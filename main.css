@@ -176,17 +176,22 @@
   margin: auto;
   padding: 10px 20px;
   box-shadow: 0 0 10px #bcbcbc;
-  color: black;
   filter: sepia(40%) saturate(60%) brightness(1);
   background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/newspaper-texture.jpg);
   box-sizing: border-box;
   position: relative;
+
+  color: black;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: justify;
 }
 
 #workskin .newspaper-headline {
   margin: 1.286em auto;
-  padding-bottom: 10px;
+  padding: 10px 0;
   border-bottom: 2px dashed #b3a4a4;
+  border-top: 2px dashed #b3a4a4;
 }
 
 #workskin .newspaper-headline p {
