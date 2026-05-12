@@ -107,6 +107,45 @@
 
 
 /* ============================================================
+   BOOK — IMAGE VARIANT
+   An optional decorative image block to place inside .book.
+   Use .cover-float to float it left alongside text.
+   Use .cover-book-img as a standalone image block.
+   
+   Example:
+   <div class="book">
+     <div class="cover-float">
+       <div class="cover-book-img"></div>
+     </div>
+     <p class="book-title">Title of the Book</p>
+     <p>Content here.</p>
+     <span class="book-edition">First Edition — 1998</span>
+   </div>
+   ============================================================ */
+ 
+#workskin .cover-float {
+  margin: 0 15px 0 0;
+  float: left;
+}
+ 
+#workskin .cover-book-img {
+  height: 130px;
+  width: 220px;
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/book-cover-image.gif);
+  background-size: cover;
+  filter: brightness(0.8);
+  border-radius: 0 20%;
+  margin-bottom: 15px;
+}
+ 
+#workskin .cover-float img {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+
+/* ============================================================
    NEWSPAPER
    A sepia-toned newspaper/gazette layout.
    Components:
