@@ -76,11 +76,6 @@
   box-sizing: border-box;
 }
 
-#workskin .book .parchment {
-  width: 100%;
-  margin-left: -1.3em;
-}
-
 #workskin p.book-title {
   font-size: 1.1em;
   letter-spacing: .1em;
