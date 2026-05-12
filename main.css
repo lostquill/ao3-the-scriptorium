@@ -25,6 +25,7 @@
   background: white;
   border: 2px solid #F0E7D9;
   box-sizing: border-box;
+  position: relative;
 }
 
 
@@ -42,6 +43,7 @@
   color: black;
   background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/parchment-texture.jpg);
   padding: 1em 1.3em;
+  position: relative;
   box-sizing: border-box;
 }
 
@@ -62,7 +64,7 @@
    ============================================================ */
 
 #workskin .book {
-  max-width: 40em;
+  max-width: 38em;
   margin: auto;
   padding: 4em 2em;
   color: #d8c8af;
@@ -74,11 +76,13 @@
   border-image-outset: 20px;
   border-image-width: 130px;
   box-sizing: border-box;
+  position: relative;
 }
 
 #workskin p.book-title {
   font-size: 1.1em;
   letter-spacing: .1em;
+  font-weight: bold;
   text-transform: uppercase;
   text-shadow: 2px 2px 2px black;
   border-bottom: 2px solid #887777;
@@ -98,6 +102,7 @@
   border-top: 2px solid #887777;
   padding-top: 10px;
   font-size: 12px;
+  text-align: right;
 }
 
 
@@ -106,6 +111,7 @@
    An optional decorative image block to place inside .book.
    Use .cover-float to float it left alongside text.
    Use .cover-book-img as a standalone image block.
+   Use .cover-float-clear after the floated block to clear the float.
    
    Example:
    <div class="book">
@@ -114,6 +120,7 @@
      </div>
      <p class="book-title">Title of the Book</p>
      <p>Content here.</p>
+     <div class="cover-float-clear"></div>
      <span class="book-edition">First Edition — 1998</span>
    </div>
    ============================================================ */
@@ -173,6 +180,7 @@
   filter: sepia(40%) saturate(60%) brightness(1);
   background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/newspaper-texture.jpg);
   box-sizing: border-box;
+  position: relative;
 }
 
 #workskin .newspaper-headline {
@@ -198,6 +206,8 @@
 #workskin .newspaper-date {
   font-size: 11px;
   font-family: courier new;
+  position: absolute;
+  top: 1em;
 }
 
 #workskin .newspaper-article {
@@ -217,4 +227,5 @@
   text-align: center;
   border-top: 1px solid #9d9d9d;
   padding-top: 10px;
+  margin-bottom: 0;
 }
