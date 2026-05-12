@@ -59,10 +59,12 @@
    ============================================================ */
 
 #workskin .book {
+  max-width: 33em;
+  margin: auto;
+  padding: 4em 2em;
   color: #d8c8af;
   background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/book-cover-texture.png) top left;
   background-color: #180905;
-  padding: 4em 2em;
   filter: drop-shadow(2px 4px 6px #464646) contrast(.9);
   border: 15px solid transparent;
   border-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/book-border.png) 45% round;
