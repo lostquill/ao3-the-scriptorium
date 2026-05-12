@@ -1,0 +1,177 @@
+/* ============================================================
+   THE SCRIPTORIUM — AO3 Workskin
+   A collection of CSS components for document-style formatting:
+   parchment scrolls, newspaper clippings, and book pages.
+   
+   Usage: copy the desired class(es) into your workskin on AO3.
+   Wrap your content in a div with the appropriate class name.
+   ============================================================ */
+
+
+/* ============================================================
+   FRAME
+   A simple centered container with a light border.
+   Use as a wrapper around any of the components below,
+   or on its own for a clean, framed text block.
+   
+   Example: <div class="frame"><p>Your text here.</p></div>
+   ============================================================ */
+
+#workskin .frame {
+  max-width: 40em;
+  padding: 5px;
+  margin: auto;
+  position: relative;
+  background: white;
+  border: 2px solid #F0E7D9;
+  box-sizing: border-box;
+}
+
+
+/* ============================================================
+   PARCHMENT
+   A warm, textured parchment background.
+   Works on its own or nested inside .frame or .book.
+   
+   Example: <div class="frame parchment"><p>Your text here.</p></div>
+   ============================================================ */
+
+#workskin .parchment {
+  color: black;
+  background: url(https://zupimages.net/up/21/17/pihg.jpg);
+  padding: 1em 1.3em;
+}
+
+
+/* ============================================================
+   BOOK
+   A dark, ornate book cover with a decorative border.
+   Use .book-title for the title line inside the book.
+   Use .book-edition for a smaller line at the bottom (e.g. edition, year).
+   Nest .parchment inside for inner pages with a lighter texture.
+   
+   Example:
+   <div class="book">
+     <p class="book-title">Title of the Book</p>
+     <p>Content here.</p>
+     <span class="book-edition">First Edition — 1998</span>
+   </div>
+   ============================================================ */
+
+#workskin .book {
+  color: #d8c8af;
+  background: url(https://zupimages.net/up/18/33/r99z.png) top left;
+  background-color: #180905;
+  padding: 4em 2em;
+  filter: drop-shadow(2px 4px 6px #464646) contrast(.9);
+  border: 15px solid transparent;
+  border-image: url(https://zupimages.net/up/26/17/tznd.png) 45% round;
+  border-image-outset: 20px;
+  border-image-width: 130px;
+}
+
+#workskin .book .parchment {
+  width: 100%;
+  margin-left: -1.3em;
+}
+
+#workskin p.book-title {
+  font-size: 1.1em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px black;
+  border-bottom: 2px solid #887777;
+  padding-bottom: 5px;
+}
+
+#workskin .parchment p.book-title {
+  text-shadow: none;
+}
+
+#workskin .book p {
+  line-height: 1.3em;
+}
+
+#workskin .book-edition {
+  display: block;
+  border-top: 2px solid #887777;
+  padding-top: 10px;
+  font-size: 12px;
+}
+
+
+/* ============================================================
+   NEWSPAPER
+   A sepia-toned newspaper/gazette layout.
+   Components:
+   - .newspaper          — outer wrapper with textured background
+   - .newspaper-headline — headline block with bottom border
+   - .newspaper-title    — large centered title in courier
+   - .newspaper-date     — small date line
+   - .newspaper-article  — justified article body text
+   - .newspaper-byline   — right-aligned author/signature line
+   - .newspaper-footer   — small centered closing line with top border
+   
+   Example:
+   <div class="frame newspaper">
+     <div class="newspaper-headline">
+       <p class="newspaper-title">THE DAILY PROPHET</p>
+       <p class="newspaper-date">1 September 1998</p>
+     </div>
+     <p class="newspaper-article">Article content here.</p>
+     <p class="newspaper-byline">— By Rita Skeeter</p>
+     <p class="newspaper-footer">— End of article —</p>
+   </div>
+   ============================================================ */
+
+#workskin .newspaper {
+  padding: 10px 20px;
+  box-shadow: 0 0 10px #bcbcbc;
+  color: black;
+  filter: sepia(40%) saturate(60%) brightness(1);
+  background: url(https://zupimages.net/up/26/15/8r98.jpg);
+}
+
+#workskin .newspaper-headline {
+  margin: 1.286em auto;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed #b3a4a4;
+}
+
+#workskin .newspaper-headline p {
+  margin: auto;
+}
+
+#workskin .newspaper-title {
+  text-align: center;
+  font-family: courier new;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 18px;
+  line-height: 23px;
+  margin-bottom: 10px;
+}
+
+#workskin .newspaper-date {
+  font-size: 11px;
+  font-family: courier new;
+}
+
+#workskin .newspaper-article {
+  font-size: 14px;
+  line-height: 17px;
+  text-align: justify;
+}
+
+#workskin .newspaper-byline {
+  font-size: 12px;
+  text-align: right;
+}
+
+#workskin .newspaper-footer {
+  font-size: 12px;
+  font-family: courier new;
+  text-align: center;
+  border-top: 1px solid #9d9d9d;
+  padding-top: 10px;
+}
