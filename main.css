@@ -21,7 +21,6 @@
   max-width: 40em;
   padding: 5px;
   margin: auto;
-  position: relative;
   background: white;
   border: 2px solid #F0E7D9;
   box-sizing: border-box;
@@ -32,9 +31,17 @@
 /* ============================================================
    PARCHMENT
    A warm, textured parchment background.
-   Works on its own or nested inside .frame or .book.
+   Works on its own or nested inside .frame.
+   When used with .frame, wrap .parchment inside .frame as a
+   separate nested div — do not combine both classes on one element.
    
-   Example: <div class="frame parchment"><p>Your text here.</p></div>
+   Example (standalone):
+   <div class="parchment"><p>Your text here.</p></div>
+   
+   Example (with frame):
+   <div class="frame">
+     <div class="parchment"><p>Your text here.</p></div>
+   </div>
    ============================================================ */
 
 #workskin .parchment {
@@ -55,11 +62,20 @@
    Use .book-edition for a smaller line at the bottom (e.g. edition, year).
    Nest .parchment inside for inner pages with a lighter texture.
    
-   Example:
+   Example (basic):
    <div class="book">
      <p class="book-title">Title of the Book</p>
      <p>Content here.</p>
      <span class="book-edition">First Edition — 1998</span>
+   </div>
+   
+   Example (with inner parchment page):
+   <div class="book">
+     <div class="parchment">
+       <p class="book-title">Chapter One</p>
+       <p>Content here.</p>
+       <span class="book-edition">First Edition — 1998</span>
+     </div>
    </div>
    ============================================================ */
 
@@ -109,27 +125,27 @@
 /* ============================================================
    BOOK — IMAGE VARIANT
    An optional decorative image block to place inside .book.
-   Use .cover-float to float it left alongside text.
-   Use .cover-book-img as a standalone image block.
-   Use .cover-float-clear after the floated block to clear the float.
+   Use .cover-float to float the image left alongside text.
+   Use .cover-float-clear after the floated content to clear
+   the float before the edition line.
    
    Example:
    <div class="book">
+     <p class="book-title">Title of the Book</p>
      <div class="cover-float">
        <div class="cover-book-img"></div>
      </div>
-     <p class="book-title">Title of the Book</p>
      <p>Content here.</p>
      <div class="cover-float-clear"></div>
      <span class="book-edition">First Edition — 1998</span>
    </div>
    ============================================================ */
- 
+
 #workskin .cover-float {
   margin: 0 15px 0 0;
   float: left;
 }
- 
+
 #workskin .cover-book-img {
   height: 130px;
   width: 220px;
@@ -139,22 +155,30 @@
   border-radius: 0 20%;
   margin-bottom: 15px;
 }
- 
+
 #workskin .cover-float img {
   display: block;
   width: 100%;
   margin: 0;
 }
 
+#workskin .cover-float-clear {
+  clear: both;
+}
+
 
 /* ============================================================
    NEWSPAPER
    A sepia-toned newspaper/gazette layout.
+   Combine .frame and .newspaper on the same div for the full effect.
+   The .newspaper-date uses position: absolute — make sure its
+   parent (.newspaper or .frame) has position: relative.
+   
    Components:
    - .newspaper          — outer wrapper with textured background
-   - .newspaper-headline — headline block with bottom border
-   - .newspaper-title    — large centered title in courier
-   - .newspaper-date     — small date line
+   - .newspaper-headline — headline block with top and bottom border
+   - .newspaper-title    — large centered title in Courier
+   - .newspaper-date     — small date line in Courier, absolutely positioned
    - .newspaper-article  — justified article body text
    - .newspaper-byline   — right-aligned author/signature line
    - .newspaper-footer   — small centered closing line with top border
@@ -162,8 +186,8 @@
    Example:
    <div class="frame newspaper">
      <div class="newspaper-headline">
-       <p class="newspaper-title">THE DAILY PROPHET</p>
        <p class="newspaper-date">1 September 1998</p>
+       <p class="newspaper-title">THE DAILY PROPHET</p>
      </div>
      <p class="newspaper-article">Article content here.</p>
      <p class="newspaper-byline">— By Rita Skeeter</p>
