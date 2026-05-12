@@ -38,7 +38,7 @@
 
 #workskin .parchment {
   color: black;
-  background: url(https://zupimages.net/up/21/17/pihg.jpg);
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/parchment-texture.jpg);
   padding: 1em 1.3em;
 }
 
@@ -60,12 +60,12 @@
 
 #workskin .book {
   color: #d8c8af;
-  background: url(https://zupimages.net/up/18/33/r99z.png) top left;
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/book-cover-texture.png) top left;
   background-color: #180905;
   padding: 4em 2em;
   filter: drop-shadow(2px 4px 6px #464646) contrast(.9);
   border: 15px solid transparent;
-  border-image: url(https://zupimages.net/up/26/17/tznd.png) 45% round;
+  border-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/book-border.png) 45% round;
   border-image-outset: 20px;
   border-image-width: 130px;
 }
@@ -129,7 +129,7 @@
   box-shadow: 0 0 10px #bcbcbc;
   color: black;
   filter: sepia(40%) saturate(60%) brightness(1);
-  background: url(https://zupimages.net/up/26/15/8r98.jpg);
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/newspaper-texture.jpg);
 }
 
 #workskin .newspaper-headline {
