@@ -1,6 +1,6 @@
 /* ============================================================
    THE SCRIPTORIUM — AO3 Workskin
-   A collection of CSS components for document-style formatting:
+   A collection of simple CSS components for document-style formatting:
    parchment scrolls, newspaper clippings, and book pages.
    
    Usage: copy the desired class(es) into your workskin on AO3.
@@ -11,8 +11,6 @@
 /* ============================================================
    FRAME
    A simple centered container with a light border.
-   Use as a wrapper around any of the components below,
-   or on its own for a clean, framed text block.
    
    Example: <div class="frame"><p>Your text here.</p></div>
    ============================================================ */
@@ -31,9 +29,6 @@
 /* ============================================================
    PARCHMENT
    A warm, textured parchment background.
-   Works on its own or nested inside .frame.
-   When used with .frame, wrap .parchment inside .frame as a
-   separate nested div — do not combine both classes on one element.
    
    Example (standalone):
    <div class="parchment"><p>Your text here.</p></div>
@@ -58,9 +53,9 @@
 /* ============================================================
    BOOK
    A dark, ornate book cover with a decorative border.
+   Nest .parchment inside for inner pages with a lighter texture.
    Use .book-title for the title line inside the book.
    Use .book-edition for a smaller line at the bottom (e.g. edition, year).
-   Nest .parchment inside for inner pages with a lighter texture.
    
    Example (basic):
    <div class="book">
@@ -125,9 +120,6 @@
 /* ============================================================
    BOOK — IMAGE VARIANT
    An optional decorative image block to place inside .book.
-   Use .cover-float to float the image left alongside text.
-   Use .cover-float-clear after the floated content to clear
-   the float before the edition line.
    
    Example:
    <div class="book">
@@ -170,15 +162,12 @@
 /* ============================================================
    NEWSPAPER
    A sepia-toned newspaper/gazette layout.
-   Combine .frame and .newspaper on the same div for the full effect.
-   The .newspaper-date uses position: absolute — make sure its
-   parent (.newspaper or .frame) has position: relative.
    
    Components:
    - .newspaper          — outer wrapper with textured background
    - .newspaper-headline — headline block with top and bottom border
-   - .newspaper-title    — large centered title in Courier
    - .newspaper-date     — small date line in Courier, absolutely positioned
+   - .newspaper-title    — large centered title in Courier
    - .newspaper-article  — justified article body text
    - .newspaper-byline   — right-aligned author/signature line
    - .newspaper-footer   — small centered closing line with top border
