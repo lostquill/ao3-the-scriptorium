@@ -6,7 +6,7 @@ A collection of CSS components for AO3 workskins. Originally built for my own fa
 
 - **Parchment** — warm textured parchment background
 - **Book** — dark ornate book cover with decorative border, with an optional decorative image variant
-- **Newspaper** — sepia-toned newspaper layout
+- **Newspaper** — sepia-toned newspaper layout, with an optional decorative image variant
 
 Usage and HTML examples available on [AO3](https://archiveofourown.org/works/84721106).
 
