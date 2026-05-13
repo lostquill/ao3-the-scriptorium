@@ -141,7 +141,7 @@
 
 #workskin .cover-book-img {
   padding-bottom: 59%;
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif);
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif) center center;
   background-size: cover;
   filter: brightness(0.8);
 }
@@ -265,9 +265,9 @@
 
 #workskin .newspaper-img {
   padding-bottom: 59%;
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif);
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif) center center;
   background-size: cover;
-  filter: brightness(0.8);
+  filter: sepia(1);
 }
 
 #workskin .img-float-clear {
