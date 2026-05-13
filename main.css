@@ -123,6 +123,7 @@
 /* ============================================================
    BOOK — IMAGE VARIANT
    An optional decorative image block to place inside .book.
+   No need to add #workskin .img-float-clear again if already included via newspaper image css.
    
    Example:
    <div class="book">
@@ -243,6 +244,7 @@
 /* ============================================================
    NEWSPAPER — IMAGE VARIANT
    An optional decorative sepia image block to place before .newspaper-article.
+   No need to add #workskin .img-float-clear again if already included via book image css.
 
    Example:
    <div class="newspaper">
