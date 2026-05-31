@@ -1,10 +1,15 @@
 /* ============================================================
    THE SCRIPTORIUM — AO3 Workskin
+   Author: LostQuill
    A collection of simple CSS components for document-style formatting:
    parchment scrolls, newspaper clippings, and book pages.
    
    Usage: copy the desired class(es) into your workskin on AO3.
    Wrap your content in a div with the appropriate class name.
+
+	Credits:
+   - Newspaper image: "Wedding & Couple Photographer in Vietnam"
+     by Jupilu via Pixabay
    ============================================================ */
 
 
@@ -17,12 +22,11 @@
 
 #workskin .frame {
   max-width: 40em;
-  padding: 5px;
   margin: auto;
+  padding: 5px;
   background: white;
   border: 2px solid #F0E7D9;
   box-sizing: border-box;
-  position: relative;
 }
 
 
@@ -43,7 +47,7 @@
   max-width: 40em;
   margin: auto;
   color: black;
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/parchment-texture.jpg);
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg);
   padding: 1em 1.3em;
   position: relative;
   box-sizing: border-box;
@@ -77,13 +81,12 @@
 #workskin .book {
   max-width: 38em;
   margin: auto;
-  padding: 4em 2em;
+  padding: 5em 2em;
   color: #d8c8af;
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/book-cover-texture.png) top left;
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png) top left;
   background-color: #180905;
   filter: drop-shadow(2px 4px 6px #464646) contrast(.9);
-  border: 15px solid transparent;
-  border-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/book-border.png) 45% round;
+  border-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-border.png) 45% round;
   border-image-outset: 20px;
   border-image-width: 130px;
   box-sizing: border-box;
@@ -92,7 +95,7 @@
 
 #workskin p.book-title {
   font-size: 1.1em;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   font-weight: bold;
   text-transform: uppercase;
   text-shadow: 2px 2px 2px black;
@@ -120,6 +123,7 @@
 /* ============================================================
    BOOK — IMAGE VARIANT
    An optional decorative image block to place inside .book.
+   No need to add #workskin .img-float-clear again if already included via newspaper image css.
    
    Example:
    <div class="book">
@@ -128,33 +132,25 @@
        <div class="cover-book-img"></div>
      </div>
      <p>Content here.</p>
-     <div class="cover-float-clear"></div>
+     <div class="img-float-clear"></div>
      <span class="book-edition">First Edition — 1998</span>
    </div>
    ============================================================ */
 
 #workskin .cover-float {
-  margin: 0 15px 0 0;
+  width: 40%;
+  margin: 0 10px 0 0;
   float: left;
 }
 
 #workskin .cover-book-img {
-  height: 130px;
-  width: 220px;
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/book-cover-image.gif);
+  padding-bottom: 59%;
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif) center center;
   background-size: cover;
   filter: brightness(0.8);
-  border-radius: 0 20%;
-  margin-bottom: 15px;
 }
 
-#workskin .cover-float img {
-  display: block;
-  width: 100%;
-  margin: 0;
-}
-
-#workskin .cover-float-clear {
+#workskin .img-float-clear {
   clear: both;
 }
 
@@ -173,7 +169,7 @@
    - .newspaper-footer   — small centered closing line with top border
    
    Example:
-   <div class="frame newspaper">
+   <div class="newspaper">
      <div class="newspaper-headline">
        <p class="newspaper-date">1 September 1998</p>
        <p class="newspaper-title">THE DAILY PROPHET</p>
@@ -191,13 +187,14 @@
   box-shadow: 0 0 10px #bcbcbc;
   color: black;
   filter: sepia(40%) saturate(60%) brightness(1);
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/v1/assets/newspaper-texture.jpg);
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-texture.jpg);
   box-sizing: border-box;
   position: relative;
 }
 
 #workskin .newspaper-headline {
   margin: 1.286em auto;
+  margin-top: 2em;
   padding: 10px 0;
   border-bottom: 2px dashed #b3a4a4;
   border-top: 2px dashed #b3a4a4;
@@ -208,18 +205,17 @@
 }
 
 #workskin .newspaper-title {
+  font-family: "Courier New", Courier, monospace;
   text-align: center;
-  font-family: courier new;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 18px;
   line-height: 23px;
-  margin-bottom: 10px;
 }
 
 #workskin .newspaper-date {
+  font-family: "Courier New", Courier, monospace;
   font-size: 11px;
-  font-family: courier new;
   position: absolute;
   top: 1em;
 }
@@ -236,10 +232,49 @@
 }
 
 #workskin .newspaper-footer {
-  font-size: 12px;
-  font-family: courier new;
+  font-family: "Courier New", Courier, monospace;
   text-align: center;
+  font-size: 12px;
   border-top: 1px solid #9d9d9d;
   padding-top: 10px;
   margin-bottom: 0;
+}
+
+
+/* ============================================================
+   NEWSPAPER — IMAGE VARIANT
+   An optional decorative sepia image block to place before .newspaper-article.
+   No need to add #workskin .img-float-clear again if already included via book image css.
+
+   Example:
+   <div class="newspaper">
+     <div class="newspaper-headline">
+       <p class="newspaper-date">1 September 1998</p>
+       <p class="newspaper-title">THE DAILY PROPHET</p>
+     </div>
+     <div class="newspaper-float">
+       <div class="newspaper-img"></div>
+     </div>
+     <p class="newspaper-article">Article content here.</p>
+     <p class="newspaper-byline">— By Rita Skeeter</p>
+     <div class="img-float-clear"></div>
+     <p class="newspaper-footer">— End of article —</p>
+   </div>
+   ============================================================ */
+
+#workskin .newspaper-float {
+  width: 40%;
+  margin: 0 10px 0 0;
+  float: left;
+}
+
+#workskin .newspaper-img {
+  padding-bottom: 59%;
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-image.jpg) center center;
+  background-size: cover;
+  filter: sepia(1);
+}
+
+#workskin .img-float-clear {
+  clear: both;
 }
