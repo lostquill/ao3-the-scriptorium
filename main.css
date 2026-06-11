@@ -195,7 +195,7 @@
    - .newspaper-headline — headline block with top and bottom border
    - .newspaper-date     — small date line in Courier, absolutely positioned
    - .newspaper-title    — large centered title in Courier
-   - .newspaper-content  — justified article body text (with <p>), auto scrollbar
+   - .newspaper-content  — justified article body text (with <p> inside), auto scrollbar
    - .newspaper-byline   — right-aligned author/signature line
    - .newspaper-footer   — small centered closing line with top border
    
