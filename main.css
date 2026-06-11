@@ -64,16 +64,22 @@
    Example (basic):
    <div class="book">
      <p class="book-title">Title of the Book</p>
-     <p>Content here.</p>
-     <span class="book-edition">First Edition — 1998</span>
+      <div class="book-content">
+        <p>Content here.</p>
+        <p>Another paragraph here.</p>
+      </div>
+     <p class="book-edition">First Edition — 1998</p>
    </div>
    
    Example (with inner parchment page):
    <div class="book">
      <div class="parchment">
        <p class="book-title">Chapter One</p>
-       <p>Content here.</p>
-       <span class="book-edition">First Edition — 1998</span>
+       <div class="book-content">
+         <p>Content here.</p>
+         <p>Another paragraph here.</p>
+       </div>
+       <p class="book-edition">First Edition — 1998</p>
      </div>
    </div>
    ============================================================ */
@@ -107,12 +113,25 @@
   text-shadow: none;
 }
 
-#workskin .book p {
+#workskin .book-content {
+  padding: 2px 5px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+#workskin .book-content p {
   line-height: 1.3em;
 }
 
+#workskin .book-content p:first-of-type {
+  margin-top: 0;
+}
+
+#workskin .book-content p:last-of-type {
+  margin-bottom: 0;
+}
+
 #workskin .book-edition {
-  display: block;
   border-top: 2px solid #887777;
   padding-top: 10px;
   font-size: 12px;
@@ -128,12 +147,15 @@
    Example:
    <div class="book">
      <p class="book-title">Title of the Book</p>
-     <div class="cover-float">
-       <div class="cover-book-img"></div>
-     </div>
-     <p>Content here.</p>
-     <div class="img-float-clear"></div>
-     <span class="book-edition">First Edition — 1998</span>
+     <div class="book-content">
+       <div class="cover-float">
+         <div class="cover-book-img"></div>
+       </div>
+       <p>Content here.</p>
+       <p>Another paragraph here.</p>
+       <div class="img-float-clear"></div>
+	 </div>
+     <p class="book-edition">First Edition — 1998</p>
    </div>
    ============================================================ */
 
@@ -164,7 +186,7 @@
    - .newspaper-headline — headline block with top and bottom border
    - .newspaper-date     — small date line in Courier, absolutely positioned
    - .newspaper-title    — large centered title in Courier
-   - .newspaper-article  — justified article body text
+   - .newspaper-content  — justified article body text (with <p>), auto scrollbar
    - .newspaper-byline   — right-aligned author/signature line
    - .newspaper-footer   — small centered closing line with top border
    
@@ -174,7 +196,10 @@
        <p class="newspaper-date">1 September 1998</p>
        <p class="newspaper-title">THE DAILY PROPHET</p>
      </div>
-     <p class="newspaper-article">Article content here.</p>
+     <div class="newspaper-content">
+       <p>Article content here.</p>
+       <p>Another paragraph here.</p>
+     </div>
      <p class="newspaper-byline">— By Rita Skeeter</p>
      <p class="newspaper-footer">— End of article —</p>
    </div>
@@ -220,10 +245,24 @@
   top: 1em;
 }
 
-#workskin .newspaper-article {
+#workskin .newspaper-content {
+  padding: 2px 5px;
+  max-height: 550px;
+  overflow-y: auto;
+}
+
+#workskin .newspaper-content p {
   font-size: 14px;
   line-height: 17px;
   text-align: justify;
+}
+
+#workskin .newspaper-content p:first-of-type {
+  margin-top: 0;
+}
+
+#workskin .newspaper-content p:last-of-type {
+  margin-bottom: 0;
 }
 
 #workskin .newspaper-byline {
@@ -252,12 +291,15 @@
        <p class="newspaper-date">1 September 1998</p>
        <p class="newspaper-title">THE DAILY PROPHET</p>
      </div>
-     <div class="newspaper-float">
-       <div class="newspaper-img"></div>
+     <div class="newspaper-content">
+       <div class="newspaper-float">
+         <div class="newspaper-img"></div>
+       </div>
+       <p>Article content here.</p>
+       <p>Another paragraph here.</p>
+       <div class="img-float-clear"></div>
      </div>
-     <p class="newspaper-article">Article content here.</p>
      <p class="newspaper-byline">— By Rita Skeeter</p>
-     <div class="img-float-clear"></div>
      <p class="newspaper-footer">— End of article —</p>
    </div>
    ============================================================ */
