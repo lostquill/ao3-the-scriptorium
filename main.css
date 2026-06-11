@@ -87,7 +87,7 @@
 
 #workskin .book {
   max-width: 38em;
-  margin: auto;
+  margin: 20px auto;
   padding: 5em 2em;
   box-sizing: border-box;
   position: relative;
