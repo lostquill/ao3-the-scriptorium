@@ -122,10 +122,9 @@
 }
 
 #workskin .book-content {
-  padding-block: 5px;
+  padding: 5px;
   max-height: 500px;
   overflow-y: auto;
-  scrollbar-gutter: stable both-edges;
   box-sizing: border-box;
 }
 
@@ -263,10 +262,9 @@
 }
 
 #workskin .newspaper-content {
-  padding-block: 5px;
+  padding: 5px;
   max-height: 550px;
   overflow-y: auto;
-  scrollbar-gutter: stable both-edges;
   box-sizing: border-box;
 }
 
