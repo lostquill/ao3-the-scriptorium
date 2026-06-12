@@ -10,6 +10,7 @@
 	Credits:
    - Newspaper image: "Wedding & Couple Photographer in Vietnam"
      by Jupilu via Pixabay
+   - Parchment roll designed by Magnific — www.magnific.com
    ============================================================ */
 
 
@@ -31,15 +32,19 @@
 
 
 /* ============================================================
-   PARCHMENT
-   A warm, textured parchment background.
+   PARCHMENT BACKGROUND
+   A simple, textured parchment background.
    
    Example (standalone):
-   <div class="parchment"><p>Your text here.</p></div>
+   <div class="parchment">
+     <p>Your text here.</p>
+   </div>
    
    Example (with frame):
    <div class="frame">
-     <div class="parchment"><p>Your text here.</p></div>
+     <div class="parchment">
+       <p>Your text here.</p>
+     </div>
    </div>
    ============================================================ */
 
@@ -52,6 +57,48 @@
   padding: 1em 1.3em;
   position: relative;
   box-sizing: border-box;
+}
+
+/* ============================================================
+   PARCHMENT SCROLL
+   A decorative parchment scroll with a fixed size and scrollable content area.
+   
+   Example :
+   <div class="parchment-scroll">
+     <div class="parchment-scroll-content">
+       <p>Your text here.</p>
+     </div>
+   </div>
+   ============================================================ */
+
+#workskin .parchment-scroll {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+	
+    width: 600px;
+    height: 435px;
+    overflow: hidden;
+    margin: 10px auto;
+    padding: 7em 5.3em;
+	
+    background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#workskin .parchment-scroll-content {
+    height: 200px;
+    padding-inline: 2em;
+    overflow: auto;
+    margin: auto;
+}
+
+#workskin .parchment-scroll-content p {
+    color: black;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+    font-style: italic;
 }
 
 
