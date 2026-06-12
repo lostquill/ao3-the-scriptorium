@@ -432,15 +432,36 @@
 
 /* --- Images de fond décoratives --- */
 
-#workskin .deco-left {
+#workskin .doc-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	
   position: absolute;
   left: 0;
   top: 0;
   width: 375px;
   height: 445px;
   opacity: 0.9;
-  background: url(https://i.servimg.com/u/f62/19/85/90/70/debuta12.jpg);
+  /* background: url(https://i.servimg.com/u/f62/19/85/90/70/debuta12.jpg); */
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover.jpg);
+  background-size: cover;
   z-index: 1;
+}
+
+#workskin .doc-cover p {
+  width: 90%;
+  text-align: center;
+  margin: 0;
+}
+
+.doc-title {
+	
+}
+
+.doc-subtitle {
+	
 }
 
 #workskin .deco-right {
