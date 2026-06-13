@@ -416,11 +416,6 @@
    Positionnement automatique via :has() — zéro top négatif
    ============================================================ */
 
-#workskin .doc-wrapper {
-  background-image: url("https://zupimages.net/up/21/17/pihg.jpg");
-  margin: auto;
-}
-
 #workskin .doc-container {
   width: 565px;
   height: 445px;
@@ -432,7 +427,8 @@
 
 /* --- Images de fond décoratives --- */
 
-#workskin .doc-cover {
+#workskin .doc-cover,
+#workskin .doc-cover-parchment {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -444,10 +440,17 @@
   width: 375px;
   height: 445px;
   opacity: 0.9;
-  /* background: url("https://i.servimg.com/u/f62/19/85/90/70/debuta12.jpg"); */
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover.jpg");
-  background-size: cover;
   z-index: 1;
+}
+
+#workskin .doc-cover {
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover.jpg");
+  background-size: cover;
+}
+
+#workskin .doc-cover-parchment {
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-parchment.jpg");
+  background-size: cover;
 }
 
 .doc-seal-img {
@@ -468,7 +471,26 @@
   filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.3)) brightness(1.2);
 }
 
-#workskin .doc-cover p {
+.doc-classified-img {
+  /* Taille du bloc */
+  width: 170px;
+  height: 95px;
+    
+  /* Gestion du background */
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-classified.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+    
+  /* Espace entre le sceau et le titre en dessous */
+  margin-bottom: 5px;
+    
+  /* Petit effet de relief pour le détacher du parchemin */
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.3)) brightness(1.2);
+}
+
+#workskin .doc-cover p,
+#workskin .doc-cover-parchment p {
   font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
   text-align: center;
   margin: 0;
@@ -586,8 +608,9 @@
   width: 100%;
   /* background: rgba(255, 255, 255, 0.9); */
   background: rgba(247, 242, 234, 0.88);
+  border-radius: 20px 20px 0 0;
   border-top: 1px solid rgba(170, 150, 120, 0.35);
-  box-shadow: 0 -1px 5px #737373;
+  box-shadow: 0 -1px 5px #373737;
   z-index: 6;
 }
 
@@ -620,6 +643,7 @@
   width: 355px;
   height: 445px;
   background: rgb(247 242 234);
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
   border-right: 2px solid rgba(170, 150, 120, 0.4);
   box-sizing: border-box;
   z-index: 19;
@@ -655,7 +679,8 @@
    ============================================================ */
 
 #workskin .tab-btn {
-    background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg");
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg) 75% center;
+  background-size: 200%;
 }
 #workskin .tab:nth-child(1) .tab-btn {
   background-image: url("https://i.servimg.com/u/f62/19/85/90/70/potion11.jpg");
