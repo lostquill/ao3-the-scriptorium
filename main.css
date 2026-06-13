@@ -443,31 +443,18 @@
 }
 
 #workskin .folders .doc-cover {
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover.jpg");
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folders.jpg");
   background-size: cover;
 }
 
 #workskin .codex .doc-cover {
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-parchment.jpg");
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-codex.jpg");
   background-size: cover;
 }
 
-#workskin .codex .doc-img {
-  /* Taille du bloc */
-  width: 170px;
-  height: 95px;
-    
-  /* Gestion du background */
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-    
-  /* Espace entre le sceau et le titre en dessous */
-  margin-bottom: 5px;
-    
-  /* Petit effet de relief pour le détacher du parchemin */
-  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.3)) brightness(1.2);
+#workskin .folio .doc-cover {
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folio.jpg");
+  background-size: cover;
 }
 
 #workskin .folders .doc-img {
@@ -480,11 +467,33 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  transform: rotate(10deg);
+  filter: saturate(0.7);
     
   /* Espace entre le sceau et le titre en dessous */
   margin-bottom: 5px;
   position: absolute;
   top: 70px;
+}
+
+#workskin .folio .doc-img {
+  /* Taille du bloc */
+  width: 170px;
+  height: 95px;
+    
+  /* Gestion du background */
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+    
+  /* Espace entre le sceau et le titre en dessous */
+  margin-bottom: 5px;
+  position: absolute;
+  top: 70px;
+    
+  /* Petit effet de relief pour le détacher du parchemin */
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.3)) brightness(1.2);
 }
 
 #workskin .doc-cover p {
@@ -586,7 +595,6 @@
   border: ridge rgba(220, 210, 190, 0.8);
   opacity: 0.7;
   cursor: pointer;
-  background-size: cover;
   background-position: center center;
   transition: filter 300ms ease-in-out, opacity 300ms ease-in-out;
   box-sizing: border-box;
@@ -608,6 +616,15 @@
 }
 
 #workskin .codex .tab:hover .tab-btn {
+  opacity: 0.85;
+  filter: saturate(40%);
+}
+
+#workskin .folio .tab-btn {
+  filter: saturate(60%) sepia(40%);
+}
+
+#workskin .folio .tab:hover .tab-btn {
   opacity: 0.85;
   filter: saturate(40%);
 }
@@ -698,23 +715,28 @@
    ============================================================ */
 
 #workskin .folders .tab-btn {
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg) 75% center;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg") 75% center;
   background-size: 200%;
 }
 #workskin .folders .tab:nth-child(1) .tab-btn {
   background-image: url("https://i.servimg.com/u/f62/19/85/90/70/potion11.jpg");
+  background-size: cover;
 }
 #workskin .folders .tab:nth-child(2) .tab-btn {
   background-image: url("https://i.servimg.com/u/f62/19/85/90/70/herbic10.jpg");
+  background-size: cover;
 }
 #workskin .folders .tab:nth-child(3) .tab-btn {
   background-image: url("https://i.servimg.com/u/f62/19/85/90/70/somnif10.jpg");
+  background-size: cover;
 }
 #workskin .folders .tab:nth-child(4) .tab-btn {
   background-image: url("https://i.servimg.com/u/f62/19/85/90/70/eveil10.jpg");
+  background-size: cover;
 }
 #workskin .folders .tab:nth-child(5) .tab-btn {
-  background-image: url(https://i.servimg.com/u/f62/19/85/90/70/furonc10.jpg);
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/furonc10.jpg");
+  background-size: cover;
 }
 
 /* ============================================================
@@ -723,21 +745,56 @@
    ============================================================ */
 
 #workskin .codex .tab-btn {
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg) 75% center;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/codex.jpg") 16% 15%;
   background-size: 200%;
 }
 #workskin .codex .tab:nth-child(1) .tab-btn {
   background-image: url("https://i.servimg.com/u/f62/19/85/90/70/potion11.jpg");
+  background-size: cover;
 }
 #workskin .codex .tab:nth-child(2) .tab-btn {
   background-image: url("https://i.servimg.com/u/f62/19/85/90/70/herbic10.jpg");
+  background-size: cover;
 }
 #workskin .codex .tab:nth-child(3) .tab-btn {
   background-image: url("https://i.servimg.com/u/f62/19/85/90/70/somnif10.jpg");
+  background-size: cover;
 }
 #workskin .codex .tab:nth-child(4) .tab-btn {
   background-image: url("https://i.servimg.com/u/f62/19/85/90/70/eveil10.jpg");
+  background-size: cover;
 }
 #workskin .codex .tab:nth-child(5) .tab-btn {
-  background-image: url(https://i.servimg.com/u/f62/19/85/90/70/furonc10.jpg);
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/furonc10.jpg");
+  background-size: cover;
+}
+
+/* ============================================================
+   IMAGES PAR BOUTON (FOLIO)
+   Ajouter une entrée :nth-child(N) pour chaque nouvelle catégorie
+   ============================================================ */
+
+#workskin .folio .tab-btn {
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg") 75% center;
+  background-size: 200%;
+}
+#workskin .folio .tab:nth-child(1) .tab-btn {
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/potion11.jpg");
+  background-size: cover;
+}
+#workskin .folio .tab:nth-child(2) .tab-btn {
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/herbic10.jpg");
+  background-size: cover;
+}
+#workskin .folio .tab:nth-child(3) .tab-btn {
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/somnif10.jpg");
+  background-size: cover;
+}
+#workskin .folio .tab:nth-child(4) .tab-btn {
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/eveil10.jpg");
+  background-size: cover;
+}
+#workskin .folio .tab:nth-child(5) .tab-btn {
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/furonc10.jpg");
+  background-size: cover;
 }

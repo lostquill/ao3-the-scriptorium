@@ -16,7 +16,7 @@ Usage and HTML examples available on [AO3](https://archiveofourown.org/works/847
 The `assets/` folder contains the textures used by the workskin. All images are free to use, with one exception: `book-border.png` was generated with Gemini (Google AI). If you prefer not to use AI-generated assets, you can swap it out: the CSS will work with any image with minor adjustments.
 
 - `newspaper-image.jpg`: photo by [Jupilu](https://pixabay.com/users/jupilu/) via Pixabay
-- `old-parchment.png`: parchment scroll designed by [Magnific](www.magnific.com)
+- `parchment-scroll.png`: parchment scroll designed by [Magnific](www.magnific.com)
 
 ## License
 
