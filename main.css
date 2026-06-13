@@ -53,7 +53,7 @@
   margin: auto;
   color: black;
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg);
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
   padding: 1em 1.3em;
   position: relative;
   box-sizing: border-box;
@@ -83,7 +83,7 @@
     margin: 10px auto;
     padding: 7em 5.3em;
 	
-    background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment.png);
+    background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -142,9 +142,9 @@
   color: #d8c8af;
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
 	
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png) top left;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png") top left;
   background-color: #180905;
-  border-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-border.png) 45% round;
+  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-border.png") 45% round;
   border-image-outset: 20px;
   border-image-width: 130px;
   filter: drop-shadow(2px 4px 6px #464646) contrast(0.9);
@@ -223,7 +223,7 @@
 
 #workskin .cover-book-img {
   padding-bottom: 59%;
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif) center center;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif") center center;
   background-size: cover;
   filter: brightness(0.8);
 }
@@ -271,7 +271,7 @@
   color: black;
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
 	
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-texture.jpg);
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-texture.jpg");
   box-shadow: 0 0 10px #bcbcbc;
   filter: sepia(40%) saturate(60%) brightness(1);
 }
@@ -390,13 +390,13 @@
 }
 
 #workskin .newspaper-img-left {
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-image.jpg) center center;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-image.jpg") center center;
   background-size: cover;
   padding-bottom: 59%;
 }
 
 #workskin .newspaper-img-right {
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-image.jpg) center center;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-image.jpg") center center;
   background-size: cover;
   padding-bottom: 69%;
 }
@@ -417,7 +417,7 @@
    ============================================================ */
 
 #workskin .doc-wrapper {
-  background-image: url(https://zupimages.net/up/21/17/pihg.jpg);
+  background-image: url("https://zupimages.net/up/21/17/pihg.jpg");
   margin: auto;
 }
 
@@ -444,24 +444,62 @@
   width: 375px;
   height: 445px;
   opacity: 0.9;
-  /* background: url(https://i.servimg.com/u/f62/19/85/90/70/debuta12.jpg); */
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover.jpg);
+  /* background: url("https://i.servimg.com/u/f62/19/85/90/70/debuta12.jpg"); */
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover.jpg");
   background-size: cover;
   z-index: 1;
 }
 
+.doc-seal-img {
+  /* Taille du bloc */
+  width: 170px;
+  height: 95px;
+    
+  /* Gestion du background */
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+    
+  /* Espace entre le sceau et le titre en dessous */
+  margin-bottom: 5px;
+    
+  /* Petit effet de relief pour le détacher du parchemin */
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.3)) brightness(1.2);
+}
+
 #workskin .doc-cover p {
-  width: 90%;
+  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
   text-align: center;
   margin: 0;
 }
 
 .doc-title {
-	
+  width: 80%;
+  position: relative; /* Indispensable pour positionner le losange */
+  padding-bottom: 15px; /* Crée de l'espace pour la bordure sous le texte */
+  font-variant: small-caps;
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+/* La ligne horizontale */
+.doc-title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 50%;
+  height: 1px;
+  background-color: #525252;
+  transform: translateX(-50%);
 }
 
 .doc-subtitle {
-	
+  width: 70%;
+  padding-top: 15px;
+  line-height: 1;
+  /* border-top: 2px solid #525252; */
 }
 
 #workskin .deco-right {
@@ -471,7 +509,7 @@
   width: 190px;
   height: 445px;
   opacity: 0.9;
-  background: url(https://i.servimg.com/u/f58/19/68/80/61/parche13.jpg);
+  background: url("https://i.servimg.com/u/f58/19/68/80/61/parche13.jpg");
   z-index: 1;
 }
 
@@ -549,6 +587,7 @@
   /* background: rgba(255, 255, 255, 0.9); */
   background: rgba(247, 242, 234, 0.88);
   border-top: 1px solid rgba(170, 150, 120, 0.35);
+  box-shadow: 0 -1px 5px #737373;
   z-index: 6;
 }
 
@@ -615,17 +654,20 @@
    Ajouter une entrée :nth-child(N) pour chaque nouvelle catégorie
    ============================================================ */
 
+#workskin .tab-btn {
+    background-image: url("https://www.komar.de/media/catalog/product/cache/6/image/9df78eab33525d08d6e5fb8d27136e95/import/api-v1.1-file-public-files-pim-assets-97-ad-84-62-6284ad972eff292d45ce1a2e-images-6e-4c-f4-65-65f44c6e5f18b477d8eee055-iax10-0027-vintage-world-map-web.jpg");
+}
 #workskin .tab:nth-child(1) .tab-btn {
-  background-image: url(https://i.servimg.com/u/f62/19/85/90/70/potion11.jpg);
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/potion11.jpg");
 }
 #workskin .tab:nth-child(2) .tab-btn {
-  background-image: url(https://i.servimg.com/u/f62/19/85/90/70/herbic10.jpg);
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/herbic10.jpg");
 }
 #workskin .tab:nth-child(3) .tab-btn {
-  background-image: url(https://i.servimg.com/u/f62/19/85/90/70/somnif10.jpg);
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/somnif10.jpg");
 }
 #workskin .tab:nth-child(4) .tab-btn {
-  background-image: url(https://i.servimg.com/u/f62/19/85/90/70/eveil10.jpg);
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/eveil10.jpg");
 }
 #workskin .tab:nth-child(5) .tab-btn {
   background-image: url(https://i.servimg.com/u/f62/19/85/90/70/furonc10.jpg);
