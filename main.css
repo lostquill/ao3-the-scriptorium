@@ -659,7 +659,7 @@
 }
 
 #workskin .folio .tab-btn {
-  filter: saturate(60%) sepia(40%);
+  filter: saturate(80%) sepia(10%);
 }
 
 #workskin .tab:hover .tab-btn {
@@ -676,18 +676,34 @@
   left: 0;
   width: 100%;
   background: rgba(247, 242, 234, 0.88);
-  border-top: 1px solid rgba(170, 150, 120, 0.35);
-  box-shadow: 0 -1px 5px #373737;
   z-index: 6;
+  box-sizing: border-box;
 }
 
 #workskin .folders .tab-label {
-  border-radius: 20px 20px 0 0;
+  border-top: 1px solid rgba(170, 150, 120, 0.35);
+  box-shadow: 0 -1px 5px #373737;
+  border-radius: 30px 30px 0 0;
 }
 
-#workskin .folders .tab-label .red,
-#workskin .folio .tab-label .red {
+#workskin .folio .tab-label {
+  border-top: 1px solid rgba(170, 150, 120, 0.35);
+  box-shadow: 0 0 10px #141414;
+  border-radius: 25%;
+}
+
+#workskin .codex .tab-label {
+  border-top: 1px solid rgba(170, 150, 120, 0.35);
+  box-shadow: 0 -1px 5px #373737;
+  border-radius: 0 25px;
+}
+
+#workskin .folders .tab-label .red {
   color: #ff0000;
+}
+
+#workskin .folio .tab-label .red {
+  color: #b30000;
 }
 
 #workskin .codex .tab-label .red {
@@ -759,6 +775,10 @@
   box-sizing: border-box;
 }
 
+#workskin .tab-content .red {
+  color: #ff0000;
+}
+
 
 /* ============================================================
    IMAGES PAR BOUTON (FOLDERS)
@@ -826,7 +846,7 @@
    ============================================================ */
 
 #workskin .folio .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg") 75% center;
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg) right bottom;
   background-size: 200%;
 }
 #workskin .folio .tab:nth-child(1) .tab-btn {
