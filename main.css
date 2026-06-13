@@ -552,15 +552,18 @@
 #workskin .folders .doc-headline p {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
+  color: black;
 }
 
 #workskin .codex .doc-headline p {
   font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  color: black;
 }
 
 #workskin .folio .doc-headline p {
   font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
   font-style: italic;
+  color: black;
 }
 
 #workskin .doc-title {
@@ -712,7 +715,6 @@
 
 #workskin .tab-label p {
   margin-block: 7px;
-  color: #332618;
   font-weight: bold;
   text-align: center;
   line-height: 1.3;
@@ -723,18 +725,21 @@
   font-family: monospace, "Courier New", Courier;
   font-size: 12px;
   text-transform: uppercase;
+  color: black;
 }
 
 #workskin .codex .tab-label p {
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
   font-size: 11px;
   font-variant: small-caps;
+  color: black;
 }
 
 #workskin .folio .tab-label p {
   font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
   font-size: 11px;
   font-style: italic;
+  color: black;
 }
 
 
