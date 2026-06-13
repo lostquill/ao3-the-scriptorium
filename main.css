@@ -427,8 +427,7 @@
 
 /* --- Images de fond décoratives --- */
 
-#workskin .doc-cover,
-#workskin .doc-cover-parchment {
+#workskin .doc-cover {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -443,17 +442,17 @@
   z-index: 1;
 }
 
-#workskin .doc-cover {
+#workskin .folders .doc-cover {
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover.jpg");
   background-size: cover;
 }
 
-#workskin .doc-cover-parchment {
+#workskin .codex .doc-cover {
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-parchment.jpg");
   background-size: cover;
 }
 
-.doc-seal-img {
+#workskin .codex .doc-img {
   /* Taille du bloc */
   width: 170px;
   height: 95px;
@@ -471,7 +470,7 @@
   filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.3)) brightness(1.2);
 }
 
-.doc-confidential-img {
+#workskin .folders .doc-img {
   /* Taille du bloc */
   width: 170px;
   height: 95px;
@@ -488,21 +487,20 @@
   top: 70px;
 }
 
-#workskin .doc-cover p,
-#workskin .doc-cover-parchment p {
+#workskin .doc-cover p {
   text-align: center;
   margin: 0;
 }
 
-#workskin .doc-cover p {
+#workskin .folders .doc-cover p {
   font-family: "Courier New", Courier, monospace;
 }
 
-#workskin .doc-cover-parchment p {
+#workskin .codex .doc-cover p {
   font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
 }
 
-.doc-title {
+#workskin .doc-title {
   width: 80%;
   position: relative; /* Indispensable pour positionner le losange */
   padding-bottom: 15px; /* Crée de l'espace pour la bordure sous le texte */
@@ -512,7 +510,7 @@
 }
 
 /* La ligne horizontale */
-.doc-title::before {
+#workskin .doc-title::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -523,11 +521,10 @@
   transform: translateX(-50%);
 }
 
-.doc-subtitle {
+#workskin .doc-subtitle {
   width: 70%;
   padding-top: 15px;
   line-height: 1;
-  /* border-top: 2px solid #525252; */
 }
 
 #workskin .deco-right {
@@ -586,33 +583,31 @@
   display: block;
   width: 100%;
   height: 100%;
-  /* border: 5px groove #ffffff; */
   border: ridge rgba(220, 210, 190, 0.8);
   opacity: 0.7;
   cursor: pointer;
   background-size: cover;
   background-position: center center;
-  filter: saturate(60%) sepia(40%);
   transition: filter 300ms ease-in-out, opacity 300ms ease-in-out;
   box-sizing: border-box;
   position: relative;
   z-index: 5;
 }
 
-#workskin .doc-container:has(.doc-cover) .tab-btn {
-  filter: brightness(1.3) saturate(0.5);
+#workskin .folders .tab-btn {
+  filter: brightness(1.3) saturate(50%);
 }
 
-#workskin .doc-container:has(.doc-cover-parchment) .tab-btn {
-  filter: saturate(60%) sepia(40%);
-}
-
-#workskin .doc-container:has(.doc-cover) .tab:hover .tab-btn {
+#workskin .folders .tab:hover .tab-btn {
   opacity: 0.85;
   filter: saturate(40%);
 }
 
-#workskin .doc-container:has(.doc-cover-parchment) .tab:hover .tab-btn {
+#workskin .codex .tab-btn {
+  filter: saturate(60%) sepia(40%);
+}
+
+#workskin .codex .tab:hover .tab-btn {
   opacity: 0.85;
   filter: saturate(40%);
 }
@@ -625,37 +620,32 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  /* background: rgba(255, 255, 255, 0.9); */
   background: rgba(247, 242, 234, 0.88);
   border-top: 1px solid rgba(170, 150, 120, 0.35);
   box-shadow: 0 -1px 5px #373737;
   z-index: 6;
 }
 
-#workskin .doc-container:has(.doc-cover) .tab-label {
+#workskin .folders .tab-label {
   border-radius: 20px 20px 0 0;
 }
 
 #workskin .tab-label p {
-  /* margin-block: 8px; */
-  /* color: black; */
   margin-block: 7px;
   color: #332618;
   font-weight: bold;
-  /* font-size: 12px; */
   font-size: 11px;
   text-align: center;
-  /* line-height: 1.2; */
   line-height: 1.3;
   letter-spacing: 0.02em;
 }
 
-#workskin .doc-container:has(.doc-cover) .tab-label p {
+#workskin .folders .tab-label p {
   font-family: "Courier New", Courier, monospace;
   text-transform: uppercase;
 }
 
-#workskin .doc-container:has(.doc-cover-parchment) .tab-label p {
+#workskin .codex .tab-label p {
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
   font-variant: small-caps;
 }
@@ -692,11 +682,9 @@
 #workskin .tab-content {
   width: 100%;
   height: 100%;
-  /* padding: 8px; */
   padding: 12px 14px;
   overflow: auto;
   font-size: 11px;
-  /* line-height: 15px; */
   line-height: 17px;
   color: #2e2416;
   text-align: justify;
@@ -705,26 +693,51 @@
 
 
 /* ============================================================
-   IMAGES PAR BOUTON
+   IMAGES PAR BOUTON (FOLDERS)
    Ajouter une entrée :nth-child(N) pour chaque nouvelle catégorie
    ============================================================ */
 
-#workskin .tab-btn {
+#workskin .folders .tab-btn {
   background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg) 75% center;
   background-size: 200%;
 }
-#workskin .tab:nth-child(1) .tab-btn {
+#workskin .folders .tab:nth-child(1) .tab-btn {
   background-image: url("https://i.servimg.com/u/f62/19/85/90/70/potion11.jpg");
 }
-#workskin .tab:nth-child(2) .tab-btn {
+#workskin .folders .tab:nth-child(2) .tab-btn {
   background-image: url("https://i.servimg.com/u/f62/19/85/90/70/herbic10.jpg");
 }
-#workskin .tab:nth-child(3) .tab-btn {
+#workskin .folders .tab:nth-child(3) .tab-btn {
   background-image: url("https://i.servimg.com/u/f62/19/85/90/70/somnif10.jpg");
 }
-#workskin .tab:nth-child(4) .tab-btn {
+#workskin .folders .tab:nth-child(4) .tab-btn {
   background-image: url("https://i.servimg.com/u/f62/19/85/90/70/eveil10.jpg");
 }
-#workskin .tab:nth-child(5) .tab-btn {
+#workskin .folders .tab:nth-child(5) .tab-btn {
+  background-image: url(https://i.servimg.com/u/f62/19/85/90/70/furonc10.jpg);
+}
+
+/* ============================================================
+   IMAGES PAR BOUTON (CODEX)
+   Ajouter une entrée :nth-child(N) pour chaque nouvelle catégorie
+   ============================================================ */
+
+#workskin .codex .tab-btn {
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg) 75% center;
+  background-size: 200%;
+}
+#workskin .codex .tab:nth-child(1) .tab-btn {
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/potion11.jpg");
+}
+#workskin .codex .tab:nth-child(2) .tab-btn {
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/herbic10.jpg");
+}
+#workskin .codex .tab:nth-child(3) .tab-btn {
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/somnif10.jpg");
+}
+#workskin .codex .tab:nth-child(4) .tab-btn {
+  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/eveil10.jpg");
+}
+#workskin .codex .tab:nth-child(5) .tab-btn {
   background-image: url(https://i.servimg.com/u/f62/19/85/90/70/furonc10.jpg);
 }
