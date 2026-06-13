@@ -427,12 +427,19 @@
 #workskin .doc-cover,
 #workskin .tab-panel {
   height: 445px;
+  box-sizing: border-box;
 }
 
 #workskin .codex,
 #workskin .codex .doc-cover,
 #workskin .codex .tab-panel {
   height: 460px;
+  box-sizing: border-box;
+}
+
+#workskin .doc-cover,
+#workskin .tab-panel {
+  width: 375px;
 }
 
 
@@ -446,7 +453,6 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 375px;
   opacity: 0.9;
   z-index: 1;
 }
@@ -464,6 +470,21 @@
 #workskin .folio .doc-cover {
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folio.jpg");
   background-size: cover;
+}
+
+#workskin .folders .doc-cover,
+#workskin .folders .tab-panel {
+  padding-inline: 18px;
+}
+
+#workskin .codex .doc-cover,
+#workskin .codex .tab-panel {
+  padding: 58px 55px;
+}
+
+#workskin .folio .doc-cover,
+#workskin .folio .tab-panel {
+  padding-inline: 18px;
 }
 
 #workskin .doc-img {
@@ -495,6 +516,9 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+
+  margin-block: 6%;
+  filter: brightness(1.2);
 }
 
 #workskin .folio .doc-img {
@@ -509,10 +533,11 @@
   background-position: center;
     
   /* Petit effet de relief pour le détacher du parchemin */
-  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.3)) brightness(1.2);
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.3)) brightness(1.3) contrast(0.9);
 }
 
 #workskin .doc-headline {
+  padding-inline: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -526,23 +551,24 @@
 
 #workskin .folders .doc-headline p {
   font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
 }
 
 #workskin .codex .doc-headline p {
   font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
 }
 
-#workskin .doc-title {
-  width: 80%;
-  position: relative; /* Indispensable pour positionner le losange */
-  padding-bottom: 15px; /* Crée de l'espace pour la bordure sous le texte */
-  font-variant: small-caps;
-  font-size: 1.5em;
-  line-height: 1;
+#workskin .folio .doc-headline p {
+  font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
+  font-style: italic;
 }
 
-#workskin .codex .doc-title {
-  width: 70%;
+#workskin .doc-title {
+  position: relative; /* Indispensable pour positionner le losange */
+  padding-bottom: 15px; /* Crée de l'espace pour la bordure sous le texte */
+  padding-inline: 10px;
+  font-size: 1.5em;
+  line-height: 1;
 }
 
 /* La ligne horizontale */
@@ -557,9 +583,18 @@
   transform: translateX(-50%);
 }
 
+#workskin .folders .doc-title::before {
+  height: 2px;
+}
+
+#workskin .folders .doc-title,
+#workskin .codex .doc-title {
+  font-variant: small-caps;
+}
+
 #workskin .doc-subtitle {
-  width: 70%;
   padding-top: 15px;
+  padding-inline: 15px;
   line-height: 1;
 }
 
@@ -681,7 +716,7 @@
 }
 
 #workskin .folio .tab-label p {
-  font-family: Georgia, serif;
+  font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
   font-size: 11px;
   font-style: italic;
 }
@@ -697,18 +732,12 @@
   position: absolute;
   top: 0;
   right: 100%;
-  width: 355px;
   background: rgb(247 242 234);
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
-  border-right: 2px solid rgba(170, 150, 120, 0.4);
-  box-sizing: border-box;
+  background-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg);
+  background-clip: content-box;
   z-index: 19;
   overflow: hidden;
   display: none;
-}
-
-#workskin .codex .tab-panel {
-    width: 375px;
 }
 
 #workskin .tab:hover .tab-panel {
@@ -797,7 +826,7 @@
    ============================================================ */
 
 #workskin .folio .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg") 75% center;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg") 75% center;
   background-size: 200%;
 }
 #workskin .folio .tab:nth-child(1) .tab-btn {
