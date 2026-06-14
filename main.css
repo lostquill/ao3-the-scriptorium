@@ -569,7 +569,7 @@
   background-position: center;
     
   /* Petit effet de relief pour le détacher du parchemin */
-  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.3)) brightness(1.3) contrast(0.9);
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 1)) brightness(1.3) contrast(0.9);
 }
 
 #workskin .doc-headline {
@@ -807,6 +807,12 @@
   z-index: 19;
   overflow: hidden;
   display: none;
+}
+
+#workskin .folio .tab-panel {
+  background-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg);
+  background-size: cover;
+  background-clip: content-box;
 }
 
 #workskin .tab:hover .tab-panel {
