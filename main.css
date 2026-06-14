@@ -809,6 +809,12 @@
   display: none;
 }
 
+#workskin .folio .tab-panel {
+  background-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg);
+  background-size: cover;
+  background-clip: content-box;
+}
+
 #workskin .tab:hover .tab-panel {
   display: block;
 }
