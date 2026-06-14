@@ -6,6 +6,9 @@
 
    Basic structure with folders:
    <div class="doc-container folders">
+
+     <!-- DOC COVER -->
+
      <div class="doc-cover">
        <div class="doc-img"></div>
        <div class="doc-headline">
@@ -13,21 +16,41 @@
          <p class="doc-subtitle">Subtitle</p>
        </div>
      </div>
+
      <div class="sidebar">
+
+       <!-- TAB START -->
        <div class="tab">
+
+         <!-- TAB BUTTON START -->
          <div class="tab-btn">
            <div class="tab-label">
-             <p>Label</p>
+             <p>Label here.</p>
            </div>
          </div>
+         <!-- TAB BUTTON END -->
+
+         <!-- TAB CONTENT START -->
          <div class="tab-panel">
            <div class="tab-content">
-             <p class="tab-title">Main title here.</p>
+             <p class="tab-title">
+               <span class="accent">Tab 1:</span>
+               Tab title here.
+             </p>
              <p class="tab-section">Section title here.</p>
              <p>Paragraph here.</p>
+             <hr>
+             <p class="tab-section">Another section title here.</p>
+             <p>Another paragraph here.</p>
            </div>
          </div>
+         <!-- TAB CONTENT END -->
+
        </div>
+       <!-- TAB END -->
+   
+       <!-- Repeat the .tab block above for each additional tab (from 'TAB START' to 'TAB END') -->
+
      </div>
    </div>
    ============================================================ */
