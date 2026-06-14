@@ -634,6 +634,18 @@
   line-height: 17px;
 }
 
+#workskin .codex .tab-content > p:not(.tab-title, .tab-section)::first-letter,
+#workskin .codex .tab-content :is(.tab-title, .tab-section) + p:not(.tab-title, .tab-section)::first-letter {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  font-size: 4.5rem; /* Taille de la lettrine */
+  float: left;       /* Permet au texte d'envelopper la lettre */
+  line-height: 1;    /* Aligne le haut de la lettre avec le texte */
+  margin-top: 4px;   /* Ajustement pour l'alignement vertical */
+  margin-right: 8px; /* Espace entre la lettrine et le texte */
+  color: #616acc;    /* Couleur de la lettrine (ici bleu) */
+}
+
 #workskin .folio .tab-content p {
   font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
   color: black;
