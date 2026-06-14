@@ -4,7 +4,7 @@
    Three visual variants: .folders, .codex, .folio
    Optional modifier: .bigger (larger dimensions)
 
-   Basic structure:
+   Basic structure with folders:
    <div class="doc-container folders">
      <div class="doc-cover">
        <div class="doc-img"></div>
@@ -16,7 +16,9 @@
      <div class="sidebar">
        <div class="tab">
          <div class="tab-btn">
-           <div class="tab-label"><p>Label</p></div>
+           <div class="tab-label">
+             <p>Label</p>
+           </div>
          </div>
          <div class="tab-panel">
            <div class="tab-content">
