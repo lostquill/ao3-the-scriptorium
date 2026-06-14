@@ -534,18 +534,18 @@
   color: black;
 }
 
-/* Accent color */
+/* Optimized red for tab labels */
 
 #workskin .folders .tab-label .red {
   color: #ff0000;
 }
 
-#workskin .folio .tab-label .red {
-  color: #b30000;
-}
-
 #workskin .codex .tab-label .red {
   color: #8d0000;
+}
+
+#workskin .folio .tab-label .red {
+  color: #b30000;
 }
 
 
@@ -598,8 +598,18 @@
   box-sizing: border-box;
 }
 
-#workskin .tab-content .red {
-  color: #ff0000;
+/* Accent colors per variant */
+
+#workskin .folders .accent {
+  color: #bd0000; /* red */
+}
+
+#workskin .codex .accent {
+  color: #616acc; /* blue */
+}
+
+#workskin .folio .accent {
+  color: #760000; /* red */
 }
 
 
