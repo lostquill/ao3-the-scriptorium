@@ -7,8 +7,7 @@
    Basic structure with folders:
    <div class="doc-container folders">
 
-     <!-- DOC COVER -->
-
+     <!-- DOC COVER START -->
      <div class="doc-cover">
        <div class="doc-img"></div>
        <div class="doc-headline">
@@ -16,6 +15,7 @@
          <p class="doc-subtitle">Subtitle</p>
        </div>
      </div>
+     <!-- DOC COVER END -->
 
      <div class="sidebar">
 
