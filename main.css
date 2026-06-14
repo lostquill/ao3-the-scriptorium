@@ -437,7 +437,7 @@
 #workskin .bigger.doc-container,
 #workskin .bigger .doc-cover,
 #workskin .bigger .tab-panel {
-  height: 645px;
+  height: 682px;
 }
 
 #workskin .codex,
@@ -520,7 +520,7 @@
 
 #workskin .bigger.folio .doc-cover,
 #workskin .bigger.folio .tab-panel {
-  padding-inline: 28px;
+  padding-inline: 29px;
 }
 
 #workskin .doc-img {
@@ -532,7 +532,7 @@
 #workskin .bigger .doc-img {
   width: 200px;
   height: 125px;
-  margin-block: 15%;
+  margin-block: 16%;
 }
 
 #workskin .folders .doc-img {
@@ -573,7 +573,7 @@
 }
 
 #workskin .doc-headline {
-  padding-inline: 5px;
+  padding-inline: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -606,8 +606,12 @@
   position: relative; /* Indispensable pour positionner le losange */
   padding-bottom: 15px; /* Crée de l'espace pour la bordure sous le texte */
   padding-inline: 10px;
-  font-size: 1.5em;
+  font-size: 22px;
   line-height: 1;
+}
+
+#workskin .bigger .doc-title {
+  font-size: 17px;
 }
 
 /* La ligne horizontale */
@@ -634,7 +638,12 @@
 #workskin .doc-subtitle {
   padding-top: 15px;
   padding-inline: 15px;
+  font-size: 15px;
   line-height: 1;
+}
+
+#workskin .bigger .doc-subtitle {
+  font-size: 15px;
 }
 
 
@@ -770,24 +779,24 @@
 
 #workskin .codex .tab-label p {
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-variant: small-caps;
   color: black;
 }
 
 #workskin .bigger.codex .tab-label p {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 #workskin .folio .tab-label p {
   font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
-  font-size: 11px;
+  font-size: 12px;
   font-style: italic;
   color: black;
 }
 
 #workskin .bigger.folio .tab-label p {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 
@@ -848,26 +857,27 @@
   background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg") 75% center;
   background-size: 200%;
 }
-#workskin .folders .tab:nth-child(1) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/potion11.jpg");
+
+/* #workskin .folders .tab:nth-child(1) .tab-btn {
+  background-image: url("img-url-here");
   background-size: cover;
 }
 #workskin .folders .tab:nth-child(2) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/herbic10.jpg");
+  background-image: url("img-url-here");
   background-size: cover;
 }
 #workskin .folders .tab:nth-child(3) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/somnif10.jpg");
+  background-image: url("img-url-here");
   background-size: cover;
 }
 #workskin .folders .tab:nth-child(4) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/eveil10.jpg");
+  background-image: url("img-url-here");
   background-size: cover;
 }
 #workskin .folders .tab:nth-child(5) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/furonc10.jpg");
+  background-image: url("img-url-here");
   background-size: cover;
-}
+} */
 
 /* ============================================================
    IMAGES PAR BOUTON (CODEX)
@@ -878,26 +888,27 @@
   background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/codex.jpg") 16% 15%;
   background-size: 200%;
 }
-#workskin .codex .tab:nth-child(1) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/potion11.jpg");
+
+/* #workskin .codex .tab:nth-child(1) .tab-btn {
+  background-image: url("img-url-here");
   background-size: cover;
 }
 #workskin .codex .tab:nth-child(2) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/herbic10.jpg");
+  background-image: url("img-url-here");
   background-size: cover;
 }
 #workskin .codex .tab:nth-child(3) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/somnif10.jpg");
+  background-image: url("img-url-here");
   background-size: cover;
 }
 #workskin .codex .tab:nth-child(4) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/eveil10.jpg");
+  background-image: url("img-url-here");
   background-size: cover;
 }
 #workskin .codex .tab:nth-child(5) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/furonc10.jpg");
+  background-image: url("img-url-here");
   background-size: cover;
-}
+} */
 
 /* ============================================================
    IMAGES PAR BOUTON (FOLIO)
@@ -905,26 +916,36 @@
    ============================================================ */
 
 #workskin .folio .tab-btn {
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg) right bottom;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg") right bottom;
   background-size: 200%;
 }
-#workskin .folio .tab:nth-child(1) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/potion11.jpg");
+
+/* #workskin .folio .tab:nth-child(1) .tab-btn {
+  background-image: url("img-url-here");
   background-size: cover;
 }
 #workskin .folio .tab:nth-child(2) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/herbic10.jpg");
+  background-image: url("img-url-here");
   background-size: cover;
 }
 #workskin .folio .tab:nth-child(3) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/somnif10.jpg");
+  background-image: url("img-url-here");
   background-size: cover;
 }
 #workskin .folio .tab:nth-child(4) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/eveil10.jpg");
+  background-image: url("img-url-here");
   background-size: cover;
 }
 #workskin .folio .tab:nth-child(5) .tab-btn {
-  background-image: url("https://i.servimg.com/u/f62/19/85/90/70/furonc10.jpg");
+  background-image: url("img-url-here");
   background-size: cover;
-}
+} */
+
+
+/* ============================================================
+   IMAGES PAR BOUTON (BIGGER)
+   Ajouter une entrée :nth-child(N) pour chaque nouvelle catégorie avec .bigger en plus
+   ex: #workskin .bigger.codex .tab:nth-child(1) .tab-btn
+   ex: #workskin .bigger.folders .tab:nth-child(1) .tab-btn
+   ex: #workskin .bigger.folio .tab:nth-child(1) .tab-btn
+   ============================================================ */
