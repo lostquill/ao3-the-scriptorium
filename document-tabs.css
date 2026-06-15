@@ -12,6 +12,7 @@
        <div class="doc-img"></div>
        <div class="doc-headline">
          <p class="doc-title">Title</p>
+         <div class="doc-title-separator"></div>
          <p class="doc-subtitle">Subtitle</p>
        </div>
      </div>
@@ -238,7 +239,7 @@
   color: black;
 }
 
-/* Title — with decorative horizontal line via ::before */
+/* Title */
 
 #workskin .doc-title {
   position: relative;
@@ -246,23 +247,6 @@
   padding-inline: 10px;
   font-size: 22px;
   line-height: 1;
-}
-
-#workskin .doc-title::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 50%;
-  height: 1px;
-  background-color: #525252;
-  transform: translateX(-50%);
-}
-
-/* Title per variant */
-
-#workskin .folders .doc-title::before {
-  height: 2px;
 }
 
 #workskin .folders .doc-title,
@@ -655,13 +639,25 @@
   line-height: 20px;
 }
 
-#workskin .codex .tab-content .tab-title,
-#workskin .folio .tab-content .tab-title {
+#workskin .codex .tab-content .tab-title {
+  text-align: center;
   font-size: 18px;
+  padding-block: 15px;
+  border-block: 5px double #b2b2b2;
 }
 
 #workskin .folders .tab-content .tab-title {
+  text-align: center;
   font-size: 17px;
+  padding-block: 20px;
+  border-block: 2px dashed #4a3e3d;
+}
+
+#workskin .folio .tab-content .tab-title {
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #4a3e3d;
 }
 
 #workskin .codex .tab-content .tab-section,
@@ -691,49 +687,79 @@
 
 /* <hr> separators per variant */
 
+#workskin .codex .doc-title-separator,
 #workskin .codex .tab-content hr {
   border: 0;
   height: 1px;
   background: #808080;
-  margin: 30px auto;
   width: 70%;
   position: relative;
   overflow: visible;
 }
 
+#workskin .codex .doc-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .codex .tab-content hr {
+  margin: 30px auto;
+}
+
+#workskin .codex .doc-title-separator::after,
 #workskin .codex .tab-content hr::after {
-  content: "♦";
+  content: "♦\FE0E";
   display: inline-block;
   position: absolute;
-  top: -10px;
+  height: 0;
+  line-height: 0;
+  margin-top: 1px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-50%);
   background: transparent;
   padding: 0 10px;
   color: #616acc;
   font-size: 14px;
 }
 
+#workskin .folders .doc-title-separator,
 #workskin .folders .tab-content hr {
   border: 0;
   border-top: 2px dashed #4a3e3d;
-  margin: 35px auto;
   width: 90%;
   position: relative;
   overflow: visible;
 }
 
+#workskin .folders .doc-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .folders .tab-content hr {
+  margin: 35px auto;
+}
+
+#workskin .folio .doc-title-separator,
 #workskin .folio .tab-content hr {
   border: 0;
   height: 1px;
   background: #2e2416;
-  margin: 40px auto;
   width: 45%;
   position: relative;
   overflow: visible;
   opacity: 0.85;
 }
 
+#workskin .folio .doc-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .folio .tab-content hr {
+  margin: 40px auto;
+}
+
+#workskin .folio .doc-title-separator::after,
+#workskin .folio .doc-title-separator::before,
 #workskin .folio .tab-content hr::after,
 #workskin .folio .tab-content hr::before {
   display: inline-block;
@@ -743,15 +769,18 @@
   font-family: "Georgia", serif;
   font-size: 18px;
 }
-   
+
+#workskin .folio .doc-title-separator::after,
 #workskin .folio .tab-content hr::after {
   content: "❧";
-  left: -16px;
+  left: -10px;
 }
 
+#workskin .folio .doc-title-separator::before,
 #workskin .folio .tab-content hr::before {
-  content: "☙";
-  right: -16px; 
+  content: "❧";
+  transform: scaleX(-1);
+  right: -10px; 
 }
 
 
@@ -872,12 +901,35 @@
 
 /* Tab content — Font size per variant */
 
-#workskin .bigger.folio .tab-content p {
+#workskin .bigger.codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter,
+#workskin .bigger .initial::first-letter {
+  font-size: 4rem;
+}
+
+#workskin .bigger.codex .tab-content p {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+#workskin .bigger.folders .tab-content p {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 22px;
+}
+
+#workskin .bigger.folio .tab-content p {
+  font-size: 15px;
+  line-height: 22px;
 }
 
 #workskin .bigger.codex .tab-content .tab-title {
+  font-size: 20px;
+}
+
+#workskin .bigger.folders .tab-content .tab-title {
+  font-size: 18px;
+}
+
+#workskin .bigger.folio .tab-content .tab-title {
   font-size: 20px;
 }
 
@@ -885,12 +937,10 @@
   font-size: 18px;
 }
 
-#workskin .bigger.folders .tab-content .tab-title,
-#workskin .folio .tab-content .tab-title {
-  font-size: 18px;
+#workskin .bigger.folders .tab-content .tab-section {
+  font-size: 16px;
 }
 
-#workskin .bigger.folders .tab-content .tab-section,
-#workskin .folio .tab-content .tab-section {
-  font-size: 16px;
+#workskin .bigger.folio .tab-content .tab-section {
+  font-size: 17px;
 }
