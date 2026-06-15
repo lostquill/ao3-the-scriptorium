@@ -1,0 +1,1990 @@
+/* ============================================================
+   DOCUMENT TABS
+
+   Six visual variants: .doc-folders, .doc-codex, .doc-folio,
+                        .doc-newspaper, .doc-diary, .doc-book;
+
+   Optional modifier: .bigger (larger dimensions)
+
+   Basic structure with folders:
+   <div class="doc-container folders">
+
+     <!-- DOC COVER START -->
+     <div class="doc-cover">
+       <div class="doc-img"></div>
+       <div class="doc-headline">
+         <p class="doc-title">Title</p>
+         <div class="doc-title-separator"></div>
+         <p class="doc-subtitle">Subtitle</p>
+       </div>
+     </div>
+     <!-- DOC COVER END -->
+
+     <div class="sidebar">
+
+       <!-- TAB START -->
+       <div class="tab">
+
+         <!-- TAB BUTTON START -->
+         <div class="tab-btn">
+           <div class="tab-label">
+             <p>Label here.</p>
+           </div>
+         </div>
+         <!-- TAB BUTTON END -->
+
+         <!-- TAB CONTENT START -->
+         <div class="tab-panel">
+           <div class="tab-content">
+             <p class="tab-title">
+               <span class="accent">Tab 1:</span>
+               Tab title here.
+             </p>
+             <p class="tab-section">Section title here.</p>
+             <p>Paragraph here.</p>
+             <hr>
+             <p class="tab-section">Another section title here.</p>
+             <p>Another paragraph here.</p>
+           </div>
+         </div>
+         <!-- TAB CONTENT END -->
+
+       </div>
+       <!-- TAB END -->
+   
+       <!-- Repeat the .tab block above for each additional tab (from 'TAB START' to 'TAB END') -->
+
+     </div>
+   </div>
+   ============================================================ */
+
+
+/* .............................................................................
+	TABLE OF CONTENTS
+	↳ Use 'CTRL + F' to find a specific section
+
+	1.  BASE CLASSES
+	2.  CODEX
+	3.  FOLDERS
+	4.  FOLIO
+	5.  NEWSPAPER
+	6.  DIARY
+	7.  BOOK
+	............................................................................ */
+
+
+/* ============================================================
+   1.  BASE CLASSES
+   bla bla bla Commun à tous les components
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   CONTAINER
+   Outer wrapper, cover and panels dimensions.
+   ------------------------------------------------------------ */
+
+#workskin .doc-container {
+  width: 565px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#workskin .doc-cover,
+#workskin .tab-panel {
+  width: 375px;
+}
+
+#workskin .doc-container,
+#workskin .doc-cover,
+#workskin .tab-panel {
+  height: 445px;
+  box-sizing: border-box;
+}
+
+
+/* ------------------------------------------------------------
+   COVER
+   Left panel.
+   ------------------------------------------------------------ */
+
+#workskin .doc-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+
+/* ------------------------------------------------------------
+   COVER — DECORATIVE IMAGE
+   Icon or illustration displayed on the cover panel.
+   ------------------------------------------------------------ */
+
+#workskin .doc-img {
+  width: 170px;
+  height: 95px;
+}
+
+
+/* ------------------------------------------------------------
+   COVER — HEADLINE
+   Title and subtitle block displayed on the cover image.
+   ------------------------------------------------------------ */
+
+#workskin .doc-headline {
+  padding-inline: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#workskin .doc-headline p {
+  text-align: center;
+  margin: 0;
+}
+
+/* Title */
+
+#workskin .doc-title {
+  position: relative;
+  padding-bottom: 15px;
+  padding-inline: 10px;
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* Subtitle */
+
+#workskin .doc-subtitle {
+  padding-top: 15px;
+  padding-inline: 15px;
+  font-size: 15px;
+  line-height: 1;
+}
+
+
+/* ------------------------------------------------------------
+   SIDEBAR
+   Right column holding all tab buttons.
+   Acts as positioning context for all panels.
+   overflow: hidden clips panels at rest;
+   :has(.tab:hover) reveals them on hover.
+   ------------------------------------------------------------ */
+
+#workskin .sidebar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 190px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  z-index: 10;
+  overflow: hidden;
+}
+
+#workskin .sidebar:has(.tab:hover) {
+  overflow: visible;
+}
+
+
+/* ------------------------------------------------------------
+   TAB
+   Individual tab item.
+   ------------------------------------------------------------ */
+
+#workskin .tab {
+  flex: 1;
+  overflow: hidden;
+  z-index: 10;
+}
+
+#workskin .tab:hover {
+  overflow: visible;
+  z-index: 20;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — BUTTON
+   Visible area. Reveals the panel on hover.
+   ------------------------------------------------------------ */
+
+#workskin .tab-btn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: ridge rgba(220, 210, 190, 0.8);
+  background-position: center center;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: filter 300ms ease-in-out, opacity 300ms ease-in-out;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 5;
+}
+
+#workskin .tab:hover .tab-btn {
+  opacity: 0.85;
+  filter: saturate(40%);
+}
+
+
+/* ------------------------------------------------------------
+   TAB — LABEL
+   Text overlay at the bottom of each tab button.
+   ------------------------------------------------------------ */
+
+#workskin .tab-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(247, 242, 234, 0.88);
+  z-index: 6;
+  box-sizing: border-box;
+}
+
+/* Label text */
+
+#workskin .tab-label p {
+  margin-block: 7px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — PANEL
+   Content panel revealed on tab hover.
+   Positioned against .sidebar (its stacking context).
+   top: 0 keeps it flush with the container top regardless
+   of which tab is hovered. Hidden by sidebar overflow at rest.
+   ------------------------------------------------------------ */
+
+#workskin .tab-panel {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  background-color: rgb(247 242 234);
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
+  background-clip: content-box;
+  z-index: 19;
+  overflow: hidden;
+  display: none;
+}
+
+#workskin .tab:hover .tab-panel {
+  display: block;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — PANEL CONTENT
+   Scrollable inner content area.
+   ------------------------------------------------------------ */
+
+#workskin .tab-content {
+  width: 100%;
+  height: 100%;
+  padding: 12px 14px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+/* Drop cap — applied automatically to the first paragraph in .doc-codex .tab-content
+   that is not a title or section header, or manually via .initial on any paragraph. */
+#workskin .initial::first-letter,
+#workskin .doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  font-size: 3.5rem;
+  float: left;
+  line-height: 1;
+  margin-top: 2px;
+  margin-right: 8px;
+  color: #616acc;
+}
+
+
+/* ------------------------------------------------------------
+   BIGGER MODIFIER
+   Add .bigger to .doc-container to switch to larger dimensions.
+   All overrides for .bigger are grouped here.
+
+   Example: <div class="doc-container folders bigger">
+   ------------------------------------------------------------ */
+
+/* Container — Outer wrapper, cover and panels dimensions. */
+
+#workskin .bigger.doc-container {
+  width: 765px;
+}
+
+#workskin .bigger.doc-container,
+#workskin .bigger .doc-cover,
+#workskin .bigger .tab-panel {
+  height: 682px;
+}
+
+#workskin .bigger .doc-cover,
+#workskin .bigger .tab-panel {
+  width: 575px;
+}
+
+/* Cover image and margin */
+
+#workskin .bigger .doc-img {
+  width: 200px;
+  height: 125px;
+}
+
+/* Headline */
+
+#workskin .bigger .doc-title {
+  font-size: 26px;
+}
+
+#workskin .bigger .doc-subtitle {
+  font-size: 17px;
+}
+
+/* Tab content — Font size */
+
+#workskin .bigger .initial::first-letter,
+#workskin .bigger.doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
+  font-size: 4rem;
+}
+
+
+/* ============================================================
+   2.  CODEX
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   SCROLLBAR
+   Per variant.
+   ------------------------------------------------------------ */
+
+#workskin .doc-codex * {
+    scrollbar-color: #808297 transparent;
+}
+
+
+/* ------------------------------------------------------------
+   CONTAINER
+   Outer wrapper, cover and panels dimensions.
+   ------------------------------------------------------------ */
+
+#workskin .doc-codex,
+#workskin .doc-codex .doc-cover,
+#workskin .doc-codex .tab-panel {
+  height: 460px;
+  box-sizing: border-box;
+}
+
+
+/* ------------------------------------------------------------
+   COVER
+   Decorative left panel with background image.
+   ------------------------------------------------------------ */
+
+#workskin .doc-codex .doc-cover {
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-codex.jpg");
+  background-size: cover;
+}
+
+#workskin .doc-codex .doc-cover,
+#workskin .doc-codex .tab-panel {
+  padding: 58px 55px;
+}
+
+
+/* ------------------------------------------------------------
+   COVER — DECORATIVE IMAGE
+   Icon or illustration displayed on the cover panel.
+   ------------------------------------------------------------ */
+
+#workskin .doc-codex .doc-img {
+  margin-block: 8%;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/codex-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(1.2);
+}
+
+
+/* ------------------------------------------------------------
+   COVER — HEADLINE
+   Title and subtitle block displayed on the cover image.
+   Typography varies per variant.
+   ------------------------------------------------------------ */
+
+/* Headline */
+
+#workskin .doc-codex .doc-headline p {
+  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  color: #2e2416;
+}
+
+/* Title */
+
+#workskin .doc-codex .doc-title {
+  font-variant: small-caps;
+}
+
+/* ------------------------------------------------------------
+   TAB BUTTON IMAGES
+   Default image shared by all tabs. Override per tab using
+   :nth-child(N) to assign a different image to each category.
+
+   Example:
+   #workskin .doc-codex .tab:nth-child(1) .tab-btn {
+     background: url("img-url-here") center center;
+     background-size: cover;
+   }
+   ------------------------------------------------------------ */
+
+#workskin .doc-codex .tab-btn {
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/codex.jpg") 16% 15%;
+  background-size: 200%;
+}
+
+/* Per-tab overrides (uncomment and fill in URLs):
+
+#workskin .doc-codex .tab:nth-child(1) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-codex .tab:nth-child(2) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-codex .tab:nth-child(3) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-codex .tab:nth-child(4) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-codex .tab:nth-child(5) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+} */
+
+
+/* ------------------------------------------------------------
+   TAB — LABEL
+   Text overlay at the bottom of each tab button.
+   ------------------------------------------------------------ */
+
+#workskin .doc-codex .tab-label {
+  border-top: 1px solid rgba(170, 150, 120, 0.35);
+  box-shadow: 0 -1px 5px #373737;
+  border-radius: 0 25px;
+}
+
+/* Label text */
+
+#workskin .doc-codex .tab-label p {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+  font-size: 12px;
+  font-variant: small-caps;
+  color: #2e2416;
+}
+
+#workskin .doc-codex .tab-label .red {
+  color: #8d0000;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — PANEL CONTENT
+   Scrollable inner content area.
+   ------------------------------------------------------------ */
+
+#workskin .doc-codex .tab-content p {
+  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  color: #2e2416;
+  font-style: italic;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#workskin .doc-codex .tab-content .tab-title {
+  text-align: center;
+  font-size: 18px;
+  padding-block: 15px;
+  border-block: 5px double #b2b2b2;
+}
+
+#workskin .doc-codex .tab-content .tab-section {
+  font-size: 16px;
+}
+
+/* Accent colors */
+
+#workskin .doc-codex .accent {
+  color: #616acc; /* blue */
+}
+
+/* <hr> separators */
+
+#workskin .doc-codex .doc-title-separator,
+#workskin .doc-codex .tab-content hr {
+  border: 0;
+  height: 1px;
+  background: #808080;
+  width: 70%;
+  position: relative;
+  overflow: visible;
+}
+
+#workskin .doc-codex .doc-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .doc-codex .tab-content hr {
+  margin: 30px auto;
+}
+
+#workskin .doc-codex .doc-title-separator::after,
+#workskin .doc-codex .tab-content hr::after {
+  content: "♦\FE0E";
+  display: inline-block;
+  position: absolute;
+  height: 0;
+  line-height: 0;
+  margin-top: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: transparent;
+  padding: 0 10px;
+  color: #616acc;
+  font-size: 14px;
+}
+
+
+/* ------------------------------------------------------------
+   BIGGER MODIFIER
+   Add .bigger to .doc-container to switch to larger dimensions.
+   All overrides for .bigger are grouped here.
+
+   Example: <div class="doc-container doc-codex bigger">
+   ------------------------------------------------------------ */
+
+/* Container — Outer wrapper, cover and panels dimensions. */
+
+#workskin .bigger.doc-codex,
+#workskin .bigger.doc-codex .doc-cover,
+#workskin .bigger.doc-codex .tab-panel {
+  height: 702px;
+}
+
+/* Cover — Padding */
+
+#workskin .bigger.doc-codex .doc-cover,
+#workskin .bigger.doc-codex .tab-panel {
+  padding: 88px 85px;
+}
+
+/* Cover — Decorative image margin */
+
+#workskin .bigger.doc-codex .doc-img {
+  margin-block: 12%;
+}
+
+/* Tab labels */
+
+#workskin .bigger.doc-codex .tab-label p {
+  font-size: 13px;
+}
+
+/* Tab button images — add per-tab overrides here, one entry per tab:
+   .tab:nth-child(1) for the first button, .tab:nth-child(2) for the second button, and so on.
+
+   Example:
+   #workskin .bigger.doc-codex .tab:nth-child(1) .tab-btn {
+     background: url("img-url-here") center center;
+     background-size: cover;
+   } */
+
+/* Tab content — Font size */
+
+#workskin .bigger.doc-codex .tab-content p {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+#workskin .bigger.doc-codex .tab-content .tab-title {
+  font-size: 20px;
+}
+
+#workskin .bigger.doc-codex .tab-content .tab-section {
+  font-size: 18px;
+}
+
+
+/* ============================================================
+   3.  FOLDERS
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   SCROLLBAR
+   ------------------------------------------------------------ */
+
+#workskin .doc-folders * {
+    scrollbar-color: #776d64 transparent;
+}
+
+
+/* ------------------------------------------------------------
+   COVER
+   Decorative left panel with background image.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folders .doc-cover {
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folders.jpg");
+  background-size: cover;
+}
+
+/* Padding */
+
+#workskin .doc-folders .doc-cover,
+#workskin .doc-folders .tab-panel {
+  padding-inline: 18px;
+}
+
+
+/* ------------------------------------------------------------
+   COVER — DECORATIVE IMAGE
+   Icon or illustration displayed on the cover panel.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folders .doc-img {
+  margin-block: 14%;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/confidential.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(10deg);
+  filter: saturate(0.7);
+}
+
+
+/* ------------------------------------------------------------
+   COVER — HEADLINE
+   Title and subtitle block displayed on the cover image.
+   ------------------------------------------------------------ */
+
+/* Headline */
+
+#workskin .doc-folders .doc-headline p {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  color: black;
+}
+
+/* Title */
+
+#workskin .doc-folders .doc-title {
+  font-variant: small-caps;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — BUTTON
+   Visible area. Reveals the panel on hover.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folders .tab-btn {
+  filter: brightness(1.3) saturate(50%);
+}
+
+#workskin .doc-folders .tab:hover .tab-btn {
+  opacity: 0.85;
+  filter: brightness(1) saturate(40%);
+}
+
+
+/* ------------------------------------------------------------
+   TAB BUTTON IMAGES
+   Default image shared by all tabs. Override per tab using
+   :nth-child(N) to assign a different image to each category.
+
+   Example:
+   #workskin .doc-folders .tab:nth-child(1) .tab-btn {
+     background: url("img-url-here") center center;
+     background-size: cover;
+   }
+   ------------------------------------------------------------ */
+
+#workskin .doc-folders .tab-btn {
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg") 75% center;
+  background-size: 200%;
+}
+
+/* Per-tab overrides (uncomment and fill in URLs):
+
+#workskin .doc-folders .tab:nth-child(1) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-folders .tab:nth-child(2) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-folders .tab:nth-child(3) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-folders .tab:nth-child(4) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-folders .tab:nth-child(5) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+} */
+
+
+/* ------------------------------------------------------------
+   TAB — LABEL
+   Text overlay at the bottom of each tab button.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folders .tab-label {
+  border-top: 1px solid rgba(170, 150, 120, 0.35);
+  box-shadow: 0 -1px 5px #373737;
+  border-radius: 30px 30px 0 0;
+}
+
+/* Label text */
+
+#workskin .doc-folders .tab-label p {
+  font-family: monospace, "Courier New", Courier;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: black;
+}
+
+#workskin .doc-folders .tab-label .red {
+  color: #ff0000;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — PANEL CONTENT
+   Scrollable inner content area.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folders .tab-content p {
+  font-family: "Courier New", Courier, monospace;
+  color: black;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+#workskin .doc-folders .tab-content .tab-title {
+  text-align: center;
+  font-size: 17px;
+  padding-block: 20px;
+  border-block: 2px dashed #4a3e3d;
+}
+
+#workskin .doc-folders .tab-content .tab-section {
+  font-size: 15px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed #868686;
+}
+
+/* Accent colors */
+
+#workskin .doc-folders .accent {
+  color: #bd0000; /* red */
+}
+
+/* <hr> separator */
+
+#workskin .doc-folders .doc-title-separator,
+#workskin .doc-folders .tab-content hr {
+  border: 0;
+  border-top: 2px dashed #4a3e3d;
+  width: 90%;
+  position: relative;
+  overflow: visible;
+}
+
+#workskin .doc-folders .doc-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .doc-folders .tab-content hr {
+  margin: 35px auto;
+}
+
+
+/* ------------------------------------------------------------
+   BIGGER MODIFIER
+   Add .bigger to .doc-container to switch to larger dimensions.
+   All overrides for .bigger are grouped here.
+
+   Example: <div class="doc-container folders bigger">
+   ------------------------------------------------------------ */
+
+/* Cover — Padding */
+
+#workskin .bigger.doc-folders .doc-cover,
+#workskin .bigger.doc-folders .tab-panel {
+  padding-inline: 28px;
+}
+
+/* Cover — Decorative image margin */
+
+#workskin .bigger.doc-folders .doc-img {
+  margin-block: 16%;
+}
+
+/* Tab labels */
+
+#workskin .bigger.doc-folders .tab-label p {
+  font-size: 13px;
+}
+
+/* Tab button images — add per-tab overrides here, one entry per tab:
+   .tab:nth-child(1) for the first button, .tab:nth-child(2) for the second button, and so on.
+
+   Example:
+   #workskin .bigger.doc-folders .tab:nth-child(1) .tab-btn {
+     background: url("img-url-here") center center;
+     background-size: cover;
+   } */
+
+/* Tab content — Font size */
+
+#workskin .bigger.doc-folders .tab-content p {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+#workskin .bigger.doc-folders .tab-content .tab-title {
+  font-size: 18px;
+}
+
+#workskin .bigger.doc-folders .tab-content .tab-section {
+  font-size: 16px;
+}
+
+
+/* ============================================================
+   4.  FOLIO
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   SCROLLBAR
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio * {
+    scrollbar-color: #76675b transparent;
+}
+
+
+/* ------------------------------------------------------------
+   COVER
+   Decorative left panel with background image.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .doc-cover {
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folio.jpg");
+  background-size: cover;
+}
+
+/* Padding */
+
+#workskin .doc-folio .doc-cover,
+#workskin .doc-folio .tab-panel {
+  padding-inline: 18px;
+}
+
+
+/* ------------------------------------------------------------
+   COVER — DECORATIVE IMAGE
+   Icon or illustration displayed on the cover panel.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .doc-img {
+  margin-block: 14%;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 1)) brightness(1.3) contrast(0.9);
+}
+
+
+/* ------------------------------------------------------------
+   COVER — HEADLINE
+   Title and subtitle block displayed on the cover image.
+   ------------------------------------------------------------ */
+
+/* Headline */
+
+#workskin .doc-folio .doc-headline p {
+  font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
+  font-style: italic;
+  color: black;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — BUTTON
+   Visible area. Reveals the panel on hover.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .tab-btn {
+  filter: saturate(80%) sepia(10%);
+}
+
+#workskin .doc-folio .tab:hover .tab-btn {
+  opacity: 0.85;
+  filter: saturate(40%) sepia(0%);
+}
+
+
+/* ============================================================
+   TAB BUTTON IMAGES
+   Default image shared by all tabs. Override per tab using
+   :nth-child(N) to assign a different image to each category.
+
+   Example:
+   #workskin .doc-folio .tab:nth-child(1) .tab-btn {
+     background: url("img-url-here") center center;
+     background-size: cover;
+   }
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .tab-btn {
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg") right bottom;
+  background-size: 200%;
+}
+
+/* Per-tab overrides (uncomment and fill in URLs):
+
+#workskin .doc-folio .tab:nth-child(1) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-folio .tab:nth-child(2) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-folio .tab:nth-child(3) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-folio .tab:nth-child(4) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-folio .tab:nth-child(5) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+} */
+
+
+/* ------------------------------------------------------------
+   TAB — LABEL
+   Text overlay at the bottom of each tab button.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .tab-label {
+  border-top: 1px solid rgba(170, 150, 120, 0.35);
+  box-shadow: 0 0 10px #141414;
+  border-radius: 25%;
+}
+
+/* Label text */
+
+#workskin .doc-folio .tab-label p {
+  font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
+  font-size: 12px;
+  font-style: italic;
+  color: black;
+}
+
+#workskin .doc-folio .tab-label .red {
+  color: #b30000;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — PANEL
+   Content panel revealed on tab hover.
+   Positioned against .sidebar (its stacking context).
+   top: 0 keeps it flush with the container top regardless
+   of which tab is hovered. Hidden by sidebar overflow at rest.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .tab-panel {
+  background-color: rgb(195 179 153);
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-size: cover;
+  background-clip: content-box;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — PANEL CONTENT
+   Scrollable inner content area.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .tab-content p {
+  font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
+  color: black;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+#workskin .doc-folio .tab-content .tab-title {
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #4a3e3d;
+}
+
+#workskin .doc-folio .tab-content .tab-section {
+  font-size: 16px;
+}
+
+/* Accent colors */
+
+#workskin .doc-folio .accent {
+  color: #760000; /* red */
+}
+
+/* <hr> separator */
+
+#workskin .doc-folio .doc-title-separator,
+#workskin .doc-folio .tab-content hr {
+  border: 0;
+  height: 1px;
+  background: #2e2416;
+  width: 45%;
+  position: relative;
+  overflow: visible;
+  opacity: 0.85;
+}
+
+#workskin .doc-folio .doc-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .doc-folio .tab-content hr {
+  margin: 40px auto;
+}
+
+#workskin .doc-folio .doc-title-separator::after,
+#workskin .doc-folio .doc-title-separator::before,
+#workskin .doc-folio .tab-content hr::after,
+#workskin .doc-folio .tab-content hr::before {
+  display: inline-block;
+  position: absolute;
+  top: -13px;
+  color: #2e2416;
+  font-family: "Georgia", serif;
+  font-size: 18px;
+}
+
+#workskin .doc-folio .doc-title-separator::after,
+#workskin .doc-folio .tab-content hr::after {
+  content: "❧";
+  left: -10px;
+}
+
+#workskin .doc-folio .doc-title-separator::before,
+#workskin .doc-folio .tab-content hr::before {
+  content: "❧";
+  transform: scaleX(-1);
+  right: -10px; 
+}
+
+
+/* ------------------------------------------------------------
+   BIGGER MODIFIER
+   Add .bigger to .doc-container to switch to larger dimensions.
+   All overrides for .bigger are grouped here.
+
+   Example: <div class="doc-container folders bigger">
+   ------------------------------------------------------------ */
+
+/* Container — Outer wrapper, cover and panels dimensions. */
+
+#workskin .bigger.doc-folio .doc-cover,
+#workskin .bigger.doc-folio .tab-panel {
+  padding-inline: 29px;
+}
+
+/* Cover — Decorative image margin */
+
+#workskin .bigger.doc-folio .doc-img {
+  margin-block: 16%;
+}
+
+/* Tab labels */
+
+#workskin .bigger.doc-folio .tab-label p {
+  font-size: 13px;
+}
+
+/* Tab button images — add per-tab overrides here, one entry per tab:
+   .tab:nth-child(1) for the first button, .tab:nth-child(2) for the second button, and so on.
+
+   Example:
+   #workskin .bigger.doc-folio .tab:nth-child(1) .tab-btn {
+     background: url("img-url-here") center center;
+     background-size: cover;
+   } */
+
+/* Tab content — Font size */
+
+#workskin .bigger.doc-folio .tab-content p {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+#workskin .bigger.doc-folio .tab-content .tab-title {
+  font-size: 20px;
+}
+
+#workskin .bigger.doc-folio .tab-content .tab-section {
+  font-size: 17px;
+}
+
+
+/* ============================================================
+   5.  NEWSPAPER
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   SCROLLBAR
+   ------------------------------------------------------------ */
+
+#workskin .doc-newspaper * {
+    scrollbar-color: #76675b transparent;
+}
+
+
+/* ------------------------------------------------------------
+   COVER
+   Decorative left panel with background image.
+   ------------------------------------------------------------ */
+
+#workskin .doc-newspaper .doc-cover {
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folders.jpg");
+  background-size: cover;
+}
+
+/* Padding */
+
+#workskin .doc-newspaper .doc-cover,
+#workskin .doc-newspaper .tab-panel {
+  padding-inline: 18px;
+}
+
+
+/* ------------------------------------------------------------
+   COVER — DECORATIVE IMAGE
+   Icon or illustration displayed on the cover panel.
+   ------------------------------------------------------------ */
+
+#workskin .doc-newspaper .doc-img {
+  margin-block: 14%;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 1)) brightness(1.3) contrast(0.9);
+}
+
+
+/* ------------------------------------------------------------
+   COVER — HEADLINE
+   Title and subtitle block displayed on the cover image.
+   ------------------------------------------------------------ */
+
+/* Headline */
+
+#workskin .doc-newspaper .doc-headline p {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  color: black;
+}
+
+/* Title */
+
+#workskin .doc-newspaper .doc-title {
+  font-variant: small-caps;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — BUTTON
+   Visible area. Reveals the panel on hover.
+   ------------------------------------------------------------ */
+
+#workskin .doc-newspaper .tab-btn {
+  filter: brightness(1.3) saturate(50%);
+}
+
+#workskin .doc-newspaper .tab:hover .tab-btn {
+  opacity: 0.85;
+  filter: brightness(1) saturate(40%);
+}
+
+
+/* ============================================================
+   TAB BUTTON IMAGES
+   Default image shared by all tabs. Override per tab using
+   :nth-child(N) to assign a different image to each category.
+
+   Example:
+   #workskin .doc-newspaper .tab:nth-child(1) .tab-btn {
+     background: url("img-url-here") center center;
+     background-size: cover;
+   }
+   ------------------------------------------------------------ */
+
+#workskin .doc-newspaper .tab-btn {
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg") right bottom;
+  background-size: 200%;
+}
+
+/* Per-tab overrides (uncomment and fill in URLs):
+
+#workskin .doc-newspaper .tab:nth-child(1) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-newspaper .tab:nth-child(2) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-newspaper .tab:nth-child(3) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-newspaper .tab:nth-child(4) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-newspaper .tab:nth-child(5) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+} */
+
+
+/* ------------------------------------------------------------
+   TAB — LABEL
+   Text overlay at the bottom of each tab button.
+   ------------------------------------------------------------ */
+
+#workskin .doc-newspaper .tab-label {
+  border-top: 1px solid rgba(170, 150, 120, 0.35);
+  box-shadow: 0 -1px 5px #373737;
+  border-radius: 30px 30px 0 0;
+}
+
+/* Label text */
+
+#workskin .doc-newspaper .tab-label p {
+  font-family: monospace, "Courier New", Courier;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: black;
+}
+
+#workskin .doc-newspaper .tab-label .red {
+  color: #ff0000;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — PANEL
+   Content panel revealed on tab hover.
+   Positioned against .sidebar (its stacking context).
+   top: 0 keeps it flush with the container top regardless
+   of which tab is hovered. Hidden by sidebar overflow at rest.
+   ------------------------------------------------------------ */
+
+#workskin .doc-newspaper .tab-panel {
+  background-color: rgb(195 179 153);
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-size: cover;
+  background-clip: content-box;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — PANEL CONTENT
+   Scrollable inner content area.
+   ------------------------------------------------------------ */
+
+#workskin .newspaper .tab-content p {
+  font-family: "Courier New", Courier, monospace;
+  color: black;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+#workskin .doc-newspaper .tab-content .tab-title {
+  text-align: center;
+  font-size: 17px;
+  padding-block: 20px;
+  border-block: 2px dashed #4a3e3d;
+}
+
+#workskin .doc-newspaper .tab-content .tab-section {
+  font-size: 15px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed #868686;
+}
+
+/* Accent colors */
+
+#workskin .doc-newspaper .accent {
+  color: #bd0000; /* red */
+}
+
+/* <hr> separator */
+
+#workskin .doc-newspaper .doc-title-separator,
+#workskin .doc-newspaper .tab-content hr {
+  border: 0;
+  border-top: 2px dashed #4a3e3d;
+  width: 90%;
+  position: relative;
+  overflow: visible;
+}
+
+#workskin .doc-newspaper .doc-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .doc-newspaper .tab-content hr {
+  margin: 35px auto;
+}
+
+
+/* ------------------------------------------------------------
+   BIGGER MODIFIER
+   Add .bigger to .doc-container to switch to larger dimensions.
+   All overrides for .bigger are grouped here.
+
+   Example: <div class="doc-container doc-newspaper bigger">
+   ------------------------------------------------------------ */
+
+/* Container — Outer wrapper, cover and panels dimensions. */
+
+/* Cover — Padding */
+
+#workskin .bigger.doc-newspaper .doc-cover,
+#workskin .bigger.doc-newspaper .tab-panel {
+  padding-inline: 28px;
+}
+
+/* Cover — Decorative image margin */
+
+#workskin .bigger.doc-newspaper .doc-img {
+  margin-block: 16%;
+}
+
+/* Tab labels */
+
+#workskin .bigger.doc-newspapers .tab-label p {
+  font-size: 13px;
+}
+
+/* Tab button images — add per-tab overrides here, one entry per tab:
+   .tab:nth-child(1) for the first button, .tab:nth-child(2) for the second button, and so on.
+
+   Example:
+   #workskin .bigger.doc-newspaper .tab:nth-child(1) .tab-btn {
+     background: url("img-url-here") center center;
+     background-size: cover;
+   } */
+
+/* Tab content — Font size */
+
+#workskin .bigger.doc-newspaper .tab-content p {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+#workskin .bigger.doc-newspaper .tab-content .tab-title {
+  font-size: 18px;
+}
+
+#workskin .bigger.doc-newspaper .tab-content .tab-section {
+  font-size: 16px;
+}
+
+
+/* ============================================================
+   DIARY
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   SCROLLBAR
+   ------------------------------------------------------------ */
+
+#workskin .doc-diary * {
+    scrollbar-color: #76675b transparent;
+}
+
+
+/* ------------------------------------------------------------
+   COVER
+   Decorative left panel with background image.
+   ------------------------------------------------------------ */
+
+#workskin .doc-diary .doc-cover {
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folders.jpg");
+  background-size: cover;
+}
+
+/* Padding */
+
+#workskin .doc-diary .doc-cover,
+#workskin .doc-diary .tab-panel {
+  padding-inline: 18px;
+}
+
+
+/* ------------------------------------------------------------
+   COVER — DECORATIVE IMAGE
+   Icon or illustration displayed on the cover panel.
+   ------------------------------------------------------------ */
+
+#workskin .doc-diary .doc-img {
+  margin-block: 14%;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 1)) brightness(1.3) contrast(0.9);
+}
+
+
+/* ------------------------------------------------------------
+   COVER — HEADLINE
+   Title and subtitle block displayed on the cover image.
+   ------------------------------------------------------------ */
+
+/* Headline */
+
+#workskin .doc-diary .doc-headline p {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  color: black;
+}
+
+/* Title */
+
+#workskin .doc-diary .doc-title {
+  font-variant: small-caps;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — BUTTON
+   Visible area. Reveals the panel on hover.
+   ------------------------------------------------------------ */
+
+#workskin .doc-diary .tab-btn {
+  filter: brightness(1.3) saturate(50%);
+}
+
+#workskin .doc-diary .tab:hover .tab-btn {
+  opacity: 0.85;
+  filter: brightness(1) saturate(40%);
+}
+
+
+/* ============================================================
+   TAB BUTTON IMAGES
+   Default image shared by all tabs. Override per tab using
+   :nth-child(N) to assign a different image to each category.
+
+   Example:
+   #workskin .doc-diary .tab:nth-child(1) .tab-btn {
+     background: url("img-url-here") center center;
+     background-size: cover;
+   }
+   ------------------------------------------------------------ */
+
+#workskin .doc-diary .tab-btn {
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg") right bottom;
+  background-size: 200%;
+}
+
+/* Per-tab overrides (uncomment and fill in URLs):
+
+#workskin .doc-diary .tab:nth-child(1) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-diary .tab:nth-child(2) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-diary .tab:nth-child(3) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-diary .tab:nth-child(4) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-diary .tab:nth-child(5) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+} */
+
+
+/* ------------------------------------------------------------
+   TAB — LABEL
+   Text overlay at the bottom of each tab button.
+   ------------------------------------------------------------ */
+
+#workskin .doc-diary .tab-label {
+  border-top: 1px solid rgba(170, 150, 120, 0.35);
+  box-shadow: 0 -1px 5px #373737;
+  border-radius: 30px 30px 0 0;
+}
+
+/* Label text */
+
+#workskin .doc-diary .tab-label p {
+  font-family: monospace, "Courier New", Courier;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: black;
+}
+
+#workskin .doc-diary .tab-label .red {
+  color: #ff0000;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — PANEL
+   Content panel revealed on tab hover.
+   Positioned against .sidebar (its stacking context).
+   top: 0 keeps it flush with the container top regardless
+   of which tab is hovered. Hidden by sidebar overflow at rest.
+   ------------------------------------------------------------ */
+
+#workskin .doc-diary .tab-panel {
+  background-color: rgb(195 179 153);
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-size: cover;
+  background-clip: content-box;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — PANEL CONTENT
+   Scrollable inner content area.
+   ------------------------------------------------------------ */
+
+#workskin .diary .tab-content p {
+  font-family: "Courier New", Courier, monospace;
+  color: black;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+#workskin .doc-diary .tab-content .tab-title {
+  text-align: center;
+  font-size: 17px;
+  padding-block: 20px;
+  border-block: 2px dashed #4a3e3d;
+}
+
+#workskin .doc-diary .tab-content .tab-section {
+  font-size: 15px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed #868686;
+}
+
+/* Accent colors */
+
+#workskin .doc-diary .accent {
+  color: #bd0000; /* red */
+}
+
+/* <hr> separator */
+
+#workskin .doc-diary .doc-title-separator,
+#workskin .doc-diary .tab-content hr {
+  border: 0;
+  border-top: 2px dashed #4a3e3d;
+  width: 90%;
+  position: relative;
+  overflow: visible;
+}
+
+#workskin .doc-diary .doc-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .doc-diary .tab-content hr {
+  margin: 35px auto;
+}
+
+
+/* ------------------------------------------------------------
+   BIGGER MODIFIER
+   Add .bigger to .doc-container to switch to larger dimensions.
+   All overrides for .bigger are grouped here.
+
+   Example: <div class="doc-container doc-diary bigger">
+   ------------------------------------------------------------ */
+
+/* Container — Outer wrapper, cover and panels dimensions. */
+
+/* Cover — Padding */
+
+#workskin .bigger.doc-diary .doc-cover,
+#workskin .bigger.doc-diary .tab-panel {
+  padding-inline: 28px;
+}
+
+/* Cover — Decorative image margin */
+
+#workskin .bigger.doc-diary .doc-img {
+  margin-block: 16%;
+}
+
+/* Tab labels */
+
+#workskin .bigger.doc-diary .tab-label p {
+  font-size: 13px;
+}
+
+/* Tab button images — add per-tab overrides here, one entry per tab:
+   .tab:nth-child(1) for the first button, .tab:nth-child(2) for the second button, and so on.
+
+   Example:
+   #workskin .bigger.doc-diary .tab:nth-child(1) .tab-btn {
+     background: url("img-url-here") center center;
+     background-size: cover;
+   } */
+
+/* Tab content — Font size */
+
+#workskin .bigger.doc-diary .tab-content p {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+#workskin .bigger.doc-diary .tab-content .tab-title {
+  font-size: 18px;
+}
+
+#workskin .bigger.doc-diary .tab-content .tab-section {
+  font-size: 16px;
+}
+
+
+/* ============================================================
+   BOOK
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   SCROLLBAR
+   ------------------------------------------------------------ */
+
+#workskin .doc-book * {
+    scrollbar-color: #76675b transparent;
+}
+
+
+/* ------------------------------------------------------------
+   COVER
+   Decorative left panel with background image.
+   ------------------------------------------------------------ */
+
+#workskin .doc-book .doc-cover {
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png") top left;
+  background-color: #180905;
+  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-border.png") 45% round;
+  border-image-outset: 7px;
+  border-image-width: 100px;
+}
+
+/* Padding */
+
+#workskin .doc-book .doc-cover,
+#workskin .doc-book .tab-panel {
+  padding: 50px 35px;
+}
+
+
+/* ------------------------------------------------------------
+   COVER — DECORATIVE IMAGE
+   Icon or illustration displayed on the cover panel.
+   ------------------------------------------------------------ */
+
+#workskin .doc-book .doc-img {
+  width: 110px;
+  height: 80px;
+  margin-block: 12%;
+  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif) center center;
+  background-size: cover;
+  border-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/frame.png) 25% round;
+  border-image-outset: 13px;
+  border-image-width: 20px;
+  filter: contrast(1.1);
+}
+
+
+/* ------------------------------------------------------------
+   COVER — HEADLINE
+   Title and subtitle block displayed on the cover image.
+   ------------------------------------------------------------ */
+
+/* Headline */
+
+#workskin .doc-book .doc-headline p {
+  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  color: #d8c8af;
+}
+
+/* Title */
+
+#workskin .doc-book .doc-title {
+  font-variant: small-caps;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — BUTTON
+   Visible area. Reveals the panel on hover.
+   ------------------------------------------------------------ */
+
+#workskin .doc-book .tab-btn {
+  filter: brightness(1.3) saturate(50%);
+}
+
+#workskin .doc-book .tab:hover .tab-btn {
+  opacity: 0.85;
+  filter: brightness(1) saturate(40%);
+}
+
+
+/* ============================================================
+   TAB BUTTON IMAGES
+   Default image shared by all tabs. Override per tab using
+   :nth-child(N) to assign a different image to each category.
+
+   Example:
+   #workskin .doc-book .tab:nth-child(1) .tab-btn {
+     background: url("img-url-here") center center;
+     background-size: cover;
+   }
+   ------------------------------------------------------------ */
+
+#workskin .doc-book .tab-btn {
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg") right bottom;
+  background-size: 200%;
+}
+
+/* Per-tab overrides (uncomment and fill in URLs):
+
+#workskin .doc-book .tab:nth-child(1) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-book .tab:nth-child(2) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-book .tab:nth-child(3) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-book .tab:nth-child(4) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+}
+
+#workskin .doc-book .tab:nth-child(5) .tab-btn {
+  background: url("img-url-here") center center;
+  background-size: cover;
+} */
+
+
+/* ------------------------------------------------------------
+   TAB — LABEL
+   Text overlay at the bottom of each tab button.
+   ------------------------------------------------------------ */
+
+#workskin .doc-book .tab-label {
+  border-top: 1px solid rgba(170, 150, 120, 0.35);
+  box-shadow: 0 0 10px #141414;
+  border-radius: 25%;
+}
+
+/* Label text */
+
+#workskin .doc-book .tab-label p {
+  font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
+  font-size: 12px;
+  font-style: italic;
+  color: black;
+}
+
+#workskin .doc-book .tab-label .red {
+  color: #b30000;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — PANEL CONTENT
+   Scrollable inner content area.
+   ------------------------------------------------------------ */
+
+#workskin .doc-book .tab-content p {
+  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  color: #2e2416;
+  font-style: italic;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#workskin .doc-book .tab-content .tab-title {
+  text-align: center;
+  font-size: 18px;
+  padding-block: 15px;
+  border-block: 5px double #b2b2b2;
+}
+
+#workskin .doc-book .tab-content .tab-section {
+  font-size: 16px;
+}
+
+/* Accent colors */
+
+#workskin .doc-book .accent {
+  color: #616acc; /* blue */
+}
+
+/* <hr> separator */
+
+/* CODEX SIMILAR */
+
+
+/* ------------------------------------------------------------
+   BIGGER MODIFIER
+   Add .bigger to .doc-container to switch to larger dimensions.
+   All overrides for .bigger are grouped here.
+
+   Example: <div class="doc-container doc-book bigger">
+   ------------------------------------------------------------ */
+
+/* Container — Outer wrapper, cover and panels dimensions. */
+
+#workskin .bigger.doc-book .doc-cover {
+    border-image-outset: 8px;
+    border-image-width: 130px;
+}
+
+/* Cover — Padding */
+
+#workskin .bigger.doc-book .doc-cover,
+#workskin .bigger.doc-book .tab-panel {
+  padding: 70px 50px;
+}
+
+/* Cover — Decorative image margin */
+
+#workskin .bigger.doc-book .doc-img {
+  width: 160px;
+  height: 110px;
+  margin-block: 12%;
+  border-image-outset: 13px;
+  border-image-width: 30px;
+}
+
+/* Tab labels */
+
+#workskin .bigger.doc-book .tab-label p {
+  font-size: 13px;
+}
+
+/* Tab button images — add per-tab overrides here, one entry per tab:
+   .tab:nth-child(1) for the first button, .tab:nth-child(2) for the second button, and so on.
+
+   Example:
+   #workskin .bigger.doc-book .tab:nth-child(1) .tab-btn {
+     background: url("img-url-here") center center;
+     background-size: cover;
+   } */
+
+/* Tab content — Font size */
+
+#workskin .bigger.doc-book .tab-content p {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+#workskin .bigger.doc-book .tab-content .tab-title {
+  font-size: 20px;
+}
+
+#workskin .bigger.doc-book .tab-content .tab-section {
+  font-size: 18px;
+}
+
+
+
