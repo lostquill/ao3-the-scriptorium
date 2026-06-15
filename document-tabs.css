@@ -617,41 +617,62 @@
   box-sizing: border-box;
 }
 
-#workskin .folders .tab-content p {
-  font-family: "Courier New", Courier, monospace;
-  color: black;
-  font-weight: bold;
-  font-size: 11px;
-  line-height: 17px;
-}
-
 #workskin .codex .tab-content p {
   font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
   color: #2e2416;
   font-style: italic;
   text-align: justify;
-  font-size: 11px;
-  line-height: 17px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
-#workskin .codex .tab-content > p:not(.tab-title, .tab-section)::first-letter,
-#workskin .codex .tab-content :is(.tab-title, .tab-section) + p:not(.tab-title, .tab-section)::first-letter {
+/* Drop cap — applied automatically to the first paragraph in .codex .tab-content
+   that is not a title or section header, or manually via .initial on any paragraph. */
+#workskin .codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter,
+#workskin .initial::first-letter {
   font-family: 'Georgia', serif;
   font-weight: bold;
-  font-size: 4.5rem; /* Taille de la lettrine */
-  float: left;       /* Permet au texte d'envelopper la lettre */
-  line-height: 1;    /* Aligne le haut de la lettre avec le texte */
-  margin-top: 4px;   /* Ajustement pour l'alignement vertical */
-  margin-right: 8px; /* Espace entre la lettrine et le texte */
-  color: #616acc;    /* Couleur de la lettrine (ici bleu) */
+  font-size: 3.5rem;
+  float: left;
+  line-height: 1;
+  margin-top: 2px;
+  margin-right: 8px;
+  color: #616acc;
+}
+
+#workskin .folders .tab-content p {
+  font-family: "Courier New", Courier, monospace;
+  color: black;
+  font-size: 13px;
+  line-height: 18px;
 }
 
 #workskin .folio .tab-content p {
   font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
   color: black;
   font-style: italic;
-  font-size: 11px;
-  line-height: 17px;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+#workskin .codex .tab-content .tab-title,
+#workskin .folio .tab-content .tab-title {
+  font-size: 18px;
+}
+
+#workskin .folders .tab-content .tab-title {
+  font-size: 17px;
+}
+
+#workskin .codex .tab-content .tab-section,
+#workskin .folio .tab-content .tab-section {
+  font-size: 16px;
+}
+
+#workskin .folders .tab-content .tab-section {
+  font-size: 15px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed #868686;
 }
 
 /* Accent colors per variant */
@@ -666,6 +687,71 @@
 
 #workskin .folio .accent {
   color: #760000; /* red */
+}
+
+/* <hr> separators per variant */
+
+#workskin .codex .tab-content hr {
+  border: 0;
+  height: 1px;
+  background: #808080;
+  margin: 30px auto;
+  width: 70%;
+  position: relative;
+  overflow: visible;
+}
+
+#workskin .codex .tab-content hr::after {
+  content: "♦";
+  display: inline-block;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  padding: 0 10px;
+  color: #616acc;
+  font-size: 14px;
+}
+
+#workskin .folders .tab-content hr {
+  border: 0;
+  border-top: 2px dashed #4a3e3d;
+  margin: 35px auto;
+  width: 90%;
+  position: relative;
+  overflow: visible;
+}
+
+#workskin .folio .tab-content hr {
+  border: 0;
+  height: 1px;
+  background: #2e2416;
+  margin: 40px auto;
+  width: 45%;
+  position: relative;
+  overflow: visible;
+  opacity: 0.85;
+}
+
+#workskin .folio .tab-content hr::after,
+#workskin .folio .tab-content hr::before {
+  display: inline-block;
+  position: absolute;
+  top: -13px;
+  color: #2e2416;
+  font-family: "Georgia", serif;
+  font-size: 18px;
+}
+   
+#workskin .folio .tab-content hr::after {
+  content: "❧";
+  left: -16px;
+}
+
+#workskin .folio .tab-content hr::before {
+  content: "☙";
+  right: -16px; 
 }
 
 
@@ -783,3 +869,28 @@
   background: url("img-url-here") center center;
   background-size: cover;
 } */
+
+/* Tab content — Font size per variant */
+
+#workskin .bigger.folio .tab-content p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#workskin .bigger.codex .tab-content .tab-title {
+  font-size: 20px;
+}
+
+#workskin .bigger.codex .tab-content .tab-section {
+  font-size: 18px;
+}
+
+#workskin .bigger.folders .tab-content .tab-title,
+#workskin .folio .tab-content .tab-title {
+  font-size: 18px;
+}
+
+#workskin .bigger.folders .tab-content .tab-section,
+#workskin .folio .tab-content .tab-section {
+  font-size: 16px;
+}
