@@ -1,32 +1,78 @@
 /* ============================================================
    DOCUMENT TABS
 
-   Three visual variants: .folders, .codex, .folio
+   Three visual variants: .doc-folders, .doc-codex, .doc-folio
    Optional modifier: .bigger (larger dimensions)
 
-   Basic structure:
+   Basic structure with folders:
    <div class="doc-container folders">
+
+     <!-- DOC COVER START -->
      <div class="doc-cover">
        <div class="doc-img"></div>
        <div class="doc-headline">
          <p class="doc-title">Title</p>
+         <div class="doc-title-separator"></div>
          <p class="doc-subtitle">Subtitle</p>
        </div>
      </div>
+     <!-- DOC COVER END -->
+
      <div class="sidebar">
+
+       <!-- TAB START -->
        <div class="tab">
+
+         <!-- TAB BUTTON START -->
          <div class="tab-btn">
-           <div class="tab-label"><p>Label</p></div>
-         </div>
-         <div class="tab-panel">
-           <div class="tab-content">
-             <p>Content here.</p>
+           <div class="tab-label">
+             <p>Label here.</p>
            </div>
          </div>
+         <!-- TAB BUTTON END -->
+
+         <!-- TAB CONTENT START -->
+         <div class="tab-panel">
+           <div class="tab-content">
+             <p class="tab-title">
+               <span class="accent">Tab 1:</span>
+               Tab title here.
+             </p>
+             <p class="tab-section">Section title here.</p>
+             <p>Paragraph here.</p>
+             <hr>
+             <p class="tab-section">Another section title here.</p>
+             <p>Another paragraph here.</p>
+           </div>
+         </div>
+         <!-- TAB CONTENT END -->
+
        </div>
+       <!-- TAB END -->
+   
+       <!-- Repeat the .tab block above for each additional tab (from 'TAB START' to 'TAB END') -->
+
      </div>
    </div>
    ============================================================ */
+
+
+/* ============================================================
+   SCROLLBAR
+   Per variant.
+   ============================================================ */
+
+#workskin .doc-codex * {
+    scrollbar-color: #808297 transparent;
+}
+
+#workskin .doc-folders * {
+    scrollbar-color: #776d64 transparent;
+}
+
+#workskin .doc-folio * {
+    scrollbar-color: #76675b transparent;
+}
 
 
 /* ============================================================
@@ -55,9 +101,9 @@
 
 /* Specific to codex variant */
 
-#workskin .codex,
-#workskin .codex .doc-cover,
-#workskin .codex .tab-panel {
+#workskin .doc-codex,
+#workskin .doc-codex .doc-cover,
+#workskin .doc-codex .tab-panel {
   height: 460px;
   box-sizing: border-box;
 }
@@ -82,36 +128,49 @@
 
 /* Cover background images per variant */
 
-#workskin .folders .doc-cover {
+#workskin .doc-folders .doc-cover {
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folders.jpg");
   background-size: cover;
 }
 
-#workskin .codex .doc-cover {
+#workskin .doc-codex .doc-cover {
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-codex.jpg");
   background-size: cover;
 }
 
-#workskin .folio .doc-cover {
+#workskin .doc-folio .doc-cover {
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folio.jpg");
   background-size: cover;
 }
 
+#workskin .doc-book .doc-cover {
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png") top left;
+  background-color: #180905;
+  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-border.png") 45% round;
+  border-image-outset: 7px;
+  border-image-width: 100px;
+}
+
 /* Padding per variant */
 
-#workskin .folders .doc-cover,
-#workskin .folders .tab-panel {
+#workskin .doc-folders .doc-cover,
+#workskin .doc-folders .tab-panel {
   padding-inline: 18px;
 }
 
-#workskin .codex .doc-cover,
-#workskin .codex .tab-panel {
+#workskin .doc-codex .doc-cover,
+#workskin .doc-codex .tab-panel {
   padding: 58px 55px;
 }
 
-#workskin .folio .doc-cover,
-#workskin .folio .tab-panel {
+#workskin .doc-folio .doc-cover,
+#workskin .doc-folio .tab-panel {
   padding-inline: 18px;
+}
+
+#workskin .doc-book .doc-cover,
+#workskin .doc-book .tab-panel {
+  padding: 50px 35px;
 }
 
 
@@ -126,7 +185,7 @@
   height: 95px;
 }
 
-#workskin .folders .doc-img {
+#workskin .doc-folders .doc-img {
   margin-block: 14%;
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/confidential.png");
   background-size: contain;
@@ -136,7 +195,7 @@
   filter: saturate(0.7);
 }
 
-#workskin .codex .doc-img {
+#workskin .doc-codex .doc-img {
   margin-block: 8%;
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/codex-icon.png");
   background-size: contain;
@@ -145,13 +204,22 @@
   filter: brightness(1.2);
 }
 
-#workskin .folio .doc-img {
+#workskin .doc-folio .doc-img {
   margin-block: 14%;
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 1)) brightness(1.3) contrast(0.9);
+}
+
+#workskin .doc-book .doc-img {
+  margin-block: 10%;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif") center center;
+  background-size: cover;
+  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/frame.png") 45% round;
+  border-image-outset: 7px;
+  border-image-width: 100px;
 }
 
 
@@ -176,24 +244,29 @@
 
 /* Headline per variant */
 
-#workskin .folders .doc-headline p {
+#workskin .doc-folders .doc-headline p {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   color: black;
 }
 
-#workskin .codex .doc-headline p {
+#workskin .doc-codex .doc-headline p {
   font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
-  color: black;
+  color: #2e2416;
 }
 
-#workskin .folio .doc-headline p {
+#workskin .doc-folio .doc-headline p {
   font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
   font-style: italic;
   color: black;
 }
 
-/* Title — with decorative horizontal line via ::before */
+#workskin .doc-book .doc-headline p {
+  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  color: #d8c8af;
+}
+
+/* Title */
 
 #workskin .doc-title {
   position: relative;
@@ -203,25 +276,13 @@
   line-height: 1;
 }
 
-#workskin .doc-title::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 50%;
-  height: 1px;
-  background-color: #525252;
-  transform: translateX(-50%);
+#workskin .doc-folders .doc-title,
+#workskin .doc-codex .doc-title {
+  font-variant: small-caps;
 }
 
-/* Title per variant */
-
-#workskin .folders .doc-title::before {
-  height: 2px;
-}
-
-#workskin .folders .doc-title,
-#workskin .codex .doc-title {
+#workskin .doc-book .doc-title,
+#workskin .doc-book .doc-title {
   font-variant: small-caps;
 }
 
@@ -298,11 +359,11 @@
   z-index: 5;
 }
 
-#workskin .folders .tab-btn {
+#workskin .doc-folders .tab-btn {
   filter: brightness(1.3) saturate(50%);
 }
 
-#workskin .folio .tab-btn {
+#workskin .doc-folio .tab-btn {
   filter: brightness(1) saturate(80%) sepia(10%);
 }
 
@@ -318,40 +379,40 @@
    :nth-child(N) to assign a different image to each category.
 
    Example:
-   #workskin .folders .tab:nth-child(1) .tab-btn {
+   #workskin .doc-folders .tab:nth-child(1) .tab-btn {
      background: url("img-url-here") center center;
      background-size: cover;
    }
    ============================================================ */
 
-#workskin .folders .tab-btn {
+#workskin .doc-folders .tab-btn {
   background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg") 75% center;
   background-size: 200%;
 }
 
 /* Per-tab overrides (uncomment and fill in URLs):
 
-#workskin .folders .tab:nth-child(1) .tab-btn {
+#workskin .doc-folders .tab:nth-child(1) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 }
 
-#workskin .folders .tab:nth-child(2) .tab-btn {
+#workskin .doc-folders .tab:nth-child(2) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 }
 
-#workskin .folders .tab:nth-child(3) .tab-btn {
+#workskin .doc-folders .tab:nth-child(3) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 }
 
-#workskin .folders .tab:nth-child(4) .tab-btn {
+#workskin .doc-folders .tab:nth-child(4) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 }
 
-#workskin .folders .tab:nth-child(5) .tab-btn {
+#workskin .doc-folders .tab:nth-child(5) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 } */
@@ -363,40 +424,40 @@
    :nth-child(N) to assign a different image to each category.
 
    Example:
-   #workskin .codex .tab:nth-child(1) .tab-btn {
+   #workskin .doc-codex .tab:nth-child(1) .tab-btn {
      background: url("img-url-here") center center;
      background-size: cover;
    }
    ============================================================ */
 
-#workskin .codex .tab-btn {
+#workskin .doc-codex .tab-btn {
   background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/codex.jpg") 16% 15%;
   background-size: 200%;
 }
 
 /* Per-tab overrides (uncomment and fill in URLs):
 
-#workskin .codex .tab:nth-child(1) .tab-btn {
+#workskin .doc-codex .tab:nth-child(1) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 }
 
-#workskin .codex .tab:nth-child(2) .tab-btn {
+#workskin .doc-codex .tab:nth-child(2) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 }
 
-#workskin .codex .tab:nth-child(3) .tab-btn {
+#workskin .doc-codex .tab:nth-child(3) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 }
 
-#workskin .codex .tab:nth-child(4) .tab-btn {
+#workskin .doc-codex .tab:nth-child(4) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 }
 
-#workskin .codex .tab:nth-child(5) .tab-btn {
+#workskin .doc-codex .tab:nth-child(5) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 } */
@@ -408,40 +469,40 @@
    :nth-child(N) to assign a different image to each category.
 
    Example:
-   #workskin .folio .tab:nth-child(1) .tab-btn {
+   #workskin .doc-folio .tab:nth-child(1) .tab-btn {
      background: url("img-url-here") center center;
      background-size: cover;
    }
    ============================================================ */
 
-#workskin .folio .tab-btn {
+#workskin .doc-folio .tab-btn {
   background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg") right bottom;
   background-size: 200%;
 }
 
 /* Per-tab overrides (uncomment and fill in URLs):
 
-#workskin .folio .tab:nth-child(1) .tab-btn {
+#workskin .doc-folio .tab:nth-child(1) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 }
 
-#workskin .folio .tab:nth-child(2) .tab-btn {
+#workskin .doc-folio .tab:nth-child(2) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 }
 
-#workskin .folio .tab:nth-child(3) .tab-btn {
+#workskin .doc-folio .tab:nth-child(3) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 }
 
-#workskin .folio .tab:nth-child(4) .tab-btn {
+#workskin .doc-folio .tab:nth-child(4) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 }
 
-#workskin .folio .tab:nth-child(5) .tab-btn {
+#workskin .doc-folio .tab:nth-child(5) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 } */
@@ -463,19 +524,19 @@
   box-sizing: border-box;
 }
 
-#workskin .folders .tab-label {
+#workskin .doc-folders .tab-label {
   border-top: 1px solid rgba(170, 150, 120, 0.35);
   box-shadow: 0 -1px 5px #373737;
   border-radius: 30px 30px 0 0;
 }
 
-#workskin .folio .tab-label {
+#workskin .doc-folio .tab-label {
   border-top: 1px solid rgba(170, 150, 120, 0.35);
   box-shadow: 0 0 10px #141414;
   border-radius: 25%;
 }
 
-#workskin .codex .tab-label {
+#workskin .doc-codex .tab-label {
   border-top: 1px solid rgba(170, 150, 120, 0.35);
   box-shadow: 0 -1px 5px #373737;
   border-radius: 0 25px;
@@ -491,39 +552,39 @@
   letter-spacing: 0.02em;
 }
 
-#workskin .folders .tab-label p {
+#workskin .doc-folders .tab-label p {
   font-family: monospace, "Courier New", Courier;
   font-size: 12px;
   text-transform: uppercase;
   color: black;
 }
 
-#workskin .codex .tab-label p {
+#workskin .doc-codex .tab-label p {
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
   font-size: 12px;
   font-variant: small-caps;
-  color: black;
+  color: #2e2416;
 }
 
-#workskin .folio .tab-label p {
+#workskin .doc-folio .tab-label p {
   font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
   font-size: 12px;
   font-style: italic;
   color: black;
 }
 
-/* Accent color */
+/* Optimized red for tab labels */
 
-#workskin .folders .tab-label .red {
+#workskin .doc-folders .tab-label .red {
   color: #ff0000;
 }
 
-#workskin .folio .tab-label .red {
-  color: #b30000;
+#workskin .doc-codex .tab-label .red {
+  color: #8d0000;
 }
 
-#workskin .codex .tab-label .red {
-  color: #8d0000;
+#workskin .doc-folio .tab-label .red {
+  color: #b30000;
 }
 
 
@@ -547,7 +608,7 @@
   display: none;
 }
 
-#workskin .folio .tab-panel {
+#workskin .doc-folio .tab-panel {
   background-color: rgb(195 179 153);
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
   background-size: cover;
@@ -569,15 +630,189 @@
   height: 100%;
   padding: 12px 14px;
   overflow: auto;
-  font-size: 11px;
-  line-height: 17px;
-  color: #2e2416;
-  text-align: justify;
   box-sizing: border-box;
 }
 
-#workskin .tab-content .red {
-  color: #ff0000;
+#workskin .doc-codex .tab-content p {
+  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  color: #2e2416;
+  font-style: italic;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Drop cap — applied automatically to the first paragraph in .doc-codex .tab-content
+   that is not a title or section header, or manually via .initial on any paragraph. */
+#workskin .doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter,
+#workskin .initial::first-letter {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  font-size: 3.5rem;
+  float: left;
+  line-height: 1;
+  margin-top: 2px;
+  margin-right: 8px;
+  color: #616acc;
+}
+
+#workskin .doc-folders .tab-content p {
+  font-family: "Courier New", Courier, monospace;
+  color: black;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+#workskin .doc-folio .tab-content p {
+  font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
+  color: black;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+#workskin .doc-codex .tab-content .tab-title {
+  text-align: center;
+  font-size: 18px;
+  padding-block: 15px;
+  border-block: 5px double #b2b2b2;
+}
+
+#workskin .doc-folders .tab-content .tab-title {
+  text-align: center;
+  font-size: 17px;
+  padding-block: 20px;
+  border-block: 2px dashed #4a3e3d;
+}
+
+#workskin .doc-folio .tab-content .tab-title {
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #4a3e3d;
+}
+
+#workskin .doc-codex .tab-content .tab-section,
+#workskin .doc-folio .tab-content .tab-section {
+  font-size: 16px;
+}
+
+#workskin .doc-folders .tab-content .tab-section {
+  font-size: 15px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed #868686;
+}
+
+/* Accent colors per variant */
+
+#workskin .doc-folders .accent {
+  color: #bd0000; /* red */
+}
+
+#workskin .doc-codex .accent {
+  color: #616acc; /* blue */
+}
+
+#workskin .doc-folio .accent {
+  color: #760000; /* red */
+}
+
+/* <hr> separators per variant */
+
+#workskin .doc-codex .doc-title-separator,
+#workskin .doc-codex .tab-content hr {
+  border: 0;
+  height: 1px;
+  background: #808080;
+  width: 70%;
+  position: relative;
+  overflow: visible;
+}
+
+#workskin .doc-codex .doc-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .doc-codex .tab-content hr {
+  margin: 30px auto;
+}
+
+#workskin .doc-codex .doc-title-separator::after,
+#workskin .doc-codex .tab-content hr::after {
+  content: "♦\FE0E";
+  display: inline-block;
+  position: absolute;
+  height: 0;
+  line-height: 0;
+  margin-top: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: transparent;
+  padding: 0 10px;
+  color: #616acc;
+  font-size: 14px;
+}
+
+#workskin .doc-folders .doc-title-separator,
+#workskin .doc-folders .tab-content hr {
+  border: 0;
+  border-top: 2px dashed #4a3e3d;
+  width: 90%;
+  position: relative;
+  overflow: visible;
+}
+
+#workskin .doc-folders .doc-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .doc-folders .tab-content hr {
+  margin: 35px auto;
+}
+
+#workskin .doc-folio .doc-title-separator,
+#workskin .doc-folio .tab-content hr {
+  border: 0;
+  height: 1px;
+  background: #2e2416;
+  width: 45%;
+  position: relative;
+  overflow: visible;
+  opacity: 0.85;
+}
+
+#workskin .doc-folio .doc-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .doc-folio .tab-content hr {
+  margin: 40px auto;
+}
+
+#workskin .doc-folio .doc-title-separator::after,
+#workskin .doc-folio .doc-title-separator::before,
+#workskin .doc-folio .tab-content hr::after,
+#workskin .doc-folio .tab-content hr::before {
+  display: inline-block;
+  position: absolute;
+  top: -13px;
+  color: #2e2416;
+  font-family: "Georgia", serif;
+  font-size: 18px;
+}
+
+#workskin .doc-folio .doc-title-separator::after,
+#workskin .doc-folio .tab-content hr::after {
+  content: "❧";
+  left: -10px;
+}
+
+#workskin .doc-folio .doc-title-separator::before,
+#workskin .doc-folio .tab-content hr::before {
+  content: "❧";
+  transform: scaleX(-1);
+  right: -10px; 
 }
 
 
@@ -608,27 +843,39 @@
 
 /* Specific to codex variant */
 
-#workskin .bigger.codex,
-#workskin .bigger.codex .doc-cover,
-#workskin .bigger.codex .tab-panel {
+#workskin .bigger.doc-codex,
+#workskin .bigger.doc-codex .doc-cover,
+#workskin .bigger.doc-codex .tab-panel {
   height: 702px;
+}
+
+/* Specific to book variant */
+
+#workskin .bigger.doc-book .doc-cover {
+    border-image-outset: 8px;
+    border-image-width: 130px;
 }
 
 /* Cover — Padding per variant */
 
-#workskin .bigger.folders .doc-cover,
-#workskin .bigger.folders .tab-panel {
+#workskin .bigger.doc-folders .doc-cover,
+#workskin .bigger.doc-folders .tab-panel {
   padding-inline: 28px;
 }
 
-#workskin .bigger.codex .doc-cover,
-#workskin .bigger.codex .tab-panel {
+#workskin .bigger.doc-codex .doc-cover,
+#workskin .bigger.doc-codex .tab-panel {
   padding: 88px 85px;
 }
 
-#workskin .bigger.folio .doc-cover,
-#workskin .bigger.folio .tab-panel {
+#workskin .bigger.doc-folio .doc-cover,
+#workskin .bigger.doc-folio .tab-panel {
   padding-inline: 29px;
+}
+
+#workskin .bigger.doc-book .doc-cover,
+#workskin .bigger.doc-book .tab-panel {
+  padding: 70px 50px;
 }
 
 /* Cover image and margin per variant */
@@ -638,15 +885,15 @@
   height: 125px;
 }
 
-#workskin .bigger.folders .doc-img {
+#workskin .bigger.doc-folders .doc-img {
   margin-block: 16%;
 }
 
-#workskin .bigger.codex .doc-img {
+#workskin .bigger.doc-codex .doc-img {
   margin-block: 12%;
 }
 
-#workskin .bigger.folio .doc-img {
+#workskin .bigger.doc-folio .doc-img {
   margin-block: 16%;
 }
 
@@ -662,15 +909,15 @@
 
 /* Tab labels */
 
-#workskin .bigger.folders .tab-label p {
+#workskin .bigger.doc-folders .tab-label p {
   font-size: 13px;
 }
 
-#workskin .bigger.codex .tab-label p {
+#workskin .bigger.doc-codex .tab-label p {
   font-size: 13px;
 }
 
-#workskin .bigger.folio .tab-label p {
+#workskin .bigger.doc-folio .tab-label p {
   font-size: 13px;
 }
 
@@ -679,19 +926,65 @@
    Check the following examples:
 
 ↳ Bigger folders — First button:
-#workskin .bigger.folders .tab:nth-child(1) .tab-btn {
+#workskin .bigger.doc-folders .tab:nth-child(1) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 }
 
 ↳ Bigger codex — First button:
-#workskin .bigger.codex  .tab:nth-child(1) .tab-btn {
+#workskin .bigger.doc-codex  .tab:nth-child(1) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 }
 
 ↳ Bigger folio — First button:
-#workskin .bigger.folio  .tab:nth-child(1) .tab-btn {
+#workskin .bigger.doc-folio  .tab:nth-child(1) .tab-btn {
   background: url("img-url-here") center center;
   background-size: cover;
 } */
+
+/* Tab content — Font size per variant */
+
+#workskin .bigger.doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter,
+#workskin .bigger .initial::first-letter {
+  font-size: 4rem;
+}
+
+#workskin .bigger.doc-codex .tab-content p {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+#workskin .bigger.doc-folders .tab-content p {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+#workskin .bigger.doc-folio .tab-content p {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+#workskin .bigger.doc-codex .tab-content .tab-title {
+  font-size: 20px;
+}
+
+#workskin .bigger.doc-folders .tab-content .tab-title {
+  font-size: 18px;
+}
+
+#workskin .bigger.doc-folio .tab-content .tab-title {
+  font-size: 20px;
+}
+
+#workskin .bigger.doc-codex .tab-content .tab-section {
+  font-size: 18px;
+}
+
+#workskin .bigger.doc-folders .tab-content .tab-section {
+  font-size: 16px;
+}
+
+#workskin .bigger.doc-folio .tab-content .tab-section {
+  font-size: 17px;
+}
