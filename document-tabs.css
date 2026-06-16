@@ -219,9 +219,9 @@
   margin-block: 12%;
   background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif) center center;
   background-size: cover;
-  border-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/frame.png) 25% round;
-  border-image-outset: 13px;
-  border-image-width: 20px;
+  border-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/frame.png) 30% round;
+  border-image-outset: 15px;
+  border-image-width: 36px;
   filter: contrast(1.1);
 }
 
@@ -259,7 +259,7 @@
 }
 
 #workskin .doc-folio .doc-headline p {
-  font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
+  font-family: "Monotype Corsiva", "Apple Chancery", "Palatino Linotype", "Georgia", serif;
   font-style: italic;
   color: black;
 }
@@ -618,6 +618,24 @@
   background-clip: content-box;
 }
 
+#workskin .doc-diary .tab-panel {
+  background: linear-gradient(to bottom, white 29px, #00b0d7 1px);
+  background-size: 100% 30px;
+  background-clip: content-box;
+}
+
+#workskin .doc-diary .tab-panel::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 140px;
+  height: 100%;
+  width: 1px;
+  background: #db4034;
+}
+
 #workskin .tab:hover .tab-panel {
   display: block;
 }
@@ -667,7 +685,7 @@
 }
 
 #workskin .doc-folio .tab-content p {
-  font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
+  font-family: "Monotype Corsiva", "Apple Chancery", "Palatino Linotype", "Georgia", serif;
   color: black;
   font-style: italic;
   font-size: 13px;
@@ -904,8 +922,8 @@
   width: 160px;
   height: 110px;
   margin-block: 12%;
-  border-image-outset: 13px;
-  border-image-width: 30px;
+  border-image-outset: 25px;
+  border-image-width: 51px;
 }
 
 /* Headline */
