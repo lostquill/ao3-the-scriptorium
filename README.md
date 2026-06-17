@@ -10,7 +10,7 @@ A collection of CSS components for AO3 workskins: simple document-style formatti
 - **Newspaper** — sepia-toned newspaper layout, with an optional decorative image variant
 
 ### document-tabs.css
-- **Document Tabs** — tabbed document viewer with a decorative cover panel and a sidebar of hoverable tabs revealing content panels. Three visual variants: `.folders`, `.codex`, `.folio`. Optional `.bigger` modifier for larger dimensions.
+- **Document Tabs** — tabbed document viewer with a decorative cover panel and a sidebar of hoverable tabs revealing content panels. Six visual variants: `.doc-folders`, `.doc-codex`, `.doc-folio`, `.doc-newspaper`, `.doc-diary`, `.doc-book`. Optional `.bigger` modifier for larger dimensions.
 
 Usage and HTML examples available on [AO3](https://archiveofourown.org/works/84721106).
 
