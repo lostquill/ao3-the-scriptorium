@@ -1639,7 +1639,7 @@
 #workskin .doc-diary .tab-label p {
   font-family: "Lucida Handwriting", "Comic Sans MS", cursive;
   font-size: 12px;
-  color: black;
+  color: #0f0f3e;
 }
 
 #workskin .doc-diary .tab-label .red {
@@ -1891,6 +1891,12 @@
   color: #d8c8af;
 }
 
+/* Title */
+
+#workskin .doc-book .doc-headline p.doc-title {
+  font-variant: small-caps;
+}
+
 
 /* ------------------------------------------------------------
    TAB — BUTTON
@@ -2004,7 +2010,11 @@
 /* Accent colors */
 
 #workskin .doc-book .accent {
-  color: #616acc; /* blue */
+  color: #cfbc64; /* yellow on cover */
+}
+
+#workskin .doc-book .tab-content .accent {
+  color: #a96525; /* darker on pages */
 }
 
 /* <hr> separator */
