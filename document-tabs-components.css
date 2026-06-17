@@ -163,7 +163,7 @@
   position: relative;
   padding-bottom: 15px;
   padding-inline: 10px;
-  font-size: 22px;
+  font-size: 23px;
   line-height: 1;
 }
 
@@ -365,7 +365,7 @@
 /* Headline */
 
 #workskin .bigger .doc-headline p.doc-title {
-  font-size: 26px;
+  font-size: 30px;
 }
 
 #workskin .bigger .doc-headline p.doc-subtitle {
@@ -678,7 +678,7 @@
 
 #workskin .doc-folders .doc-cover,
 #workskin .doc-folders .tab-panel {
-  padding-inline: 18px;
+  padding-inline: 19px;
 }
 
 
@@ -928,7 +928,7 @@
 
 #workskin .doc-folio .doc-cover,
 #workskin .doc-folio .tab-panel {
-  padding-inline: 18px;
+  padding-inline: 19px;
 }
 
 
@@ -960,7 +960,7 @@
 /* Title */
 
 #workskin .doc-folio .doc-headline p.doc-title {
-  font-size: 25px;
+  font-size: 27px;
 }
 
 /* Subtitle */
@@ -1065,8 +1065,6 @@
 #workskin .doc-folio .tab-panel {
   background-color: rgb(195 179 153);
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
-  background-size: cover;
-  background-clip: content-box;
 }
 
 
@@ -1234,14 +1232,11 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-newspaper .doc-cover {
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-newspaper.jpg");
-}
-
-/* Padding */
-
-#workskin .doc-newspaper .doc-cover,
-#workskin .doc-newspaper .tab-panel {
-  padding-inline: 18px;
+  padding-inline: 10px;
+  background-color: white;
+  background-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-newspaper.jpg);
+  border: 5px double #828282;
+  filter: sepia(0.3);
 }
 
 
@@ -1251,9 +1246,8 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-newspaper .doc-img {
-  margin-block: 14%;
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
-  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 1)) brightness(1.3) contrast(0.9);
+  margin-block: 5%;
+  /* background-image: url("img-url-here"); */
 }
 
 
@@ -1263,6 +1257,13 @@
    ------------------------------------------------------------ */
 
 /* Headline */
+
+#workskin .doc-newspaper .doc-headline {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-block: 30px;
+  margin-inline: 15px;
+  border: 3px double #828282;
+}
 
 #workskin .doc-newspaper .doc-headline p {
   font-family: "Courier New", Courier, monospace;
@@ -1304,7 +1305,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-newspaper .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-background.jpg") right bottom;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-background.jpg") center bottom;
   background-size: 200%;
 }
 
@@ -1344,7 +1345,6 @@
 #workskin .doc-newspaper .tab-label {
   border-top: 1px solid rgba(170, 150, 120, 0.35);
   box-shadow: 0 -1px 5px #373737;
-  border-radius: 30px 30px 0 0;
 }
 
 /* Label text */
@@ -1370,10 +1370,8 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-newspaper .tab-panel {
-  background-color: rgb(195 179 153);
+  padding: 5px;
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-texture.jpg");
-  background-size: cover;
-  background-clip: content-box;
 }
 
 
@@ -1382,24 +1380,47 @@
    Scrollable inner content area.
    ------------------------------------------------------------ */
 
-#workskin .newspaper .tab-content p {
-  font-family: "Courier New", Courier, monospace;
+#workskin .doc-newspaper .tab-content p {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, sans-serif;
   color: black;
   font-size: 13px;
   line-height: 18px;
+  text-align: justify;
 }
 
 #workskin .doc-newspaper .tab-content p.tab-title {
   text-align: center;
   font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   padding-block: 20px;
   border-block: 2px dashed #4a3e3d;
 }
 
 #workskin .doc-newspaper .tab-content p.tab-section {
   font-size: 15px;
+  text-transform: uppercase;
   padding-bottom: 4px;
   border-bottom: 1px dashed #868686;
+}
+
+/* Images */
+
+#workskin .doc-newspaper-float-left {
+  width: 40%;
+  margin: 0 10px 0 0;
+  float: left;
+}
+
+#workskin .doc-newspaper-img-left {
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-image.jpg") center center;
+  background-size: cover;
+  padding-bottom: 63%;
+  filter: saturate(0.6)
+}
+
+#workskin .img-float-clear {
+  clear: both;
 }
 
 /* Accent colors */
@@ -1420,7 +1441,7 @@
 }
 
 #workskin .doc-newspaper .doc-headline .doc-title-separator {
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 #workskin .doc-newspaper .tab-content hr {
@@ -1440,15 +1461,14 @@
 
 /* Cover — Padding */
 
-#workskin .bigger.doc-newspaper .doc-cover,
-#workskin .bigger.doc-newspaper .tab-panel {
+#workskin .bigger.doc-newspaper .doc-cover {
   padding-inline: 28px;
 }
 
 /* Cover — Decorative image margin */
 
 #workskin .bigger.doc-newspaper .doc-img {
-  margin-block: 16%;
+  margin-block: 10%;
 }
 
 /* Tab labels */
@@ -1502,6 +1522,7 @@
 
 #workskin .doc-diary .doc-cover {
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-diary.jpg");
+  filter: saturate(0.8) sepia(0.1);
 }
 
 /* Padding */
@@ -1541,7 +1562,7 @@
   width: 190px;
   padding: 0;
   font-family: "Lucida Handwriting", "Comic Sans MS", cursive;
-  color: black;
+  color: #0f0f3e;
 }
 
 #workskin .doc-diary .doc-headline p,
@@ -1735,7 +1756,7 @@
 /* Headline */
 
 #workskin .bigger.doc-diary .doc-headline {
-  margin-top: 44%;
+  margin-top: 43%;
 }
 
 #workskin .bigger.doc-diary .doc-headline p {
@@ -1898,7 +1919,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-book .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg") right bottom;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/bookshelf.jpg") right bottom;
   background-size: 200%;
 }
 
@@ -1938,7 +1959,6 @@
 #workskin .doc-book .tab-label {
   border-top: 1px solid rgba(170, 150, 120, 0.35);
   box-shadow: 0 0 10px #141414;
-  border-radius: 25%;
 }
 
 /* Label text */
