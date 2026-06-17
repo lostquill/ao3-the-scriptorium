@@ -75,7 +75,7 @@
 
 /* ============================================================
    1.  BASE CLASSES
-   bla bla bla Commun à tous les components
+   Shared by all components
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -390,7 +390,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-codex * {
-    scrollbar-color: #808297 transparent;
+  scrollbar-color: #808297 transparent;
 }
 
 
@@ -662,7 +662,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-folders * {
-    scrollbar-color: #776d64 transparent;
+  scrollbar-color: #776d64 transparent;
 }
 
 
@@ -912,7 +912,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-folio * {
-    scrollbar-color: #76675b transparent;
+  scrollbar-color: #76675b transparent;
 }
 
 
@@ -1224,7 +1224,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-newspaper * {
-    scrollbar-color: #76675b transparent;
+  scrollbar-color: #76675b transparent;
 }
 
 
@@ -1513,7 +1513,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-diary * {
-    scrollbar-color: #cfd5df transparent;
+  scrollbar-color: #cfd5df transparent;
 }
 
 
@@ -1726,9 +1726,9 @@
 }
 
 #workskin .doc-diary .tab-content hr {
-    margin-inline: auto;
-    margin-top: 17px;
-    margin-bottom: 3px;
+  margin-inline: auto;
+  margin-top: 17px;
+  margin-bottom: 3px;
 }
 
 
@@ -1837,7 +1837,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-book * {
-    scrollbar-color: #76675b transparent;
+  scrollbar-color: #76675b transparent;
 }
 
 
@@ -2071,8 +2071,8 @@
 /* Container — Outer wrapper, cover and panels dimensions. */
 
 #workskin .bigger.doc-book .doc-cover {
-    border-image-outset: 8px;
-    border-image-width: 130px;
+  border-image-outset: 8px;
+  border-image-width: 130px;
 }
 
 /* Cover — Padding */
