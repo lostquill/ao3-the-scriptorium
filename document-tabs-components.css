@@ -7,7 +7,7 @@
    Optional modifier: .bigger (larger dimensions)
 
    Basic structure with folders:
-   <div class="doc-container folders">
+   <div class="doc-container doc-folders">
 
      <!-- DOC COVER START -->
      <div class="doc-cover">
@@ -335,7 +335,7 @@
    Add .bigger to .doc-container to switch to larger dimensions.
    All overrides for .bigger are grouped here.
 
-   Example: <div class="doc-container folders bigger">
+   Example: <div class="doc-container doc-folders bigger">
    ------------------------------------------------------------ */
 
 /* Container — Outer wrapper, cover and panels dimensions. */
@@ -452,6 +452,7 @@
 #workskin .doc-codex .doc-headline p.doc-title {
   font-variant: small-caps;
 }
+
 
 /* ------------------------------------------------------------
    TAB BUTTON IMAGES
@@ -855,7 +856,7 @@
    Add .bigger to .doc-container to switch to larger dimensions.
    All overrides for .bigger are grouped here.
 
-   Example: <div class="doc-container folders bigger">
+   Example: <div class="doc-container doc-folders bigger">
    ------------------------------------------------------------ */
 
 /* Cover — Padding */
@@ -984,7 +985,7 @@
 }
 
 
-/* ============================================================
+/* ------------------------------------------------------------
    TAB BUTTON IMAGES
    Default image shared by all tabs. Override per tab using
    :nth-child(N) to assign a different image to each category.
@@ -1154,7 +1155,7 @@
    Add .bigger to .doc-container to switch to larger dimensions.
    All overrides for .bigger are grouped here.
 
-   Example: <div class="doc-container folders bigger">
+   Example: <div class="doc-container doc-folio bigger">
    ------------------------------------------------------------ */
 
 /* Container — Outer wrapper, cover and panels dimensions. */
@@ -1187,6 +1188,7 @@
 #workskin .bigger.doc-folio .tab-label p {
   font-size: 13px;
 }
+
 
 /* Tab button images — add per-tab overrides here, one entry per tab:
    .tab:nth-child(1) for the first button, .tab:nth-child(2) for the second button, and so on.
@@ -1292,7 +1294,7 @@
 }
 
 
-/* ============================================================
+/* ------------------------------------------------------------
    TAB BUTTON IMAGES
    Default image shared by all tabs. Override per tab using
    :nth-child(N) to assign a different image to each category.
@@ -1473,7 +1475,7 @@
 
 /* Tab labels */
 
-#workskin .bigger.doc-newspapers .tab-label p {
+#workskin .bigger.doc-newspaper .tab-label p {
   font-size: 13px;
 }
 
@@ -1503,7 +1505,7 @@
 
 
 /* ============================================================
-   DIARY
+   6.  DIARY
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -1578,7 +1580,7 @@
 }
 
 
-/* ============================================================
+/* ------------------------------------------------------------
    TAB BUTTON IMAGES
    Default image shared by all tabs. Override per tab using
    :nth-child(N) to assign a different image to each category.
@@ -1827,7 +1829,7 @@
 
 
 /* ============================================================
-   BOOK
+   7.  BOOK
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -1912,7 +1914,7 @@
 }
 
 
-/* ============================================================
+/* ------------------------------------------------------------
    TAB BUTTON IMAGES
    Default image shared by all tabs. Override per tab using
    :nth-child(N) to assign a different image to each category.
