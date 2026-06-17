@@ -2019,7 +2019,44 @@
 
 /* <hr> separator */
 
-/* CODEX SIMILAR */
+#workskin .doc-book .doc-headline .doc-title-separator,
+#workskin .doc-book .tab-content hr {
+  border: 0;
+  height: 1px;
+  background: #808080;
+  width: 70%;
+  position: relative;
+  overflow: visible;
+}
+
+#workskin .doc-book .doc-headline .doc-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .doc-book .tab-content hr {
+  margin: 30px auto;
+}
+
+#workskin .doc-book .doc-headline .doc-title-separator::after,
+#workskin .doc-book .tab-content hr::after {
+  content: "♦\FE0E";
+  display: inline-block;
+  position: absolute;
+  height: 0;
+  line-height: 0;
+  margin-top: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: transparent;
+  padding: 0 10px;
+  color: #cfbc64;
+  font-size: 14px;
+}
+
+#workskin .doc-book .tab-content hr::after {
+  color: #a96525;
+}
 
 
 /* ------------------------------------------------------------
