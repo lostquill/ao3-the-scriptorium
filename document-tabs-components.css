@@ -725,7 +725,6 @@
 }
 
 #workskin .doc-folders .tab:hover .tab-btn {
-  opacity: 0.85;
   filter: brightness(1) saturate(40%);
 }
 
@@ -981,7 +980,6 @@
 }
 
 #workskin .doc-folio .tab:hover .tab-btn {
-  opacity: 0.85;
   filter: saturate(40%) sepia(0%);
 }
 
@@ -1236,7 +1234,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-newspaper .doc-cover {
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folders.jpg");
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-newspaper.jpg");
 }
 
 /* Padding */
@@ -1289,7 +1287,6 @@
 }
 
 #workskin .doc-newspaper .tab:hover .tab-btn {
-  opacity: 0.85;
   filter: brightness(1) saturate(40%);
 }
 
@@ -1307,7 +1304,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-newspaper .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg") right bottom;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-background.jpg") right bottom;
   background-size: 200%;
 }
 
@@ -1374,7 +1371,7 @@
 
 #workskin .doc-newspaper .tab-panel {
   background-color: rgb(195 179 153);
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-texture.jpg");
   background-size: cover;
   background-clip: content-box;
 }
@@ -1494,7 +1491,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-diary * {
-    scrollbar-color: #76675b transparent;
+    scrollbar-color: #cfd5df transparent;
 }
 
 
@@ -1560,21 +1557,6 @@
 }
 
 
-/* ------------------------------------------------------------
-   TAB — BUTTON
-   Visible area. Reveals the panel on hover.
-   ------------------------------------------------------------ */
-
-#workskin .doc-diary .tab-btn {
-  filter: brightness(1.3) saturate(50%);
-}
-
-#workskin .doc-diary .tab:hover .tab-btn {
-  opacity: 0.85;
-  filter: brightness(1) saturate(40%);
-}
-
-
 /* ============================================================
    TAB BUTTON IMAGES
    Default image shared by all tabs. Override per tab using
@@ -1588,7 +1570,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-diary .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/collage.jpg") left top;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/collage.jpg") 55% 60%;
   background-size: 200%;
 }
 
@@ -1722,8 +1704,8 @@
 
 #workskin .doc-diary .tab-content hr {
     margin-inline: auto;
-    margin-top: 18px;
-    margin-bottom: 2px;
+    margin-top: 17px;
+    margin-bottom: 3px;
 }
 
 
@@ -1899,7 +1881,6 @@
 }
 
 #workskin .doc-book .tab:hover .tab-btn {
-  opacity: 0.85;
   filter: brightness(1) saturate(40%);
 }
 
