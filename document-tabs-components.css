@@ -118,6 +118,9 @@
   top: 0;
   opacity: 0.9;
   z-index: 1;
+
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 
@@ -129,6 +132,10 @@
 #workskin .doc-img {
   width: 170px;
   height: 95px;
+	
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 
@@ -152,7 +159,7 @@
 
 /* Title */
 
-#workskin .doc-title {
+#workskin .doc-headline p.doc-title {
   position: relative;
   padding-bottom: 15px;
   padding-inline: 10px;
@@ -162,7 +169,7 @@
 
 /* Subtitle */
 
-#workskin .doc-subtitle {
+#workskin .doc-headline p.doc-subtitle {
   padding-top: 15px;
   padding-inline: 15px;
   font-size: 15px;
@@ -278,6 +285,8 @@
   right: 100%;
   background-color: rgb(247 242 234);
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
+  background-size: 100%;
+  background-repeat: repeat;
   background-clip: content-box;
   z-index: 19;
   overflow: hidden;
@@ -301,7 +310,7 @@
   overflow: auto;
   box-sizing: border-box;
 	
-  background-size: contain;
+  background-size: 100%;
   background-repeat: repeat;
   background-attachment: local;
 }
@@ -355,11 +364,11 @@
 
 /* Headline */
 
-#workskin .bigger .doc-title {
+#workskin .bigger .doc-headline p.doc-title {
   font-size: 26px;
 }
 
-#workskin .bigger .doc-subtitle {
+#workskin .bigger .doc-headline p.doc-subtitle {
   font-size: 17px;
 }
 
@@ -405,7 +414,6 @@
 
 #workskin .doc-codex .doc-cover {
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-codex.jpg");
-  background-size: cover;
 }
 
 #workskin .doc-codex .doc-cover,
@@ -422,9 +430,6 @@
 #workskin .doc-codex .doc-img {
   margin-block: 8%;
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/codex-icon.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   filter: brightness(1.2);
 }
 
@@ -444,7 +449,7 @@
 
 /* Title */
 
-#workskin .doc-codex .doc-title {
+#workskin .doc-codex .doc-headline p.doc-title {
   font-variant: small-caps;
 }
 
@@ -551,7 +556,7 @@
 
 /* <hr> separators */
 
-#workskin .doc-codex .doc-title-separator,
+#workskin .doc-codex .doc-headline .doc-title-separator,
 #workskin .doc-codex .tab-content hr {
   border: 0;
   height: 1px;
@@ -561,7 +566,7 @@
   overflow: visible;
 }
 
-#workskin .doc-codex .doc-title-separator {
+#workskin .doc-codex .doc-headline .doc-title-separator {
   margin: 20px auto;
 }
 
@@ -569,7 +574,7 @@
   margin: 30px auto;
 }
 
-#workskin .doc-codex .doc-title-separator::after,
+#workskin .doc-codex .doc-headline .doc-title-separator::after,
 #workskin .doc-codex .tab-content hr::after {
   content: "♦\FE0E";
   display: inline-block;
@@ -667,7 +672,6 @@
 
 #workskin .doc-folders .doc-cover {
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folders.jpg");
-  background-size: cover;
 }
 
 /* Padding */
@@ -686,9 +690,6 @@
 #workskin .doc-folders .doc-img {
   margin-block: 14%;
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/confidential.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   transform: rotate(10deg);
   filter: saturate(0.7);
 }
@@ -709,7 +710,7 @@
 
 /* Title */
 
-#workskin .doc-folders .doc-title {
+#workskin .doc-folders .doc-headline p.doc-title {
   font-variant: small-caps;
 }
 
@@ -832,7 +833,7 @@
 
 /* <hr> separator */
 
-#workskin .doc-folders .doc-title-separator,
+#workskin .doc-folders .doc-headline .doc-title-separator,
 #workskin .doc-folders .tab-content hr {
   border: 0;
   border-top: 2px dashed #4a3e3d;
@@ -841,7 +842,7 @@
   overflow: visible;
 }
 
-#workskin .doc-folders .doc-title-separator {
+#workskin .doc-folders .doc-headline .doc-title-separator {
   margin: 20px auto;
 }
 
@@ -922,7 +923,6 @@
 
 #workskin .doc-folio .doc-cover {
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folio.jpg");
-  background-size: cover;
 }
 
 /* Padding */
@@ -941,9 +941,6 @@
 #workskin .doc-folio .doc-img {
   margin-block: 14%;
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 1)) brightness(1.3) contrast(0.9);
 }
 
@@ -959,6 +956,18 @@
   font-family: "Monotype Corsiva", "Apple Chancery", "Palatino Linotype", "Georgia", serif;
   font-style: italic;
   color: black;
+}
+
+/* Title */
+
+#workskin .doc-folio .doc-headline p.title {
+  font-size: 25px;
+}
+
+/* Subtitle */
+
+#workskin .doc-folio .doc-headline p.subtitle {
+  font-size: 20px;
 }
 
 
@@ -1073,22 +1082,22 @@
 }
 
 #workskin .doc-folio .tab-content p {
-  font-family: "Monotype Corsiva", "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  font-family: "Monotype Corsiva", "Apple Chancery", "Palatino Linotype", "Georgia", cursive;
   color: black;
   font-style: italic;
-  font-size: 13px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 #workskin .doc-folio .tab-content p.tab-title {
   text-align: center;
-  font-size: 18px;
+  font-size: 22px;
   padding-bottom: 10px;
   border-bottom: 1px solid #4a3e3d;
 }
 
 #workskin .doc-folio .tab-content p.tab-section {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 /* Accent colors */
@@ -1099,7 +1108,7 @@
 
 /* <hr> separator */
 
-#workskin .doc-folio .doc-title-separator,
+#workskin .doc-folio .doc-headline .doc-title-separator,
 #workskin .doc-folio .tab-content hr {
   border: 0;
   height: 1px;
@@ -1110,7 +1119,7 @@
   opacity: 0.85;
 }
 
-#workskin .doc-folio .doc-title-separator {
+#workskin .doc-folio .doc-headline .doc-title-separator {
   margin: 20px auto;
 }
 
@@ -1118,8 +1127,8 @@
   margin: 40px auto;
 }
 
-#workskin .doc-folio .doc-title-separator::after,
-#workskin .doc-folio .doc-title-separator::before,
+#workskin .doc-folio .doc-headline .doc-title-separator::after,
+#workskin .doc-folio .doc-headline .doc-title-separator::before,
 #workskin .doc-folio .tab-content hr::after,
 #workskin .doc-folio .tab-content hr::before {
   display: inline-block;
@@ -1130,13 +1139,13 @@
   font-size: 18px;
 }
 
-#workskin .doc-folio .doc-title-separator::after,
+#workskin .doc-folio .doc-headline .doc-title-separator::after,
 #workskin .doc-folio .tab-content hr::after {
   content: "❧";
   left: -10px;
 }
 
-#workskin .doc-folio .doc-title-separator::before,
+#workskin .doc-folio .doc-headline .doc-title-separator::before,
 #workskin .doc-folio .tab-content hr::before {
   content: "❧";
   transform: scaleX(-1);
@@ -1157,6 +1166,18 @@
 #workskin .bigger.doc-folio .doc-cover,
 #workskin .bigger.doc-folio .tab-panel {
   padding-inline: 29px;
+}
+
+/* Title */
+
+#workskin .bigger.doc-folio .doc-headline p.title {
+  font-size: 35px;
+}
+
+/* Subtitle */
+
+#workskin .bigger.doc-folio .doc-headline p.subtitle {
+  font-size: 24px;
 }
 
 /* Cover — Decorative image margin */
@@ -1183,16 +1204,16 @@
 /* Tab content — Font size */
 
 #workskin .bigger.doc-folio .tab-content p {
-  font-size: 15px;
-  line-height: 22px;
+  font-size: 19px;
+  line-height: 25px;
 }
 
 #workskin .bigger.doc-folio .tab-content p.tab-title {
-  font-size: 20px;
+  font-size: 26px;
 }
 
 #workskin .bigger.doc-folio .tab-content p.tab-section {
-  font-size: 17px;
+  font-size: 21px;
 }
 
 
@@ -1216,7 +1237,6 @@
 
 #workskin .doc-newspaper .doc-cover {
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folders.jpg");
-  background-size: cover;
 }
 
 /* Padding */
@@ -1235,9 +1255,6 @@
 #workskin .doc-newspaper .doc-img {
   margin-block: 14%;
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 1)) brightness(1.3) contrast(0.9);
 }
 
@@ -1257,7 +1274,7 @@
 
 /* Title */
 
-#workskin .doc-newspaper .doc-title {
+#workskin .doc-newspaper .doc-headline p.doc-title {
   font-variant: small-caps;
 }
 
@@ -1396,7 +1413,7 @@
 
 /* <hr> separator */
 
-#workskin .doc-newspaper .doc-title-separator,
+#workskin .doc-newspaper .doc-headline .doc-title-separator,
 #workskin .doc-newspaper .tab-content hr {
   border: 0;
   border-top: 2px dashed #4a3e3d;
@@ -1405,7 +1422,7 @@
   overflow: visible;
 }
 
-#workskin .doc-newspaper .doc-title-separator {
+#workskin .doc-newspaper .doc-headline .doc-title-separator {
   margin: 20px auto;
 }
 
@@ -1488,7 +1505,6 @@
 
 #workskin .doc-diary .doc-cover {
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folders.jpg");
-  background-size: cover;
 }
 
 /* Padding */
@@ -1506,11 +1522,7 @@
 
 #workskin .doc-diary .doc-img {
   margin-block: 14%;
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 1)) brightness(1.3) contrast(0.9);
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/diary-lock.png");
 }
 
 
@@ -1529,7 +1541,7 @@
 
 /* Title */
 
-#workskin .doc-diary .doc-title {
+#workskin .doc-diary .doc-headline p.doc-title {
   font-variant: small-caps;
 }
 
@@ -1682,7 +1694,7 @@
 
 /* <hr> separator */
 
-#workskin .doc-diary .doc-title-separator,
+#workskin .doc-diary .doc-headline .doc-title-separator,
 #workskin .doc-diary .tab-content hr {
   border: 0;
   border-top: 2px solid #ff6ae0;
@@ -1691,7 +1703,7 @@
   overflow: visible;
 }
 
-#workskin .doc-diary .doc-title-separator {
+#workskin .doc-diary .doc-headline .doc-title-separator {
   margin: 20px auto;
 }
 
@@ -1798,6 +1810,7 @@
 #workskin .doc-book .doc-cover {
   background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png") top left;
   background-color: #180905;
+  background-size: unset;
   border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-border.png") 45% round;
   border-image-outset: 7px;
   border-image-width: 100px;
@@ -1807,7 +1820,7 @@
 
 #workskin .doc-book .doc-cover,
 #workskin .doc-book .tab-panel {
-  padding: 50px 35px;
+  padding: 50px 43px;
 }
 
 
@@ -1843,7 +1856,7 @@
 
 /* Title */
 
-#workskin .doc-book .doc-title {
+#workskin .doc-book .doc-headline p.doc-title {
   font-variant: small-caps;
 }
 
@@ -2030,6 +2043,3 @@
 #workskin .bigger.doc-book .tab-content p.tab-section {
   font-size: 18px;
 }
-
-
-
