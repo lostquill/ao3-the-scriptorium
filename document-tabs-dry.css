@@ -163,7 +163,6 @@
 /* Title */
 
 #workskin .doc-headline p.doc-title {
-  position: relative;
   padding-bottom: 15px;
   padding-inline: 10px;
   font-size: 23px;
@@ -318,10 +317,12 @@
   background-attachment: local;
 }
 
-/* Drop cap — applied automatically to the first paragraph in .doc-codex .tab-content
-   that is not a title or section header, or manually via .initial on any paragraph. */
-#workskin .initial::first-letter,
-#workskin .doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
+/* Drop cap — applied automatically to the first paragraph in .doc-codex .tab-content and .doc-book .tab-content
+   that is not a title or section header, or manually via .initial on any paragraph of these components. */
+#workskin .doc-codex .initial::first-letter,
+#workskin .doc-book .initial::first-letter,
+#workskin .doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter,
+#workskin .doc-book .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
   font-family: 'Georgia', serif;
   font-weight: bold;
   font-size: 3.5rem;
@@ -329,7 +330,16 @@
   line-height: 1;
   margin-top: 2px;
   margin-right: 8px;
+}
+
+#workskin .doc-codex .initial::first-letter,
+#workskin .doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
   color: #616acc;
+}
+
+#workskin .doc-book .initial::first-letter,
+#workskin .doc-book .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
+  color: #a96525;
 }
 
 
@@ -377,8 +387,10 @@
 
 /* Tab content — Font size */
 
-#workskin .bigger .initial::first-letter,
-#workskin .bigger.doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
+#workskin .bigger.doc-codex .initial::first-letter,
+#workskin .bigger.doc-book .initial::first-letter,
+#workskin .bigger.doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter,
+#workskin .bigger.doc-book .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
   font-size: 4rem;
 }
 
