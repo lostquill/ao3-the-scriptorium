@@ -10,7 +10,7 @@
    Optional modifier: .bigger (larger dimensions)
 
    Basic structure with folders:
-   <div class="doc-container doc-folders">
+   <div class="doc-folders">
 
      <!-- DOC COVER START -->
      <div class="doc-cover">
@@ -475,10 +475,10 @@
 
 /* ------------------------------------------------------------
    BIGGER MODIFIER
-   Add .bigger to .doc-container to switch to larger dimensions.
+   Add .bigger to switch to larger dimensions.
    All overrides for .bigger are grouped here.
 
-   Example: <div class="doc-container doc-codex bigger">
+   Example: <div class="doc-codex bigger">
    ------------------------------------------------------------ */
 
 /* Container — Outer wrapper, cover and panels dimensions. */
@@ -926,10 +926,10 @@
 
 /* ------------------------------------------------------------
    BIGGER MODIFIER
-   Add .bigger to .doc-container to switch to larger dimensions.
+   Add .bigger to switch to larger dimensions.
    All overrides for .bigger are grouped here.
 
-   Example: <div class="doc-container doc-folders bigger">
+   Example: <div class="doc-folders bigger">
    ------------------------------------------------------------ */
 
 /* Container — Outer wrapper, cover and panels dimensions. */
@@ -1401,10 +1401,10 @@
 
 /* ------------------------------------------------------------
    BIGGER MODIFIER
-   Add .bigger to .doc-container to switch to larger dimensions.
+   Add .bigger to switch to larger dimensions.
    All overrides for .bigger are grouped here.
 
-   Example: <div class="doc-container doc-folio bigger">
+   Example: <div class="doc-folio bigger">
    ------------------------------------------------------------ */
 
 /* Container — Outer wrapper, cover and panels dimensions. */
@@ -1872,10 +1872,10 @@
 
 /* ------------------------------------------------------------
    BIGGER MODIFIER
-   Add .bigger to .doc-container to switch to larger dimensions.
+   Add .bigger to switch to larger dimensions.
    All overrides for .bigger are grouped here.
 
-   Example: <div class="doc-container doc-newspaper bigger">
+   Example: <div class="doc-newspaper bigger">
    ------------------------------------------------------------ */
 
 /* Container — Outer wrapper, cover and panels dimensions. */
@@ -2346,10 +2346,10 @@
 
 /* ------------------------------------------------------------
    BIGGER MODIFIER
-   Add .bigger to .doc-container to switch to larger dimensions.
+   Add .bigger to switch to larger dimensions.
    All overrides for .bigger are grouped here.
 
-   Example: <div class="doc-container doc-diary bigger">
+   Example: <div class="doc-diary bigger">
    ------------------------------------------------------------ */
 
 /* Container — Outer wrapper, cover and panels dimensions. */
@@ -2872,10 +2872,10 @@
 
 /* ------------------------------------------------------------
    BIGGER MODIFIER
-   Add .bigger to .doc-container to switch to larger dimensions.
+   Add .bigger to switch to larger dimensions.
    All overrides for .bigger are grouped here.
 
-   Example: <div class="doc-container doc-book bigger">
+   Example: <div class="doc-book bigger">
    ------------------------------------------------------------ */
 
 /* Container — Outer wrapper, cover and panels dimensions. */
