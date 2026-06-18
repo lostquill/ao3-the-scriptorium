@@ -1,5 +1,8 @@
 /* ============================================================
-   DOCUMENT TABS
+   DOCUMENT TABS — STANDALONE VERSION (ISOLATED & CUSTOMIZABLE)
+   
+   Each variant is fully self-contained with its own specific rules.
+   Best for extracting a single component variant with no external dependencies.
 
    Six visual variants: .doc-codex, .doc-folders, .doc-folio,
                         .doc-newspaper, .doc-diary, .doc-book;
