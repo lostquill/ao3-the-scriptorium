@@ -72,44 +72,45 @@
    ============================================================ */
 
 #workskin .parchment-scroll {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
 	
-    width: 600px;
-    height: 435px;
-    overflow: hidden;
-    margin: 10px auto;
-    padding: 7em 5.3em;
+  width: 600px;
+  height: 435px;
+  overflow: hidden;
+  margin: 10px auto;
+  padding: 7em 5.3em;
 	
-    background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-scroll.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-scroll.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #workskin .parchment-scroll-content {
-    max-height: 200px;
-    padding-inline: 2em;
-    overflow: auto;
-    margin: auto;
+  max-height: 200px;
+  padding-inline: 2em;
+  overflow: auto;
+  margin: auto;
 }
 
 #workskin .parchment-scroll-content p {
-    color: black;
-    font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
-    font-style: italic;
+  color: black;
+  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  font-size: 18px;
+  line-height: 1.4;
+  font-style: italic;
 }
 
 
 /* ============================================================
-   BOOK
+   BOOK — BACK COVER
    A dark, ornate book cover with a decorative border.
-   Nest .parchment inside for inner pages with a lighter texture.
    Use .book-title for the title line inside the book.
    Use .book-edition for a smaller line at the bottom (e.g. edition, year).
    
-   Example (basic):
+   Example:
    <div class="book">
      <p class="book-title">Title of the Book</p>
       <div class="book-content">
@@ -117,18 +118,6 @@
         <p>Another paragraph here.</p>
       </div>
      <p class="book-edition">First Edition — 1998</p>
-   </div>
-   
-   Example (with inner parchment page):
-   <div class="book">
-     <div class="parchment">
-       <p class="book-title">Chapter One</p>
-       <div class="book-content">
-         <p>First paragraph here.</p>
-         <p>Another paragraph here.</p>
-       </div>
-       <p class="book-edition">First Edition — 1998</p>
-     </div>
    </div>
    ============================================================ */
 
@@ -164,10 +153,6 @@
   padding-bottom: 5px;
 }
 
-#workskin .parchment p.book-title {
-  text-shadow: none;
-}
-
 #workskin .book-content {
   padding: 5px;
   max-height: 500px;
@@ -196,7 +181,40 @@
 
 
 /* ============================================================
-   BOOK — IMAGE VARIANT
+   BOOK — INNER PAGE
+   Nest .parchment inside for inner pages with a lighter texture.
+   
+   Example:
+   <div class="book">
+     <div class="parchment">
+       <p class="book-title">Chapter One</p>
+       <div class="book-content">
+         <p>First paragraph here.</p>
+         <p>Another paragraph here.</p>
+       </div>
+       <p class="book-edition">First Edition — 1998</p>
+     </div>
+   </div>
+   ============================================================ */
+
+#workskin .book .parchment {
+  max-width: 40em;
+  margin: auto;
+  color: black;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
+  padding: 1em 1.3em;
+  position: relative;
+  box-sizing: border-box;
+}
+
+#workskin .book .parchment p.book-title {
+  text-shadow: none;
+}
+
+
+/* ============================================================
+   BOOK — IMAGE
    An optional decorative image block to place inside .book.
    No need to add #workskin .img-float-clear again if already included via newspaper image css.
    
@@ -345,7 +363,7 @@
 
 
 /* ============================================================
-   NEWSPAPER — IMAGE VARIANT
+   NEWSPAPER — IMAGES
    Optional decorative sepia image blocks to place inside .newspaper-content.
    No need to add #workskin .img-float-clear again if already included via book image css.
 
