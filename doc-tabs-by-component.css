@@ -1,7 +1,7 @@
 /* ============================================================
    DOCUMENT TABS
 
-   Six visual variants: .doc-folders, .doc-codex, .doc-folio,
+   Six visual variants: .doc-codex, .doc-folders, .doc-folio,
                         .doc-newspaper, .doc-diary, .doc-book;
 
    Optional modifier: .bigger (larger dimensions)
@@ -183,7 +183,6 @@
 /* Title */
 
 #workskin .doc-codex .doc-headline p.doc-title {
-  position: relative;
   padding-bottom: 15px;
   padding-inline: 10px;
   font-size: 23px;
@@ -666,7 +665,6 @@
 /* Title */
 
 #workskin .doc-folders .doc-headline p.doc-title {
-  position: relative;
   padding-bottom: 15px;
   padding-inline: 10px;
   font-size: 23px;
@@ -1112,7 +1110,6 @@
 /* Title */
 
 #workskin .doc-folio .doc-headline p.doc-title {
-  position: relative;
   padding-bottom: 15px;
   padding-inline: 10px;
   font-size: 27px;
@@ -1591,7 +1588,6 @@
 /* Title */
 
 #workskin .doc-newspaper .doc-headline p.doc-title {
-  position: relative;
   padding-bottom: 15px;
   padding-inline: 10px;
   font-size: 23px;
@@ -2080,8 +2076,6 @@
 /* Title */
 
 #workskin .doc-diary .doc-headline p.doc-title {
-  position: relative;
-  padding-bottom: 15px;
   padding-inline: 10px;
   font-size: 18px;
   line-height: 1;
@@ -2090,7 +2084,6 @@
 /* Subtitle */
 
 #workskin .doc-diary .doc-headline p.doc-subtitle {
-  padding-top: 15px;
   padding-inline: 15px;
   font-size: 15px;
   line-height: 1;
@@ -2519,9 +2512,7 @@
 
   background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png") top left;
   background-color: #180905;
-  background-size: unset;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   
   border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-border.png") 45% round;
   border-image-outset: 7px;
@@ -2582,7 +2573,6 @@
 /* Title */
 
 #workskin .doc-book .doc-headline p.doc-title {
-  position: relative;
   padding-bottom: 15px;
   padding-inline: 10px;
   font-size: 23px;
