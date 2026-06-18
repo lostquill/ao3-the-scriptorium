@@ -1,5 +1,8 @@
 /* ============================================================
-   DOCUMENT TABS
+   DOCUMENT TABS — DRY VERSION (MODULAR & CENTRALIZED)
+   
+   Features shared base classes with specific overrides per variant.
+   Best if you want to install all variants at once and switch easily.
 
    Six visual variants: .doc-codex, .doc-folders, .doc-folio,
                         .doc-newspaper, .doc-diary, .doc-book;
