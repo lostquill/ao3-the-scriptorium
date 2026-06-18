@@ -1,7 +1,7 @@
 /* ============================================================
    DOCUMENT TABS
 
-   Six visual variants: .doc-folders, .doc-codex, .doc-folio,
+   Six visual variants: .doc-codex, .doc-folders, .doc-folio,
                         .doc-newspaper, .doc-diary, .doc-book;
 
    Optional modifier: .bigger (larger dimensions)
@@ -75,7 +75,7 @@
 
 /* ============================================================
    1.  BASE CLASSES
-   Shared by all components
+   Shared by most components unless overriden.
    ============================================================ */
 
 /* ------------------------------------------------------------
