@@ -325,6 +325,7 @@
 #workskin .doc-book .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
   font-family: 'Georgia', serif;
   font-weight: bold;
+  font-style: italic;
   font-size: 3.5rem;
   float: left;
   line-height: 1;
