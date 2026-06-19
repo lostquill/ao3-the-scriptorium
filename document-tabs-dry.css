@@ -345,10 +345,6 @@
 
 /* Images */
 
-#workskin .tab-content > p:has(img) {
-  margin: 0;
-}
-
 #workskin .tab-content > p.img-left img {
   margin-right: 10px;
   float: left;
