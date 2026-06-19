@@ -1918,7 +1918,7 @@
 #workskin .doc-newspaper .tab-content > p.img-left,
 #workskin .doc-newspaper .tab-content > p.img-right {
   margin: 0;
-  filter: saturate(0.6)
+  filter: saturate(0.6);
 }
 
 #workskin .doc-newspaper .tab-content > p.img-left img {
