@@ -871,6 +871,12 @@
   color: #bd0000; /* red */
 }
 
+/* Images */
+
+#workskin .doc-folders .tab-content > p:has(img) {
+  filter: greyscale(0.8);
+}
+
 /* <hr> separator */
 
 #workskin .doc-folders .doc-headline .doc-title-separator,
