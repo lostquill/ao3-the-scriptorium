@@ -430,6 +430,35 @@
   font-size: 16px;
 }
 
+/* Images */
+
+#workskin .doc-codex .tab-content > p.img-left,
+#workskin .doc-codex .tab-content > p.img-right {
+  margin: 0;
+}
+
+#workskin .doc-codex .tab-content > p.img-left img {
+  width: 40%;
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .doc-codex .tab-content > p.img-right img {
+  width: 30%;
+  margin-left: 10px;
+  float: right;
+}
+
+#workskin .doc-codex .tab-content .img-float-clear + p:not(#workskin .img-left, #workskin .img-right),
+#workskin .doc-codex .tab-content .img-float-clear + p.img-left + p,
+#workskin .doc-codex .tab-content .img-float-clear + p.img-right + p {
+  margin-top: 0;
+}
+
+#workskin .doc-codex .tab-content .img-float-clear {
+  clear: both;
+}
+
 /* Accent colors */
 
 #workskin .doc-codex .accent {
@@ -899,6 +928,35 @@
   border-bottom: 1px dashed #868686;
 }
 
+/* Images */
+
+#workskin .doc-folders .tab-content > p.img-left,
+#workskin .doc-folders .tab-content > p.img-right {
+  margin: 0;
+}
+
+#workskin .doc-folders .tab-content > p.img-left img {
+  width: 40%;
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .doc-folders .tab-content > p.img-right img {
+  width: 30%;
+  margin-left: 10px;
+  float: right;
+}
+
+#workskin .doc-folders .tab-content .img-float-clear + p:not(#workskin .img-left, #workskin .img-right),
+#workskin .doc-folders .tab-content .img-float-clear + p.img-left + p,
+#workskin .doc-folders .tab-content .img-float-clear + p.img-right + p {
+  margin-top: 0;
+}
+
+#workskin .doc-folders .tab-content .img-float-clear {
+  clear: both;
+}
+
 /* Accent colors */
 
 #workskin .doc-folders .accent {
@@ -1345,6 +1403,35 @@
 
 #workskin .doc-folio .tab-content p.tab-section {
   font-size: 20px;
+}
+
+/* Images */
+
+#workskin .doc-folio .tab-content > p.img-left,
+#workskin .doc-folio .tab-content > p.img-right {
+  margin: 0;
+}
+
+#workskin .doc-folio .tab-content > p.img-left img {
+  width: 40%;
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .doc-folio .tab-content > p.img-right img {
+  width: 30%;
+  margin-left: 10px;
+  float: right;
+}
+
+#workskin .doc-folio .tab-content .img-float-clear + p:not(#workskin .img-left, #workskin .img-right),
+#workskin .doc-folio .tab-content .img-float-clear + p.img-left + p,
+#workskin .doc-folio .tab-content .img-float-clear + p.img-right + p {
+  margin-top: 0;
+}
+
+#workskin .doc-folio .tab-content .img-float-clear {
+  clear: both;
 }
 
 /* Accent colors */
@@ -1828,20 +1915,31 @@
 
 /* Images */
 
-#workskin .doc-newspaper-float-left {
-  width: 40%;
-  margin: 0 10px 0 0;
-  float: left;
-}
-
-#workskin .doc-newspaper-img-left {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-image.jpg") center center;
-  background-size: cover;
-  padding-bottom: 63%;
+#workskin .doc-newspaper .tab-content > p.img-left,
+#workskin .doc-newspaper .tab-content > p.img-right {
+  margin: 0;
   filter: saturate(0.6)
 }
 
-#workskin .img-float-clear {
+#workskin .doc-newspaper .tab-content > p.img-left img {
+  width: 40%;
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .doc-newspaper .tab-content > p.img-right img {
+  width: 30%;
+  margin-left: 10px;
+  float: right;
+}
+
+#workskin .doc-newspaper .tab-content .img-float-clear + p:not(#workskin .img-left, #workskin .img-right),
+#workskin .doc-newspaper .tab-content .img-float-clear + p.img-left + p,
+#workskin .doc-newspaper .tab-content .img-float-clear + p.img-right + p {
+  margin-top: 0;
+}
+
+#workskin .doc-newspaper .tab-content .img-float-clear {
   clear: both;
 }
 
@@ -2315,6 +2413,35 @@
 #workskin .doc-diary .tab-content p.tab-section {
   font-size: 15px;
   color: #00807c;
+}
+
+/* Images */
+
+#workskin .doc-diary .tab-content > p.img-left,
+#workskin .doc-diary .tab-content > p.img-right {
+  margin: 0;
+}
+
+#workskin .doc-diary .tab-content > p.img-left img {
+  width: 40%;
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .doc-diary .tab-content > p.img-right img {
+  width: 30%;
+  margin-left: 10px;
+  float: right;
+}
+
+#workskin .doc-diary .tab-content .img-float-clear + p:not(#workskin .img-left, #workskin .img-right),
+#workskin .doc-diary .tab-content .img-float-clear + p.img-left + p,
+#workskin .doc-diary .tab-content .img-float-clear + p.img-right + p {
+  margin-top: 0;
+}
+
+#workskin .doc-diary .tab-content .img-float-clear {
+  clear: both;
 }
 
 /* Accent colors */
@@ -2818,6 +2945,35 @@
 
 #workskin .doc-book .tab-content p.tab-section {
   font-size: 16px;
+}
+
+/* Images */
+
+#workskin .doc-book .tab-content > p.img-left,
+#workskin .doc-book .tab-content > p.img-right {
+  margin: 0;
+}
+
+#workskin .doc-book .tab-content > p.img-left img {
+  width: 40%;
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .doc-book .tab-content > p.img-right img {
+  width: 30%;
+  margin-left: 10px;
+  float: right;
+}
+
+#workskin .doc-book .tab-content .img-float-clear + p:not(#workskin .img-left, #workskin .img-right),
+#workskin .doc-book .tab-content .img-float-clear + p.img-left + p,
+#workskin .doc-book .tab-content .img-float-clear + p.img-right + p {
+  margin-top: 0;
+}
+
+#workskin .doc-book .tab-content .img-float-clear {
+  clear: both;
 }
 
 /* Accent colors */
