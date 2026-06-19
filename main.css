@@ -225,7 +225,7 @@
      <p class="book-title">Title of the Book</p>
      <div class="book-content">
        <p class="book-img-left">
-         <img src="img-url-here">
+         <img width="40%" src="img-url-here">
        </p>
        <p>First paragraph here.</p>
        <p>Another paragraph here.</p>
@@ -386,13 +386,13 @@
        <p class="newspaper-title">THE DAILY PROPHET</p>
      </div>
      <div class="newspaper-content">
-       <p class="newspaper-img newspaper-img-left">
-         <img src="img-url-here">
+       <p class="newspaper-img-left">
+         <img width="40%" src="img-url-here">
        </p>
        <p>First paragraph here.</p>
        <div class="img-float-clear"></div>
        <p class="newspaper-img-right">
-         <img src="img-url-here">
+         <img width="30%" src="img-url-here">
        </p>
        <p>Another paragraph here.</p>
        <div class="img-float-clear"></div>
