@@ -164,8 +164,9 @@
   line-height: 1.3em;
 }
 
-#workskin .book-content > p:not(.book-img-wrapper):first-of-type,
-#workskin .book-content > p.book-img-wrapper:first-of-type + p {
+#workskin .book-content > p:not(#workskin .book-img-left, #workskin .book-img-right):first-of-type,
+#workskin .book-content > p.book-img-left:first-of-type + p,
+#workskin .book-content > p.book-img-right:first-of-type + p {
   margin-top: 0;
 }
 
@@ -223,7 +224,7 @@
    <div class="book">
      <p class="book-title">Title of the Book</p>
      <div class="book-content">
-       <p class="book-img-wrapper book-img-left">
+       <p class="book-img-left">
          <img src="img-url-here">
        </p>
        <p>First paragraph here.</p>
@@ -234,35 +235,28 @@
    </div>
    ============================================================ */
 
-#workskin .book-content > p.book-img-wrapper {
-  position: relative;
-  overflow: hidden;
+#workskin .book-content > p.book-img-left,
+#workskin .book-content > p.book-img-right {
+  margin: 0;
   filter: brightness(0.8);
 }
 
-#workskin .book-content > p.book-img-left {
+#workskin .book-content > p.book-img-left img {
   width: 40%;
-  padding-bottom: 25%;
-  margin: 0 10px 0 0;
+  margin-right: 10px;
   float: left;
 }
 
-#workskin .book-content > p.book-img-right {
+#workskin .book-content > p.book-img-right img {
   width: 40%;
-  padding-bottom: 25%;
-  margin: 0 0 0 10px;
+  margin-left: 10px;
   float: right;
 }
 
-#workskin .book-content > p.book-img-wrapper img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
+#workskin .book-content .img-float-clear + p:not(#workskin .book-img-left, #workskin .book-img-right),
+#workskin .book-content .img-float-clear + p.book-img-left + p,
+#workskin .book-content .img-float-clear + p.book-img-right + p {
+  margin-top: 0;
 }
 
 #workskin .img-float-clear {
@@ -358,8 +352,9 @@
   text-align: justify;
 }
 
-#workskin .newspaper-content > p:not(.newspaper-img-wrapper):first-of-type,
-#workskin .newspaper-content > p.newspaper-img-wrapper:first-of-type + p {
+#workskin .newspaper-content > p:not(#workskin .newspaper-img-left, #workskin .newspaper-img-right):first-of-type,
+#workskin .newspaper-content > p.newspaper-img-left:first-of-type + p,
+#workskin .newspaper-content > p.newspaper-img-right:first-of-type + p {
   margin-top: 0;
 }
 
@@ -399,7 +394,7 @@
        </p>
        <p>First paragraph here.</p>
        <div class="img-float-clear"></div>
-       <p class="newspaper-img-wrapper newspaper-img-right">
+       <p class="newspaper-img-right">
          <img src="img-url-here">
        </p>
        <p>Another paragraph here.</p>
@@ -410,40 +405,28 @@
    </div>
    ============================================================ */
 
-#workskin .newspaper-content > p.newspaper-img-wrapper {
-  position: relative;
-  overflow: hidden;
+#workskin .newspaper-content > p.newspaper-img-left,
+#workskin .newspaper-content > p.newspaper-img-right {
+  margin: 0;
   filter: sepia(1);
 }
 
-#workskin .newspaper-content > p.newspaper-img-left {
+#workskin .newspaper-content > p.newspaper-img-left img {
   width: 40%;
-  padding-bottom: 25%;
-  margin: 0 10px 0 0;
+  margin-right: 10px;
   float: left;
 }
 
-#workskin .newspaper-content > p.newspaper-img-right {
+#workskin .newspaper-content > p.newspaper-img-right img {
   width: 30%;
-  padding-bottom: 20%;
-  margin: 0 0 0 10px;
+  margin-left: 10px;
   float: right;
 }
 
-#workskin .newspaper-content > p.newspaper-img-wrapper img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-}
-
-#workskin .newspaper-content:has(.img-float-clear) .newspaper-float-left + p,
-#workskin .newspaper-content:has(.img-float-clear) .newspaper-float-right + p {
-	margin-top: 0;
+#workskin .newspaper-content .img-float-clear + p:not(#workskin .newspaper-img-left, #workskin .newspaper-img-right),
+#workskin .newspaper-content .img-float-clear + p.newspaper-img-left + p,
+#workskin .newspaper-content .img-float-clear + p.newspaper-img-right + p {
+  margin-top: 0;
 }
 
 #workskin .img-float-clear {
