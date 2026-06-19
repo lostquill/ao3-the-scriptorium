@@ -164,7 +164,8 @@
   line-height: 1.3em;
 }
 
-#workskin .book-content p:first-of-type {
+#workskin .book-content > p:not(.book-img-wrapper):first-of-type,
+#workskin .book-content > p.book-img-wrapper:first-of-type + p {
   margin-top: 0;
 }
 
@@ -214,17 +215,17 @@
 
 
 /* ============================================================
-   BOOK — IMAGE
-   An optional decorative image block to place inside .book.
+   BOOK — IMAGES
+   Optional decorative image blocks to place inside .book.
    No need to add #workskin .img-float-clear again if already included via newspaper image css.
    
    Example:
    <div class="book">
      <p class="book-title">Title of the Book</p>
      <div class="book-content">
-       <div class="cover-float">
-         <div class="cover-book-img"></div>
-       </div>
+       <p class="book-img-wrapper book-img-left">
+         <img src="img-url-here">
+       </p>
        <p>First paragraph here.</p>
        <p>Another paragraph here.</p>
        <div class="img-float-clear"></div>
@@ -233,17 +234,35 @@
    </div>
    ============================================================ */
 
-#workskin .cover-float {
+#workskin .book-content > p.book-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  filter: brightness(0.8);
+}
+
+#workskin .book-content > p.book-img-left {
   width: 40%;
+  padding-bottom: 25%;
   margin: 0 10px 0 0;
   float: left;
 }
 
-#workskin .cover-book-img {
-  padding-bottom: 59%;
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif") center center;
-  background-size: cover;
-  filter: brightness(0.8);
+#workskin .book-content > p.book-img-right {
+  width: 40%;
+  padding-bottom: 25%;
+  margin: 0 0 0 10px;
+  float: right;
+}
+
+#workskin .book-content > p.book-img-wrapper img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
 }
 
 #workskin .img-float-clear {
@@ -339,7 +358,8 @@
   text-align: justify;
 }
 
-#workskin .newspaper-content p:first-of-type {
+#workskin .newspaper-content > p:not(.newspaper-img-wrapper):first-of-type,
+#workskin .newspaper-content > p.newspaper-img-wrapper:first-of-type + p {
   margin-top: 0;
 }
 
@@ -374,14 +394,14 @@
        <p class="newspaper-title">THE DAILY PROPHET</p>
      </div>
      <div class="newspaper-content">
-       <div class="newspaper-float-left">
-         <div class="newspaper-img-left"></div>
-       </div>
+       <p class="newspaper-img newspaper-img-left">
+         <img src="img-url-here">
+       </p>
        <p>First paragraph here.</p>
        <div class="img-float-clear"></div>
-       <div class="newspaper-float-right">
-         <div class="newspaper-img-right"></div>
-       </div>
+       <p class="newspaper-img-wrapper newspaper-img-right">
+         <img src="img-url-here">
+       </p>
        <p>Another paragraph here.</p>
        <div class="img-float-clear"></div>
      </div>
@@ -390,33 +410,35 @@
    </div>
    ============================================================ */
 
-#workskin .newspaper-float-left {
+#workskin .newspaper-content > p.newspaper-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  filter: sepia(1);
+}
+
+#workskin .newspaper-content > p.newspaper-img-left {
   width: 40%;
+  padding-bottom: 25%;
   margin: 0 10px 0 0;
   float: left;
 }
 
-#workskin .newspaper-float-right {
+#workskin .newspaper-content > p.newspaper-img-right {
   width: 30%;
+  padding-bottom: 20%;
   margin: 0 0 0 10px;
   float: right;
 }
 
-#workskin .newspaper-img-left,
-#workskin .newspaper-img-right {
-  filter: sepia(1);
-}
-
-#workskin .newspaper-img-left {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-image.jpg") center center;
-  background-size: cover;
-  padding-bottom: 59%;
-}
-
-#workskin .newspaper-img-right {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-image.jpg") center center;
-  background-size: cover;
-  padding-bottom: 69%;
+#workskin .newspaper-content > p.newspaper-img-wrapper img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
 }
 
 #workskin .newspaper-content:has(.img-float-clear) .newspaper-float-left + p,
