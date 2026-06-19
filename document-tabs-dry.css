@@ -870,7 +870,7 @@
 /* Images */
 
 #workskin .doc-folders .tab-content > p:has(img) {
-  filter: greyscale(0.8);
+  filter: grayscale(0.8);
 }
 
 /* <hr> separator */
