@@ -589,22 +589,6 @@
   font-size: 16px;
 }
 
-/* Images */
-
-#workskin .doc-codex .tab-content > p:has(img) {
-  margin: 0;
-}
-
-#workskin .doc-codex .tab-content > p.img-left img {
-  margin-right: 10px;
-  float: left;
-}
-
-#workskin .doc-codex .tab-content > p.img-right img {
-  margin-left: 10px;
-  float: right;
-}
-
 /* Accent colors */
 
 #workskin .doc-codex .accent {
