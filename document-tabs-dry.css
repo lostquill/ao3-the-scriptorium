@@ -343,6 +343,18 @@
   color: #a96525;
 }
 
+/* Images */
+
+#workskin .tab-content .img-float-clear + p:not(#workskin .img-left, #workskin .img-right),
+#workskin .tab-content .img-float-clear + p.img-left + p,
+#workskin .tab-content .img-float-clear + p.img-right + p {
+  margin-top: 0;
+}
+
+#workskin .tab-content .img-float-clear {
+  clear: both;
+}
+
 
 /* ------------------------------------------------------------
    BIGGER MODIFIER
@@ -561,6 +573,25 @@
 
 #workskin .doc-codex .tab-content p.tab-section {
   font-size: 16px;
+}
+
+/* Images */
+
+#workskin .doc-codex .tab-content > p.img-left,
+#workskin .doc-codex .tab-content > p.img-right {
+  margin: 0;
+}
+
+#workskin .doc-codex .tab-content > p.img-left img {
+  width: 40%;
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .doc-codex .tab-content > p.img-right img {
+  width: 30%;
+  margin-left: 10px;
+  float: right;
 }
 
 /* Accent colors */
@@ -839,6 +870,25 @@
   border-bottom: 1px dashed #868686;
 }
 
+/* Images */
+
+#workskin .doc-folders .tab-content > p.img-left,
+#workskin .doc-folders .tab-content > p.img-right {
+  margin: 0;
+}
+
+#workskin .doc-folders .tab-content > p.img-left img {
+  width: 40%;
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .doc-folders .tab-content > p.img-right img {
+  width: 30%;
+  margin-left: 10px;
+  float: right;
+}
+
 /* Accent colors */
 
 #workskin .doc-folders .accent {
@@ -1109,6 +1159,25 @@
 
 #workskin .doc-folio .tab-content p.tab-section {
   font-size: 20px;
+}
+
+/* Images */
+
+#workskin .doc-folio .tab-content > p.img-left,
+#workskin .doc-folio .tab-content > p.img-right {
+  margin: 0;
+}
+
+#workskin .doc-folio .tab-content > p.img-left img {
+  width: 40%;
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .doc-folio .tab-content > p.img-right img {
+  width: 30%;
+  margin-left: 10px;
+  float: right;
 }
 
 /* Accent colors */
@@ -1422,21 +1491,22 @@
 
 /* Images */
 
-#workskin .doc-newspaper-float-left {
+#workskin .doc-newspaper .tab-content > p.img-left,
+#workskin .doc-newspaper .tab-content > p.img-right {
+  margin: 0;
+  filter: saturate(0.6);
+}
+
+#workskin .doc-newspaper .tab-content > p.img-left img {
   width: 40%;
-  margin: 0 10px 0 0;
+  margin-right: 10px;
   float: left;
 }
 
-#workskin .doc-newspaper-img-left {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-image.jpg") center center;
-  background-size: cover;
-  padding-bottom: 63%;
-  filter: saturate(0.6)
-}
-
-#workskin .img-float-clear {
-  clear: both;
+#workskin .doc-newspaper .tab-content > p.img-right img {
+  width: 30%;
+  margin-left: 10px;
+  float: right;
 }
 
 /* Accent colors */
@@ -1716,6 +1786,25 @@
 #workskin .doc-diary .tab-content p.tab-section {
   font-size: 15px;
   color: #00807c;
+}
+
+/* Images */
+
+#workskin .doc-diary .tab-content > p.img-left,
+#workskin .doc-diary .tab-content > p.img-right {
+  margin: 0;
+}
+
+#workskin .doc-diary .tab-content > p.img-left img {
+  width: 40%;
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .doc-diary .tab-content > p.img-right img {
+  width: 30%;
+  margin-left: 10px;
+  float: right;
 }
 
 /* Accent colors */
@@ -2020,6 +2109,25 @@
 
 #workskin .doc-book .tab-content p.tab-section {
   font-size: 16px;
+}
+
+/* Images */
+
+#workskin .doc-book .tab-content > p.img-left,
+#workskin .doc-book .tab-content > p.img-right {
+  margin: 0;
+}
+
+#workskin .doc-book .tab-content > p.img-left img {
+  width: 40%;
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .doc-book .tab-content > p.img-right img {
+  width: 30%;
+  margin-left: 10px;
+  float: right;
 }
 
 /* Accent colors */
