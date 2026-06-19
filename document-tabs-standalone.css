@@ -929,6 +929,7 @@
 
 #workskin .doc-folders .tab-content > p:has(img) {
   margin: 0;
+  filter: greyscale(0.8);
 }
 
 #workskin .doc-folders .tab-content > p.img-left img {
