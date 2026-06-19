@@ -432,24 +432,21 @@
 
 /* Images */
 
-#workskin .doc-codex .tab-content > p.img-left,
-#workskin .doc-codex .tab-content > p.img-right {
+#workskin .doc-codex .tab-content > p:has(img) {
   margin: 0;
 }
 
 #workskin .doc-codex .tab-content > p.img-left img {
-  width: 40%;
   margin-right: 10px;
   float: left;
 }
 
 #workskin .doc-codex .tab-content > p.img-right img {
-  width: 30%;
   margin-left: 10px;
   float: right;
 }
 
-#workskin .doc-codex .tab-content .img-float-clear + p:not(#workskin .img-left, #workskin .img-right),
+#workskin .doc-codex .tab-content .img-float-clear + p,
 #workskin .doc-codex .tab-content .img-float-clear + p.img-left + p,
 #workskin .doc-codex .tab-content .img-float-clear + p.img-right + p {
   margin-top: 0;
@@ -930,24 +927,21 @@
 
 /* Images */
 
-#workskin .doc-folders .tab-content > p.img-left,
-#workskin .doc-folders .tab-content > p.img-right {
+#workskin .doc-folders .tab-content > p:has(img) {
   margin: 0;
 }
 
 #workskin .doc-folders .tab-content > p.img-left img {
-  width: 40%;
   margin-right: 10px;
   float: left;
 }
 
 #workskin .doc-folders .tab-content > p.img-right img {
-  width: 30%;
   margin-left: 10px;
   float: right;
 }
 
-#workskin .doc-folders .tab-content .img-float-clear + p:not(#workskin .img-left, #workskin .img-right),
+#workskin .doc-folders .tab-content .img-float-clear + p,
 #workskin .doc-folders .tab-content .img-float-clear + p.img-left + p,
 #workskin .doc-folders .tab-content .img-float-clear + p.img-right + p {
   margin-top: 0;
@@ -1407,24 +1401,21 @@
 
 /* Images */
 
-#workskin .doc-folio .tab-content > p.img-left,
-#workskin .doc-folio .tab-content > p.img-right {
+#workskin .doc-folio .tab-content > p:has(img) {
   margin: 0;
 }
 
 #workskin .doc-folio .tab-content > p.img-left img {
-  width: 40%;
   margin-right: 10px;
   float: left;
 }
 
 #workskin .doc-folio .tab-content > p.img-right img {
-  width: 30%;
   margin-left: 10px;
   float: right;
 }
 
-#workskin .doc-folio .tab-content .img-float-clear + p:not(#workskin .img-left, #workskin .img-right),
+#workskin .doc-folio .tab-content .img-float-clear + p,
 #workskin .doc-folio .tab-content .img-float-clear + p.img-left + p,
 #workskin .doc-folio .tab-content .img-float-clear + p.img-right + p {
   margin-top: 0;
@@ -1915,25 +1906,22 @@
 
 /* Images */
 
-#workskin .doc-newspaper .tab-content > p.img-left,
-#workskin .doc-newspaper .tab-content > p.img-right {
+#workskin .doc-newspaper .tab-content > p:has(img) {
   margin: 0;
   filter: saturate(0.6);
 }
 
 #workskin .doc-newspaper .tab-content > p.img-left img {
-  width: 40%;
   margin-right: 10px;
   float: left;
 }
 
 #workskin .doc-newspaper .tab-content > p.img-right img {
-  width: 30%;
   margin-left: 10px;
   float: right;
 }
 
-#workskin .doc-newspaper .tab-content .img-float-clear + p:not(#workskin .img-left, #workskin .img-right),
+#workskin .doc-newspaper .tab-content .img-float-clear + p,
 #workskin .doc-newspaper .tab-content .img-float-clear + p.img-left + p,
 #workskin .doc-newspaper .tab-content .img-float-clear + p.img-right + p {
   margin-top: 0;
@@ -2417,24 +2405,21 @@
 
 /* Images */
 
-#workskin .doc-diary .tab-content > p.img-left,
-#workskin .doc-diary .tab-content > p.img-right {
+#workskin .doc-diary .tab-content > p:has(img) {
   margin: 0;
 }
 
 #workskin .doc-diary .tab-content > p.img-left img {
-  width: 40%;
   margin-right: 10px;
   float: left;
 }
 
 #workskin .doc-diary .tab-content > p.img-right img {
-  width: 30%;
   margin-left: 10px;
   float: right;
 }
 
-#workskin .doc-diary .tab-content .img-float-clear + p:not(#workskin .img-left, #workskin .img-right),
+#workskin .doc-diary .tab-content .img-float-clear + p,
 #workskin .doc-diary .tab-content .img-float-clear + p.img-left + p,
 #workskin .doc-diary .tab-content .img-float-clear + p.img-right + p {
   margin-top: 0;
@@ -2949,24 +2934,21 @@
 
 /* Images */
 
-#workskin .doc-book .tab-content > p.img-left,
-#workskin .doc-book .tab-content > p.img-right {
+#workskin .doc-book .tab-content > p:has(img) {
   margin: 0;
 }
 
 #workskin .doc-book .tab-content > p.img-left img {
-  width: 40%;
   margin-right: 10px;
   float: left;
 }
 
 #workskin .doc-book .tab-content > p.img-right img {
-  width: 30%;
   margin-left: 10px;
   float: right;
 }
 
-#workskin .doc-book .tab-content .img-float-clear + p:not(#workskin .img-left, #workskin .img-right),
+#workskin .doc-book .tab-content .img-float-clear + p,
 #workskin .doc-book .tab-content .img-float-clear + p.img-left + p,
 #workskin .doc-book .tab-content .img-float-clear + p.img-right + p {
   margin-top: 0;
