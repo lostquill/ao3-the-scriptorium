@@ -343,6 +343,32 @@
   color: #a96525;
 }
 
+/* Images */
+
+#workskin .tab-content > p:has(img) {
+  margin: 0;
+}
+
+#workskin .tab-content > p.img-left img {
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .tab-content > p.img-right img {
+  margin-left: 10px;
+  float: right;
+}
+
+#workskin .tab-content .img-float-clear + p,
+#workskin .tab-content .img-float-clear + p.img-left + p,
+#workskin .tab-content .img-float-clear + p.img-right + p {
+  margin-top: 0;
+}
+
+#workskin .tab-content .img-float-clear {
+  clear: both;
+}
+
 
 /* ------------------------------------------------------------
    BIGGER MODIFIER
@@ -561,32 +587,6 @@
 
 #workskin .doc-codex .tab-content p.tab-section {
   font-size: 16px;
-}
-
-/* Images */
-
-#workskin .tab-content > p:has(img) {
-  margin: 0;
-}
-
-#workskin .tab-content > p.img-left img {
-  margin-right: 10px;
-  float: left;
-}
-
-#workskin .tab-content > p.img-right img {
-  margin-left: 10px;
-  float: right;
-}
-
-#workskin .tab-content .img-float-clear + p,
-#workskin .tab-content .img-float-clear + p.img-left + p,
-#workskin .tab-content .img-float-clear + p.img-right + p {
-  margin-top: 0;
-}
-
-#workskin .tab-content .img-float-clear {
-  clear: both;
 }
 
 /* Accent colors */
