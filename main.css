@@ -164,7 +164,7 @@
   line-height: 1.3em;
 }
 
-#workskin .book-content > p:not(#workskin .book-img-left, #workskin .book-img-right):first-of-type,
+#workskin .book-content > p:first-of-type,
 #workskin .book-content > p.book-img-left:first-of-type + p,
 #workskin .book-content > p.book-img-right:first-of-type + p {
   margin-top: 0;
@@ -235,25 +235,22 @@
    </div>
    ============================================================ */
 
-#workskin .book-content > p.book-img-left,
-#workskin .book-content > p.book-img-right {
+#workskin .book-content > p:has(img) {
   margin: 0;
   filter: brightness(0.8);
 }
 
 #workskin .book-content > p.book-img-left img {
-  width: 40%;
   margin-right: 10px;
   float: left;
 }
 
 #workskin .book-content > p.book-img-right img {
-  width: 40%;
   margin-left: 10px;
   float: right;
 }
 
-#workskin .book-content .img-float-clear + p:not(#workskin .book-img-left, #workskin .book-img-right),
+#workskin .book-content .img-float-clear + p,
 #workskin .book-content .img-float-clear + p.book-img-left + p,
 #workskin .book-content .img-float-clear + p.book-img-right + p {
   margin-top: 0;
@@ -352,7 +349,7 @@
   text-align: justify;
 }
 
-#workskin .newspaper-content > p:not(#workskin .newspaper-img-left, #workskin .newspaper-img-right):first-of-type,
+#workskin .newspaper-content > p:first-of-type,
 #workskin .newspaper-content > p.newspaper-img-left:first-of-type + p,
 #workskin .newspaper-content > p.newspaper-img-right:first-of-type + p {
   margin-top: 0;
@@ -405,25 +402,22 @@
    </div>
    ============================================================ */
 
-#workskin .newspaper-content > p.newspaper-img-left,
-#workskin .newspaper-content > p.newspaper-img-right {
+#workskin .newspaper-content > p:has(img) {
   margin: 0;
   filter: sepia(1);
 }
 
 #workskin .newspaper-content > p.newspaper-img-left img {
-  width: 40%;
   margin-right: 10px;
   float: left;
 }
 
 #workskin .newspaper-content > p.newspaper-img-right img {
-  width: 30%;
   margin-left: 10px;
   float: right;
 }
 
-#workskin .newspaper-content .img-float-clear + p:not(#workskin .newspaper-img-left, #workskin .newspaper-img-right),
+#workskin .newspaper-content .img-float-clear + p,
 #workskin .newspaper-content .img-float-clear + p.newspaper-img-left + p,
 #workskin .newspaper-content .img-float-clear + p.newspaper-img-right + p {
   margin-top: 0;
