@@ -1,13 +1,16 @@
 /* ============================================================
-   DOCUMENT TABS
+   DOCUMENT TABS — DRY VERSION (MODULAR & CENTRALIZED)
+   
+   Features shared base classes with specific overrides per variant.
+   Best if you want to install all variants at once and switch easily.
 
-   Six visual variants: .doc-folders, .doc-codex, .doc-folio,
+   Six visual variants: .doc-codex, .doc-folders, .doc-folio,
                         .doc-newspaper, .doc-diary, .doc-book;
 
    Optional modifier: .bigger (larger dimensions)
 
    Basic structure with folders:
-   <div class="doc-container folders">
+   <div class="doc-container doc-folders">
 
      <!-- DOC COVER START -->
      <div class="doc-cover">
@@ -75,7 +78,7 @@
 
 /* ============================================================
    1.  BASE CLASSES
-   bla bla bla Commun à tous les components
+   Shared by most components unless overriden.
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -160,7 +163,6 @@
 /* Title */
 
 #workskin .doc-headline p.doc-title {
-  position: relative;
   padding-bottom: 15px;
   padding-inline: 10px;
   font-size: 23px;
@@ -315,18 +317,52 @@
   background-attachment: local;
 }
 
-/* Drop cap — applied automatically to the first paragraph in .doc-codex .tab-content
-   that is not a title or section header, or manually via .initial on any paragraph. */
-#workskin .initial::first-letter,
-#workskin .doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
+/* Drop cap — applied automatically to the first paragraph in .doc-codex .tab-content and .doc-book .tab-content
+   that is not a title or section header, or manually via .initial on any paragraph of these components. */
+#workskin .doc-codex .initial::first-letter,
+#workskin .doc-book .initial::first-letter,
+#workskin .doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter,
+#workskin .doc-book .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
   font-family: 'Georgia', serif;
   font-weight: bold;
+  font-style: italic;
   font-size: 3.5rem;
   float: left;
   line-height: 1;
   margin-top: 2px;
   margin-right: 8px;
+}
+
+#workskin .doc-codex .initial::first-letter,
+#workskin .doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
   color: #616acc;
+}
+
+#workskin .doc-book .initial::first-letter,
+#workskin .doc-book .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
+  color: #a96525;
+}
+
+/* Images */
+
+#workskin .tab-content > p.img-left img {
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .tab-content > p.img-right img {
+  margin-left: 10px;
+  float: right;
+}
+
+#workskin .tab-content .img-float-clear + p,
+#workskin .tab-content .img-float-clear + p.img-left + p,
+#workskin .tab-content .img-float-clear + p.img-right + p {
+  margin-top: 0;
+}
+
+#workskin .tab-content .img-float-clear {
+  clear: both;
 }
 
 
@@ -335,7 +371,7 @@
    Add .bigger to .doc-container to switch to larger dimensions.
    All overrides for .bigger are grouped here.
 
-   Example: <div class="doc-container folders bigger">
+   Example: <div class="doc-container doc-folders bigger">
    ------------------------------------------------------------ */
 
 /* Container — Outer wrapper, cover and panels dimensions. */
@@ -374,8 +410,10 @@
 
 /* Tab content — Font size */
 
-#workskin .bigger .initial::first-letter,
-#workskin .bigger.doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
+#workskin .bigger.doc-codex .initial::first-letter,
+#workskin .bigger.doc-book .initial::first-letter,
+#workskin .bigger.doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter,
+#workskin .bigger.doc-book .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
   font-size: 4rem;
 }
 
@@ -386,11 +424,10 @@
 
 /* ------------------------------------------------------------
    SCROLLBAR
-   Per variant.
    ------------------------------------------------------------ */
 
 #workskin .doc-codex * {
-    scrollbar-color: #808297 transparent;
+  scrollbar-color: #808297 transparent;
 }
 
 
@@ -437,7 +474,6 @@
 /* ------------------------------------------------------------
    COVER — HEADLINE
    Title and subtitle block displayed on the cover image.
-   Typography varies per variant.
    ------------------------------------------------------------ */
 
 /* Headline */
@@ -452,6 +488,7 @@
 #workskin .doc-codex .doc-headline p.doc-title {
   font-variant: small-caps;
 }
+
 
 /* ------------------------------------------------------------
    TAB BUTTON IMAGES
@@ -661,7 +698,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-folders * {
-    scrollbar-color: #776d64 transparent;
+  scrollbar-color: #776d64 transparent;
 }
 
 
@@ -830,6 +867,12 @@
   color: #bd0000; /* red */
 }
 
+/* Images */
+
+#workskin .doc-folders .tab-content > p:has(img) {
+  filter: grayscale(0.8);
+}
+
 /* <hr> separator */
 
 #workskin .doc-folders .doc-headline .doc-title-separator,
@@ -855,7 +898,7 @@
    Add .bigger to .doc-container to switch to larger dimensions.
    All overrides for .bigger are grouped here.
 
-   Example: <div class="doc-container folders bigger">
+   Example: <div class="doc-container doc-folders bigger">
    ------------------------------------------------------------ */
 
 /* Cover — Padding */
@@ -911,7 +954,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-folio * {
-    scrollbar-color: #76675b transparent;
+  scrollbar-color: #76675b transparent;
 }
 
 
@@ -984,7 +1027,7 @@
 }
 
 
-/* ============================================================
+/* ------------------------------------------------------------
    TAB BUTTON IMAGES
    Default image shared by all tabs. Override per tab using
    :nth-child(N) to assign a different image to each category.
@@ -1154,7 +1197,7 @@
    Add .bigger to .doc-container to switch to larger dimensions.
    All overrides for .bigger are grouped here.
 
-   Example: <div class="doc-container folders bigger">
+   Example: <div class="doc-container doc-folio bigger">
    ------------------------------------------------------------ */
 
 /* Container — Outer wrapper, cover and panels dimensions. */
@@ -1187,6 +1230,7 @@
 #workskin .bigger.doc-folio .tab-label p {
   font-size: 13px;
 }
+
 
 /* Tab button images — add per-tab overrides here, one entry per tab:
    .tab:nth-child(1) for the first button, .tab:nth-child(2) for the second button, and so on.
@@ -1222,7 +1266,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-newspaper * {
-    scrollbar-color: #76675b transparent;
+  scrollbar-color: #76675b transparent;
 }
 
 
@@ -1292,7 +1336,7 @@
 }
 
 
-/* ============================================================
+/* ------------------------------------------------------------
    TAB BUTTON IMAGES
    Default image shared by all tabs. Override per tab using
    :nth-child(N) to assign a different image to each category.
@@ -1406,21 +1450,8 @@
 
 /* Images */
 
-#workskin .doc-newspaper-float-left {
-  width: 40%;
-  margin: 0 10px 0 0;
-  float: left;
-}
-
-#workskin .doc-newspaper-img-left {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-image.jpg") center center;
-  background-size: cover;
-  padding-bottom: 63%;
-  filter: saturate(0.6)
-}
-
-#workskin .img-float-clear {
-  clear: both;
+#workskin .doc-newspaper .tab-content > p:has(img) {
+  filter: saturate(0.6);
 }
 
 /* Accent colors */
@@ -1473,7 +1504,7 @@
 
 /* Tab labels */
 
-#workskin .bigger.doc-newspapers .tab-label p {
+#workskin .bigger.doc-newspaper .tab-label p {
   font-size: 13px;
 }
 
@@ -1503,7 +1534,7 @@
 
 
 /* ============================================================
-   DIARY
+   6.  DIARY
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -1511,7 +1542,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-diary * {
-    scrollbar-color: #cfd5df transparent;
+  scrollbar-color: #cfd5df transparent;
 }
 
 
@@ -1578,7 +1609,7 @@
 }
 
 
-/* ============================================================
+/* ------------------------------------------------------------
    TAB BUTTON IMAGES
    Default image shared by all tabs. Override per tab using
    :nth-child(N) to assign a different image to each category.
@@ -1639,7 +1670,7 @@
 #workskin .doc-diary .tab-label p {
   font-family: "Lucida Handwriting", "Comic Sans MS", cursive;
   font-size: 12px;
-  color: black;
+  color: #0f0f3e;
 }
 
 #workskin .doc-diary .tab-label .red {
@@ -1724,9 +1755,9 @@
 }
 
 #workskin .doc-diary .tab-content hr {
-    margin-inline: auto;
-    margin-top: 17px;
-    margin-bottom: 3px;
+  margin-inline: auto;
+  margin-top: 17px;
+  margin-bottom: 3px;
 }
 
 
@@ -1760,7 +1791,7 @@
 }
 
 #workskin .bigger.doc-diary .doc-headline p {
-  width: 330px;
+  width: 315px;
 }
 
 #workskin .bigger.doc-diary .doc-headline p,
@@ -1827,7 +1858,7 @@
 
 
 /* ============================================================
-   BOOK
+   7.  BOOK
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -1835,7 +1866,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-book * {
-    scrollbar-color: #76675b transparent;
+  scrollbar-color: #76675b transparent;
 }
 
 
@@ -1891,6 +1922,12 @@
   color: #d8c8af;
 }
 
+/* Title */
+
+#workskin .doc-book .doc-headline p.doc-title {
+  font-variant: small-caps;
+}
+
 
 /* ------------------------------------------------------------
    TAB — BUTTON
@@ -1906,7 +1943,7 @@
 }
 
 
-/* ============================================================
+/* ------------------------------------------------------------
    TAB BUTTON IMAGES
    Default image shared by all tabs. Override per tab using
    :nth-child(N) to assign a different image to each category.
@@ -1984,7 +2021,6 @@
 #workskin .doc-book .tab-content p {
   font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
   color: #2e2416;
-  font-style: italic;
   text-align: justify;
   font-size: 14px;
   line-height: 20px;
@@ -2004,12 +2040,53 @@
 /* Accent colors */
 
 #workskin .doc-book .accent {
-  color: #616acc; /* blue */
+  color: #cfbc64; /* yellow on cover */
+}
+
+#workskin .doc-book .tab-content .accent {
+  color: #a96525; /* darker on pages */
 }
 
 /* <hr> separator */
 
-/* CODEX SIMILAR */
+#workskin .doc-book .doc-headline .doc-title-separator,
+#workskin .doc-book .tab-content hr {
+  border: 0;
+  height: 1px;
+  background: #808080;
+  width: 70%;
+  position: relative;
+  overflow: visible;
+}
+
+#workskin .doc-book .doc-headline .doc-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .doc-book .tab-content hr {
+  margin: 30px auto;
+}
+
+#workskin .doc-book .doc-headline .doc-title-separator::after,
+#workskin .doc-book .tab-content hr::after {
+  content: "♦\FE0E";
+  display: inline-block;
+  position: absolute;
+  height: 0;
+  line-height: 0;
+  margin-top: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: transparent;
+  padding: 0 10px;
+  color: #cfbc64;
+  font-size: 14px;
+}
+
+#workskin .doc-book .tab-content hr::after {
+  color: #a96525;
+}
 
 
 /* ------------------------------------------------------------
@@ -2023,8 +2100,8 @@
 /* Container — Outer wrapper, cover and panels dimensions. */
 
 #workskin .bigger.doc-book .doc-cover {
-    border-image-outset: 8px;
-    border-image-width: 130px;
+  border-image-outset: 8px;
+  border-image-width: 130px;
 }
 
 /* Cover — Padding */

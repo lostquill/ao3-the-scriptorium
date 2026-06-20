@@ -9,8 +9,14 @@ A collection of CSS components for AO3 workskins: simple document-style formatti
 - **Book** — dark ornate book cover with decorative border, with an optional decorative image variant
 - **Newspaper** — sepia-toned newspaper layout, with an optional decorative image variant
 
-### document-tabs.css
-- **Document Tabs** — tabbed document viewer with a decorative cover panel and a sidebar of hoverable tabs revealing content panels. Six visual variants: `.doc-folders`, `.doc-codex`, `.doc-folio`, `.doc-newspaper`, `.doc-diary`, `.doc-book`. Optional `.bigger` modifier for larger dimensions.
+### document-tabs-dry.css
+- **Document Tabs (DRY Version)** — Tabbed document viewer optimized with shared base classes and specific style overrides for each component variant. This version is more practical if you want to install everything at once, giving you the flexibility to easily switch from one visual variant to another.
+
+### document-tabs-standalone.css
+- **Document Tabs (Standalone Version)** — Tabbed document viewer where each component variant is completely self-contained with its own specific rules (including repeated styles). This version offers greater customization since all the necessary classes are explicitly listed for each individual component. It is perfect if you only want to extract and use a single variant independently without any external dependencies.
+
+#### Document Tabs Variants & Modifiers
+Both files include six visual variants: `.doc-codex`, `.doc-folders`, `.doc-folio`, `.doc-newspaper`, `.doc-diary`, and `.doc-book`. They also feature an optional `.bigger` modifier for larger dimensions.
 
 Usage and HTML examples available on [AO3](https://archiveofourown.org/works/84721106).
 
@@ -22,7 +28,7 @@ The `assets/` folder contains the textures used by the workskin. All are free to
 - `confidential.png`: by [Uclean India](https://www.kindpng.com/userpngs/16619/) from [kindpng](https://www.kindpng.com/)
 - `doc-cover-newspaper.jpg`: by richard.stephenson from [Wallpapers.com](https://www.wallpapers.com/)
 - `doc-cover-diary.jpg`: inspired by [berely](https://www.canva.com/p/berely/)'s 'Cahier journal intime collage photo rétro rose et beige' from [Canva](https://www.canva.com/)
-- other elements generated with Gemini (if you prefer not to use AI-generated assets, you can swap them out: the CSS will work with any image with minor adjustments).
+- other elements generated with Gemini. If you prefer not to use AI-generated assets, you can swap them out: the CSS will work with any image with minor adjustments.
 
 ## License
 Free to use and adapt. Credit appreciated but not required.

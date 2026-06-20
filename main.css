@@ -72,44 +72,45 @@
    ============================================================ */
 
 #workskin .parchment-scroll {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
 	
-    width: 600px;
-    height: 435px;
-    overflow: hidden;
-    margin: 10px auto;
-    padding: 7em 5.3em;
+  width: 600px;
+  height: 435px;
+  overflow: hidden;
+  margin: 10px auto;
+  padding: 7em 5.3em;
 	
-    background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-scroll.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-scroll.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #workskin .parchment-scroll-content {
-    max-height: 200px;
-    padding-inline: 2em;
-    overflow: auto;
-    margin: auto;
+  max-height: 200px;
+  padding-inline: 2em;
+  overflow: auto;
+  margin: auto;
 }
 
 #workskin .parchment-scroll-content p {
-    color: black;
-    font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
-    font-style: italic;
+  color: black;
+  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  font-size: 18px;
+  line-height: 1.4;
+  font-style: italic;
 }
 
 
 /* ============================================================
-   BOOK
+   BOOK — BACK COVER
    A dark, ornate book cover with a decorative border.
-   Nest .parchment inside for inner pages with a lighter texture.
    Use .book-title for the title line inside the book.
    Use .book-edition for a smaller line at the bottom (e.g. edition, year).
    
-   Example (basic):
+   Example:
    <div class="book">
      <p class="book-title">Title of the Book</p>
       <div class="book-content">
@@ -117,18 +118,6 @@
         <p>Another paragraph here.</p>
       </div>
      <p class="book-edition">First Edition — 1998</p>
-   </div>
-   
-   Example (with inner parchment page):
-   <div class="book">
-     <div class="parchment">
-       <p class="book-title">Chapter One</p>
-       <div class="book-content">
-         <p>First paragraph here.</p>
-         <p>Another paragraph here.</p>
-       </div>
-       <p class="book-edition">First Edition — 1998</p>
-     </div>
    </div>
    ============================================================ */
 
@@ -164,10 +153,6 @@
   padding-bottom: 5px;
 }
 
-#workskin .parchment p.book-title {
-  text-shadow: none;
-}
-
 #workskin .book-content {
   padding: 5px;
   max-height: 500px;
@@ -179,7 +164,9 @@
   line-height: 1.3em;
 }
 
-#workskin .book-content p:first-of-type {
+#workskin .book-content > p:first-of-type,
+#workskin .book-content > p.book-img-left:first-of-type + p,
+#workskin .book-content > p.book-img-right:first-of-type + p {
   margin-top: 0;
 }
 
@@ -196,17 +183,50 @@
 
 
 /* ============================================================
-   BOOK — IMAGE VARIANT
-   An optional decorative image block to place inside .book.
+   BOOK — INNER PAGE
+   Nest .parchment inside for inner pages with a lighter texture.
+   
+   Example:
+   <div class="book">
+     <div class="parchment">
+       <p class="book-title">Chapter One</p>
+       <div class="book-content">
+         <p>First paragraph here.</p>
+         <p>Another paragraph here.</p>
+       </div>
+       <p class="book-edition">First Edition — 1998</p>
+     </div>
+   </div>
+   ============================================================ */
+
+#workskin .book .parchment {
+  max-width: 40em;
+  margin: auto;
+  color: black;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
+  padding: 1em 1.3em;
+  position: relative;
+  box-sizing: border-box;
+}
+
+#workskin .book .parchment p.book-title {
+  text-shadow: none;
+}
+
+
+/* ============================================================
+   BOOK — IMAGES
+   Optional decorative image blocks to place inside .book.
    No need to add #workskin .img-float-clear again if already included via newspaper image css.
    
    Example:
    <div class="book">
      <p class="book-title">Title of the Book</p>
      <div class="book-content">
-       <div class="cover-float">
-         <div class="cover-book-img"></div>
-       </div>
+       <p class="book-img-left">
+         <img width="40%" src="img-url-here">
+       </p>
        <p>First paragraph here.</p>
        <p>Another paragraph here.</p>
        <div class="img-float-clear"></div>
@@ -215,17 +235,25 @@
    </div>
    ============================================================ */
 
-#workskin .cover-float {
-  width: 40%;
-  margin: 0 10px 0 0;
+#workskin .book-content > p:has(img) {
+  margin: 0;
+  filter: brightness(0.8);
+}
+
+#workskin .book-content > p.book-img-left img {
+  margin-right: 10px;
   float: left;
 }
 
-#workskin .cover-book-img {
-  padding-bottom: 59%;
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif") center center;
-  background-size: cover;
-  filter: brightness(0.8);
+#workskin .book-content > p.book-img-right img {
+  margin-left: 10px;
+  float: right;
+}
+
+#workskin .book-content .img-float-clear + p,
+#workskin .book-content .img-float-clear + p.book-img-left + p,
+#workskin .book-content .img-float-clear + p.book-img-right + p {
+  margin-top: 0;
 }
 
 #workskin .img-float-clear {
@@ -321,7 +349,9 @@
   text-align: justify;
 }
 
-#workskin .newspaper-content p:first-of-type {
+#workskin .newspaper-content > p:first-of-type,
+#workskin .newspaper-content > p.newspaper-img-left:first-of-type + p,
+#workskin .newspaper-content > p.newspaper-img-right:first-of-type + p {
   margin-top: 0;
 }
 
@@ -345,7 +375,7 @@
 
 
 /* ============================================================
-   NEWSPAPER — IMAGE VARIANT
+   NEWSPAPER — IMAGES
    Optional decorative sepia image blocks to place inside .newspaper-content.
    No need to add #workskin .img-float-clear again if already included via book image css.
 
@@ -356,14 +386,14 @@
        <p class="newspaper-title">THE DAILY PROPHET</p>
      </div>
      <div class="newspaper-content">
-       <div class="newspaper-float-left">
-         <div class="newspaper-img-left"></div>
-       </div>
+       <p class="newspaper-img-left">
+         <img width="40%" src="img-url-here">
+       </p>
        <p>First paragraph here.</p>
        <div class="img-float-clear"></div>
-       <div class="newspaper-float-right">
-         <div class="newspaper-img-right"></div>
-       </div>
+       <p class="newspaper-img-right">
+         <img width="30%" src="img-url-here">
+       </p>
        <p>Another paragraph here.</p>
        <div class="img-float-clear"></div>
      </div>
@@ -372,38 +402,25 @@
    </div>
    ============================================================ */
 
-#workskin .newspaper-float-left {
-  width: 40%;
-  margin: 0 10px 0 0;
-  float: left;
-}
-
-#workskin .newspaper-float-right {
-  width: 30%;
-  margin: 0 0 0 10px;
-  float: right;
-}
-
-#workskin .newspaper-img-left,
-#workskin .newspaper-img-right {
+#workskin .newspaper-content > p:has(img) {
+  margin: 0;
   filter: sepia(1);
 }
 
-#workskin .newspaper-img-left {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-image.jpg") center center;
-  background-size: cover;
-  padding-bottom: 59%;
+#workskin .newspaper-content > p.newspaper-img-left img {
+  margin-right: 10px;
+  float: left;
 }
 
-#workskin .newspaper-img-right {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-image.jpg") center center;
-  background-size: cover;
-  padding-bottom: 69%;
+#workskin .newspaper-content > p.newspaper-img-right img {
+  margin-left: 10px;
+  float: right;
 }
 
-#workskin .newspaper-content:has(.img-float-clear) .newspaper-float-left + p,
-#workskin .newspaper-content:has(.img-float-clear) .newspaper-float-right + p {
-	margin-top: 0;
+#workskin .newspaper-content .img-float-clear + p,
+#workskin .newspaper-content .img-float-clear + p.newspaper-img-left + p,
+#workskin .newspaper-content .img-float-clear + p.newspaper-img-right + p {
+  margin-top: 0;
 }
 
 #workskin .img-float-clear {
