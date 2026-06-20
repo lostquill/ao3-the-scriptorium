@@ -355,7 +355,7 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL
-   Content panel revealed on tab hover.
+   Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
    of which tab is hovered. Hidden by sidebar overflow at rest.
@@ -373,7 +373,7 @@
   background-repeat: repeat;
   background-clip: content-box;
   
-  overflow: hidden;
+  overflow: auto;
   display: none;
 }
 
@@ -384,15 +384,14 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL CONTENT
-   Scrollable inner content area.
+   Inner content area.
    ------------------------------------------------------------ */
 
 #workskin .doc-codex .tab-content {
   width: 100%;
-  height: 100%;
   padding: 12px 14px;
-  overflow: auto;
   box-sizing: border-box;
+  position: relative;
 }
 
 /* Drop cap — applied automatically to the first paragraph in .doc-codex .tab-content
@@ -861,7 +860,7 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL
-   Content panel revealed on tab hover.
+   Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
    of which tab is hovered. Hidden by sidebar overflow at rest.
@@ -879,7 +878,7 @@
   background-repeat: repeat;
   background-clip: content-box;
   
-  overflow: hidden;
+  overflow: auto;
   display: none;
 }
 
@@ -890,15 +889,14 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL CONTENT
-   Scrollable inner content area.
+   Inner content area.
    ------------------------------------------------------------ */
 
 #workskin .doc-folders .tab-content {
   width: 100%;
-  height: 100%;
   padding: 12px 14px;
-  overflow: auto;
   box-sizing: border-box;
+  position: relative;
 }
 
 #workskin .doc-folders .tab-content p {
@@ -1331,7 +1329,7 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL
-   Content panel revealed on tab hover.
+   Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
    of which tab is hovered. Hidden by sidebar overflow at rest.
@@ -1349,7 +1347,7 @@
   background-repeat: repeat;
   background-clip: content-box;
   
-  overflow: hidden;
+  overflow: auto;
   display: none;
 }
 
@@ -1360,20 +1358,19 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL CONTENT
-   Scrollable inner content area.
+   Inner content area.
    ------------------------------------------------------------ */
 
 #workskin .doc-folio .tab-content {
   width: 100%;
-  height: 100%;
   padding: 12px 14px;
-  overflow: auto;
   box-sizing: border-box;
+  position: relative;
 	
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
   background-size: 100%;
   background-repeat: repeat;
-  background-attachment: local;
+  background-attachment: scroll;
 }
 
 #workskin .doc-folio .tab-content p {
@@ -1831,7 +1828,7 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL
-   Content panel revealed on tab hover.
+   Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
    of which tab is hovered. Hidden by sidebar overflow at rest.
@@ -1850,7 +1847,7 @@
   background-repeat: repeat;
   background-clip: content-box;
   
-  overflow: hidden;
+  overflow: auto;
   display: none;
 }
 
@@ -1861,15 +1858,14 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL CONTENT
-   Scrollable inner content area.
+   Inner content area.
    ------------------------------------------------------------ */
 
 #workskin .doc-newspaper .tab-content {
   width: 100%;
-  height: 100%;
   padding: 12px 14px;
-  overflow: auto;
   box-sizing: border-box;
+  position: relative;
 }
 
 #workskin .doc-newspaper .tab-content p {
@@ -2322,7 +2318,7 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL
-   Content panel revealed on tab hover.
+   Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
    of which tab is hovered. Hidden by sidebar overflow at rest.
@@ -2333,11 +2329,12 @@
   top: 0;
   right: 100%;
   z-index: 19;
-  overflow: hidden;
-  display: none;
   
   background: white;
   background-clip: content-box;
+	
+  overflow: auto;
+  display: none;
 }
 
 #workskin .doc-diary .tab:hover .tab-panel {
@@ -2347,21 +2344,18 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL CONTENT
-   Scrollable inner content area.
+   Inner content area.
    ------------------------------------------------------------ */
 
 #workskin .doc-diary .tab-content {
   width: 100%;
-  height: 100%;
   padding: 25px 14px;
   padding-left: 40px;
-  overflow: auto;
   box-sizing: border-box;
+  position: relative;
 	
   background-image: repeating-linear-gradient(to bottom, #ffffff 0px, #ffffff 21px, #00b0d7 21px, #00b0d7 22px);
-  background-size: 100%;
-  background-repeat: repeat;
-  background-attachment: local;
+  background-attachment: scroll;
 }
 
 #workskin .doc-diary .tab-content::before {
@@ -2370,7 +2364,7 @@
   position: absolute;
   z-index: 1;
   top: 0;
-  left: 50px;
+  left: 30px;
   height: 100%;
   width: 1px;
   background: #db4034;
@@ -2529,7 +2523,7 @@
 }
 
 #workskin .bigger.doc-diary .tab-content::before {
-  left: 75px;
+  left: 50px;
 }
 
 /* Tab content — Font size */
@@ -2845,7 +2839,7 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL
-   Content panel revealed on tab hover.
+   Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
    of which tab is hovered. Hidden by sidebar overflow at rest.
@@ -2863,7 +2857,7 @@
   background-repeat: repeat;
   background-clip: content-box;
   
-  overflow: hidden;
+  overflow: auto;
   display: none;
 }
 
@@ -2874,15 +2868,14 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL CONTENT
-   Scrollable inner content area.
+   Inner content area.
    ------------------------------------------------------------ */
 
 #workskin .doc-book .tab-content {
   width: 100%;
-  height: 100%;
   padding: 12px 14px;
-  overflow: auto;
   box-sizing: border-box;
+  position: relative;
 }
 
 /* Drop cap — applied automatically to the first paragraph in .doc-book .tab-content
