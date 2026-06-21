@@ -285,40 +285,45 @@
 
    Example:
    #workskin .doc-codex .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    }
    ------------------------------------------------------------ */
 
 #workskin .doc-codex .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/codex.jpg") 16% 15%;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/codex.jpg");
+  background-position: 16% 15%;
   background-size: 200%;
 }
 
 /* Per-tab overrides (uncomment and fill in URLs):
 
 #workskin .doc-codex .tab:nth-child(1) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-codex .tab:nth-child(2) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
   background-size: cover;
 }
 
 #workskin .doc-codex .tab:nth-child(3) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
   background-size: cover;
 }
 
 #workskin .doc-codex .tab:nth-child(4) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-codex .tab:nth-child(5) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 } */
 
@@ -566,7 +571,8 @@
 
    Example:
    #workskin .bigger.doc-codex .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    } */
 
@@ -659,6 +665,7 @@
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folders.jpg");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 
@@ -802,40 +809,47 @@
 
    Example:
    #workskin .doc-folders .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    }
    ------------------------------------------------------------ */
 
 #workskin .doc-folders .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg") 75% center;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg");
+  background-position: 75% center;
   background-size: 200%;
 }
 
 /* Per-tab overrides (uncomment and fill in URLs):
 
 #workskin .doc-folders .tab:nth-child(1) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-folders .tab:nth-child(2) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-folders .tab:nth-child(3) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-folders .tab:nth-child(4) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-folders .tab:nth-child(5) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 } */
 
@@ -1052,7 +1066,8 @@
 
    Example:
    #workskin .bigger.doc-folders .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    } */
 
@@ -1281,40 +1296,47 @@
 
    Example:
    #workskin .doc-folio .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    }
    ------------------------------------------------------------ */
 
 #workskin .doc-folio .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg") right bottom;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg");
+  background-position: right bottom;
   background-size: 200%;
 }
 
 /* Per-tab overrides (uncomment and fill in URLs):
 
 #workskin .doc-folio .tab:nth-child(1) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-folio .tab:nth-child(2) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-folio .tab:nth-child(3) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-folio .tab:nth-child(4) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-folio .tab:nth-child(5) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 } */
 
@@ -1561,7 +1583,8 @@
 
    Example:
    #workskin .bigger.doc-folio .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    } */
 
@@ -1794,40 +1817,47 @@
 
    Example:
    #workskin .doc-newspaper .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    }
    ------------------------------------------------------------ */
 
 #workskin .doc-newspaper .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-background.jpg") center bottom;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-background.jpg");
+  background-position: center bottom;
   background-size: 200%;
 }
 
 /* Per-tab overrides (uncomment and fill in URLs):
 
 #workskin .doc-newspaper .tab:nth-child(1) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-newspaper .tab:nth-child(2) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-newspaper .tab:nth-child(3) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-newspaper .tab:nth-child(4) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-newspaper .tab:nth-child(5) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 } */
 
@@ -2045,7 +2075,8 @@
 
    Example:
    #workskin .bigger.doc-newspaper .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    } */
 
@@ -2099,7 +2130,7 @@
 #workskin .doc-diary .doc-cover,
 #workskin .doc-diary .tab-panel {
   height: 444px;
-  background: white;
+  background-color: white;
   box-sizing: border-box;
 }
 
@@ -2283,40 +2314,47 @@
 
    Example:
    #workskin .doc-diary .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    }
    ------------------------------------------------------------ */
 
 #workskin .doc-diary .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/collage.jpg") 55% 60%;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/collage.jpg");
+  background-position: 55% 60%;
   background-size: 200%;
 }
 
 /* Per-tab overrides (uncomment and fill in URLs):
 
 #workskin .doc-diary .tab:nth-child(1) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-diary .tab:nth-child(2) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-diary .tab:nth-child(3) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-diary .tab:nth-child(4) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-diary .tab:nth-child(5) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 } */
 
@@ -2550,7 +2588,8 @@
 
    Example:
    #workskin .bigger.doc-diary .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    } */
 
@@ -2677,10 +2716,11 @@
   height: 80px;
   margin-block: 12%;
 	
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif) center center;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif");
   background-size: cover;
+  background-position: center;
   
-  border-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/frame.png) 30% round;
+  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/frame.png") 30% round;
   border-image-outset: 15px;
   border-image-width: 36px;
   
@@ -2807,40 +2847,47 @@
 
    Example:
    #workskin .doc-book .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    }
    ------------------------------------------------------------ */
 
 #workskin .doc-book .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/bookshelf.jpg") right bottom;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/bookshelf.jpg");
+  background-position: right bottom;
   background-size: 200%;
 }
 
 /* Per-tab overrides (uncomment and fill in URLs):
 
 #workskin .doc-book .tab:nth-child(1) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-book .tab:nth-child(2) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-book .tab:nth-child(3) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-book .tab:nth-child(4) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-book .tab:nth-child(5) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 } */
 
@@ -2859,7 +2906,7 @@
   box-sizing: border-box;
   
   background-color: #180905;
-  background-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png);
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png");
   background-size: 100%;
   background-repeat: repeat;
   border-top: 1px solid rgba(170, 150, 120, 0.35);
@@ -3107,7 +3154,8 @@
 
    Example:
    #workskin .bigger.doc-book .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    } */
 
