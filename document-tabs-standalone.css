@@ -108,8 +108,21 @@
 #workskin .doc-codex,
 #workskin .doc-codex .doc-cover,
 #workskin .doc-codex .tab-panel {
-  height: 460px;
+  height: 458px;
+  background-color: rgb(247 242 234);
   box-sizing: border-box;
+}
+
+/* Padding & transparent border */
+
+#workskin .doc-codex .doc-cover {
+  padding: 58px 56px;
+}
+
+#workskin .doc-codex .tab-panel {
+  border-style: solid;
+  border-color: transparent;
+  border-width: 58px 56px;
 }
 
 
@@ -132,11 +145,6 @@
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-codex.jpg");
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-#workskin .doc-codex .doc-cover,
-#workskin .doc-codex .tab-panel {
-  padding: 58px 55px;
 }
 
 
@@ -217,7 +225,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
   z-index: 10;
   overflow: hidden;
 }
@@ -367,7 +375,6 @@
   right: 100%;
   z-index: 19;
   
-  background-color: rgb(247 242 234);
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
   background-size: 100%;
   background-repeat: repeat;
@@ -518,7 +525,16 @@
 #workskin .bigger.doc-codex .doc-cover,
 #workskin .bigger.doc-codex .tab-panel {
   width: 575px;
-  padding: 88px 85px;
+}
+
+#workskin .bigger.doc-codex .doc-cover {
+  padding: 88px 86px;
+}
+
+#workskin .bigger.doc-codex .tab-panel {
+  border-style: solid;
+  border-color: transparent;
+  border-width: 88px 86px;
 }
 
 /* Cover image and margin */
@@ -609,7 +625,18 @@
 #workskin .doc-folders .doc-cover,
 #workskin .doc-folders .tab-panel {
   height: 445px;
+  background-color: rgb(247 242 234);
   box-sizing: border-box;
+}
+
+/* Padding & transparent border */
+
+#workskin .doc-folders .doc-cover {
+  padding-inline: 19px;
+}
+
+#workskin .doc-folders .tab-panel {
+  border-inline: 19px solid transparent;
 }
 
 
@@ -632,13 +659,6 @@
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folders.jpg");
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-/* Padding */
-
-#workskin .doc-folders .doc-cover,
-#workskin .doc-folders .tab-panel {
-  padding-inline: 19px;
 }
 
 
@@ -721,7 +741,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
   z-index: 10;
   overflow: hidden;
 }
@@ -872,7 +892,6 @@
   right: 100%;
   z-index: 19;
   
-  background-color: rgb(247 242 234);
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
   background-size: 100%;
   background-repeat: repeat;
@@ -994,7 +1013,14 @@
 #workskin .bigger.doc-folders .doc-cover,
 #workskin .bigger.doc-folders .tab-panel {
   width: 575px;
+}
+
+#workskin .bigger.doc-folders .doc-cover {
   padding-inline: 28px;
+}
+
+#workskin .bigger.doc-folders .tab-panel {
+  border-inline: 28px solid transparent;
 }
 
 /* Cover image and margin */
@@ -1055,7 +1081,7 @@
    ------------------------------------------------------------ */
 
 #workskin .doc-folio * {
-  scrollbar-color: #76675b transparent;
+  scrollbar-color: #4b3a2e transparent;
 }
 
 
@@ -1079,8 +1105,19 @@
 #workskin .doc-folio,
 #workskin .doc-folio .doc-cover,
 #workskin .doc-folio .tab-panel {
-  height: 445px;
+  height: 444px;
+  background-color: rgb(195 179 153);
   box-sizing: border-box;
+}
+
+/* Padding & transparent border */
+
+#workskin .doc-folio .doc-cover {
+  padding-inline: 19px;
+}
+
+#workskin .doc-folio .tab-panel {
+  border-inline: 19px solid transparent;
 }
 
 
@@ -1103,13 +1140,6 @@
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folio.jpg");
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-/* Padding */
-
-#workskin .doc-folio .doc-cover,
-#workskin .doc-folio .tab-panel {
-  padding-inline: 19px;
 }
 
 
@@ -1190,7 +1220,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
   z-index: 10;
   overflow: hidden;
 }
@@ -1341,7 +1371,6 @@
   right: 100%;
   z-index: 19;
   
-  background-color: rgb(195 179 153);
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
   background-size: 100%;
   background-repeat: repeat;
@@ -1490,7 +1519,14 @@
 #workskin .bigger.doc-folio .doc-cover,
 #workskin .bigger.doc-folio .tab-panel {
   width: 575px;
+}
+
+#workskin .bigger.doc-folio .doc-cover {
   padding-inline: 29px;
+}
+
+#workskin .bigger.doc-folio .tab-panel {
+  border-inline: 29px solid transparent;
 }
 
 /* Cover image and margin */
@@ -1578,8 +1614,15 @@
 #workskin .doc-newspaper,
 #workskin .doc-newspaper .doc-cover,
 #workskin .doc-newspaper .tab-panel {
-  height: 445px;
+  height: 444px;
+  background-color: rgb(247 242 234);
   box-sizing: border-box;
+}
+
+/* Padding & transparent border */
+
+#workskin .doc-newspaper .tab-panel {
+  border: 5px solid transparent;
 }
 
 
@@ -1690,7 +1733,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
   z-index: 10;
   overflow: hidden;
 }
@@ -1838,11 +1881,9 @@
   position: absolute;
   top: 0;
   right: 100%;
-  padding: 5px;
   z-index: 19;
   
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-texture.jpg");
-  background-color: rgb(247 242 234);
   background-size: 100%;
   background-repeat: repeat;
   background-clip: content-box;
@@ -2057,8 +2098,16 @@
 #workskin .doc-diary,
 #workskin .doc-diary .doc-cover,
 #workskin .doc-diary .tab-panel {
-  height: 445px;
+  height: 444px;
+  background: white;
   box-sizing: border-box;
+}
+
+/* Padding */
+
+#workskin .doc-diary .doc-cover,
+#workskin .doc-diary .tab-panel {
+  padding-inline: 19px 0;
 }
 
 
@@ -2083,13 +2132,6 @@
   background-repeat: no-repeat;
   
   filter: saturate(0.8) sepia(0.1);
-}
-
-/* Padding */
-
-#workskin .doc-diary .doc-cover,
-#workskin .doc-diary .tab-panel {
-  padding-inline: 19px 0;
 }
 
 
@@ -2181,7 +2223,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
   z-index: 10;
   overflow: hidden;
 }
@@ -2330,9 +2372,7 @@
   right: 100%;
   z-index: 19;
   
-  background: white;
   background-clip: content-box;
-	
   overflow: auto;
   display: none;
 }
@@ -2585,7 +2625,20 @@
 #workskin .doc-book .doc-cover,
 #workskin .doc-book .tab-panel {
   height: 445px;
+  background-color: #180905;
   box-sizing: border-box;
+}
+
+/* Padding & transparent border */
+
+#workskin .doc-book .doc-cover {
+  padding: 50px 43px;
+}
+
+#workskin .doc-book .tab-panel {
+  border-style: solid;
+  border-color: transparent;
+  border-width: 50px 43px;
 }
 
 
@@ -2605,20 +2658,12 @@
   opacity: 0.9;
   z-index: 1;
 
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png") top left;
-  background-color: #180905;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png");
   background-repeat: repeat;
   
   border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-border.png") 45% round;
   border-image-outset: 7px;
   border-image-width: 100px;
-}
-
-/* Padding */
-
-#workskin .doc-book .doc-cover,
-#workskin .doc-book .tab-panel {
-  padding: 50px 43px;
 }
 
 
@@ -2701,7 +2746,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-color: #634037;
   z-index: 10;
   overflow: hidden;
 }
@@ -2737,7 +2782,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  border: ridge rgba(220, 210, 190, 0.8);
+  border: ridge #37231e;
   background-position: center center;
   cursor: pointer;
   transition: filter 300ms ease-in-out, opacity 300ms ease-in-out;
@@ -2813,7 +2858,10 @@
   z-index: 6;
   box-sizing: border-box;
   
-  background-color: rgba(0, 0, 0, 0.88);
+  background-color: #180905;
+  background-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png);
+  background-size: 100%;
+  background-repeat: repeat;
   border-top: 1px solid rgba(170, 150, 120, 0.35);
   box-shadow: 0 0 10px #141414;
 }
@@ -3009,12 +3057,18 @@
 #workskin .bigger.doc-book .doc-cover,
 #workskin .bigger.doc-book .tab-panel {
   width: 575px;
-  padding: 70px 50px;
 }
 
 #workskin .bigger.doc-book .doc-cover {
+  padding: 70px 50px;
   border-image-outset: 8px;
   border-image-width: 130px;
+}
+
+#workskin .bigger.doc-book .tab-panel {
+  border-style: solid;
+  border-color: transparent;
+  border-width: 70px 50px;
 }
 
 /* Cover image and margin */
