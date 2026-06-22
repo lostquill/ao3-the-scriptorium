@@ -161,7 +161,7 @@
 #workskin .folio {
   max-width: 38em;
   margin: auto;
-  padding: 2em 2.5em 3em;
+  padding: 4em 2.5em;
   box-sizing: border-box;
   position: relative;
 
@@ -179,9 +179,12 @@
 }
 
 #workskin .folio-seal {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 1em;
+  width: 150px;
+  height: 87px;
+	
+  position: absolute;
+  top: 5px;
+  right: -20px;
 
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
   background-size: contain;
@@ -197,13 +200,6 @@
   line-height: 1;
   border-bottom: 1px solid #4a3e3d;
   padding-bottom: 10px;
-}
-
-#workskin .folio-content {
-  padding: 5px;
-  max-height: 500px;
-  overflow-y: auto;
-  box-sizing: border-box;
 }
 
 #workskin .folio-content p {
@@ -331,7 +327,7 @@
 #workskin .codex {
   max-width: 38em;
   margin: 20px auto;
-  padding: 2.5em 3em;
+  padding: 3em 4em;
   box-sizing: border-box;
   position: relative;
 
@@ -340,9 +336,10 @@
   font-style: italic;
 
   background-color: rgb(247 242 234);
-  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-codex.jpg") 35% fill round;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
+  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-codex.jpg") 20% fill round;
   border-image-outset: 10px;
-  border-image-width: 90px;
+  border-image-width: 85px;
   filter: drop-shadow(2px 4px 6px #464646);
 }
 
