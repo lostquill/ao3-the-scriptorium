@@ -1,21 +1,53 @@
 /* ============================================================
    THE SCRIPTORIUM — AO3 Workskin
    Author: LostQuill
-   A collection of simple CSS components for document-style formatting:
-   parchment scrolls, newspaper clippings, and book pages.
-   
+   A collection of CSS components for document-style formatting:
+   parchment scrolls, codex pages, book covers, newspaper
+   clippings, diary entries, and classified files.
+
    Usage: copy the desired class(es) into your workskin on AO3.
    Wrap your content in a div with the appropriate class name.
 
-	Credits:
-   - Newspaper photo: "Wedding & Couple Photographer in Vietnam"
-     by Jupilu via Pixabay — https://pixabay.com/fr/users/jupilu/
+   Credits:
    - Parchment scroll designed by Magnific — www.magnific.com
+   - Old parchment texture by Silvia Gaudenzi
+     (Biella Biella) via Pixabay
+     https://pixabay.com/users/silviagaudenzi-3932581/
+   - "Confidential" logo by Uclean India via kindpng
+     https://www.kindpng.com/userpngs/16619/
+   - Article photo "Wedding & Couple Photographer in Vietnam"
+     by Jupilu via Pixabay
+     https://pixabay.com/fr/users/jupilu/
+   - Other elements generated with Gemini. If you prefer not to
+     use AI-generated assets, you can swap them out: the CSS
+     will work with any image with minor adjustments.
    ============================================================ */
 
 
+/* .............................................................................
+	TABLE OF CONTENTS
+	↳ Use 'CTRL + F' to find a specific section
+
+	1.  FRAME
+	2.  PARCHMENT BACKGROUND
+	3.  PARCHMENT SCROLL
+	4.  FOLIO — SINGLE DOCUMENT
+	5.  FOLIO — IMAGES
+	6.  CODEX — SINGLE PAGE
+	7.  CODEX — IMAGES
+	8.  BOOK — BACK COVER
+	9.  BOOK — INNER PAGE
+	10. BOOK — IMAGES
+	11. NEWSPAPER — CLIPPING
+	12. NEWSPAPER — IMAGES
+	13. DIARY — SINGLE ENTRY
+	14. DIARY — IMAGES
+	15. FILE — SINGLE PAGE
+	16. FILE — IMAGES
+	........................................................................... */
+
 /* ============================================================
-   FRAME
+   1.  FRAME
    A simple centered container with a light border.
    
    Example: <div class="frame"><p>Your text here.</p></div>
@@ -32,7 +64,7 @@
 
 
 /* ============================================================
-   PARCHMENT BACKGROUND
+   2.  PARCHMENT BACKGROUND
    A simple, textured parchment background.
    
    Example (standalone):
@@ -60,7 +92,7 @@
 }
 
 /* ============================================================
-   PARCHMENT SCROLL
+   3.  PARCHMENT SCROLL
    A decorative parchment scroll with a fixed size and scrollable content area.
    
    Example :
@@ -84,7 +116,7 @@
   padding: 7em 5.3em;
 	
   background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-scroll.png");
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 
@@ -105,7 +137,341 @@
 
 
 /* ============================================================
-   BOOK — BACK COVER
+   4.  FOLIO — SINGLE DOCUMENT
+   A single parchment document on aged old-parchment texture,
+   with the iconic wax seal centred at the top.
+   Matches the aesthetic of the Stack (tab view) component.
+   Use .folio-title for the document title, .folio-footer for
+   a closing note or archive reference.
+   Use .accent for dark red highlighted text.
+
+   Example:
+   <div class="folio">
+     <div class="folio-seal"></div>
+     <p class="folio-title">Title of the Document</p>
+     <div class="folio-content">
+       <p>First paragraph here.</p>
+       <hr>
+       <p>Another paragraph here.</p>
+     </div>
+     <p class="folio-footer">Archive reference here</p>
+   </div>
+   ============================================================ */
+
+#workskin .folio {
+  max-width: 38em;
+  margin: auto;
+  padding: 4em 2.5em;
+  box-sizing: border-box;
+  position: relative;
+
+  color: black;
+  font-family: "Monotype Corsiva", "Apple Chancery", "Palatino Linotype", "Georgia", cursive;
+  font-style: italic;
+
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-size: 100%;
+  box-shadow: 0 0 10px #bcbcbc;
+}
+
+#workskin .folio p {
+  margin: 15px auto;
+}
+
+#workskin .folio-seal {
+  width: 150px;
+  height: 87px;
+	
+  position: absolute;
+  top: 5px;
+  right: -20px;
+
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 1)) brightness(1.3) contrast(0.9);
+}
+
+#workskin .folio-title {
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1;
+  border-bottom: 1px solid #4a3e3d;
+  padding-bottom: 10px;
+}
+
+#workskin .folio-content p {
+  font-size: 18px;
+  line-height: 1.4em;
+}
+
+#workskin .folio-content > p:first-of-type,
+#workskin .folio-content > p.folio-img-left:first-of-type + p,
+#workskin .folio-content > p.folio-img-right:first-of-type + p {
+  margin-top: 0;
+}
+
+#workskin .folio-content p:last-of-type {
+  margin-bottom: 0;
+}
+
+#workskin .folio-footer {
+  border-top: 1px solid #4a3e3d;
+  padding-top: 10px;
+  font-size: 14px;
+  text-align: right;
+  margin-top: 1em;
+}
+
+#workskin .folio .accent {
+  color: #760000;
+}
+
+#workskin .folio-content hr {
+  border: 0;
+  height: 1px;
+  background: #2e2416;
+  width: 45%;
+  margin: 40px auto;
+  position: relative;
+  overflow: visible;
+  opacity: 0.85;
+}
+
+#workskin .folio-content hr::after,
+#workskin .folio-content hr::before {
+  display: inline-block;
+  position: absolute;
+  top: -13px;
+  color: #2e2416;
+  font-family: "Georgia", serif;
+  font-size: 18px;
+}
+
+#workskin .folio-content hr::after {
+  content: "❧";
+  left: -10px;
+}
+
+#workskin .folio-content hr::before {
+  content: "❧";
+  transform: scaleX(-1);
+  right: -10px;
+}
+
+
+/* ============================================================
+   5.  FOLIO — IMAGES
+   Optional image blocks to place inside .folio-content.
+   No need to add #workskin .img-float-clear again if already
+   included via another component's image css.
+
+   Example:
+   <div class="folio-content">
+     <p class="folio-img-left">
+       <img width="40%" src="img-url-here">
+     </p>
+     <p>First paragraph here.</p>
+     <div class="img-float-clear"></div>
+   </div>
+   ============================================================ */
+
+#workskin .folio-content > p:has(img) {
+  margin: 0;
+}
+
+#workskin .folio-content > p.folio-img-left img {
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .folio-content > p.folio-img-right img {
+  margin-left: 10px;
+  float: right;
+}
+
+#workskin .folio-content .img-float-clear + p,
+#workskin .folio-content .img-float-clear + p.folio-img-left + p,
+#workskin .folio-content .img-float-clear + p.folio-img-right + p {
+  margin-top: 0;
+}
+
+#workskin .img-float-clear {
+  clear: both;
+}
+
+
+/* ============================================================
+   6.  CODEX — SINGLE PAGE
+   An illuminated manuscript page framed by the codex cover
+   image used as a decorative border (border-image with fill).
+   Use .codex-title for the page heading, .codex-folio for an
+   archive reference at the bottom.
+   Add the class .initial to a paragraph for a drop cap on its
+   first letter. Use .accent for blue highlighted text.
+
+   Example:
+   <div class="codex">
+     <p class="codex-title">Title of the Page</p>
+     <div class="codex-content">
+       <p class="initial">First paragraph here.</p>
+       <hr>
+       <p>Another paragraph here.</p>
+     </div>
+     <p class="codex-folio">Folio XII — Restricted Archive</p>
+   </div>
+   ============================================================ */
+
+#workskin .codex {
+  max-width: 38em;
+  margin: 20px auto;
+  padding: 3em 4em;
+  box-sizing: border-box;
+  position: relative;
+
+  color: #2e2416;
+  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  font-style: italic;
+
+  background-color: rgb(247 242 234);
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
+  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-codex.jpg") 20% fill round;
+  border-image-outset: 10px;
+  border-image-width: 85px;
+  filter: drop-shadow(2px 4px 6px #464646);
+}
+
+#workskin .codex p {
+  margin: 15px auto;
+}
+
+#workskin .codex-title {
+  text-align: center;
+  font-style: normal;
+  font-variant: small-caps;
+  font-size: 1.4em;
+  padding-block: 15px;
+  border-block: 5px double #b2b2b2;
+}
+
+#workskin .codex-content {
+  padding: 5px;
+  max-height: 500px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+#workskin .codex-content p {
+  text-align: justify;
+  line-height: 1.4em;
+}
+
+#workskin .codex-content > p:first-of-type,
+#workskin .codex-content > p.codex-img-left:first-of-type + p,
+#workskin .codex-content > p.codex-img-right:first-of-type + p {
+  margin-top: 0;
+}
+
+#workskin .codex-content p:last-of-type {
+  margin-bottom: 0;
+}
+
+#workskin .codex-folio {
+  border-top: 2px solid #808080;
+  padding-top: 10px;
+  font-size: 12px;
+  font-style: normal;
+  text-align: right;
+}
+
+#workskin .codex .initial::first-letter {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 3.2rem;
+  float: left;
+  line-height: 1;
+  margin-top: 2px;
+  margin-right: 8px;
+  color: #616acc;
+}
+
+#workskin .codex .accent {
+  color: #616acc;
+}
+
+#workskin .codex-content hr {
+  border: 0;
+  height: 1px;
+  background: #808080;
+  width: 70%;
+  margin: 30px auto;
+  position: relative;
+  overflow: visible;
+}
+
+#workskin .codex-content hr::after {
+  content: "♦\FE0E";
+  display: inline-block;
+  position: absolute;
+  height: 0;
+  line-height: 0;
+  margin-top: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: transparent;
+  padding: 0 10px;
+  color: #616acc;
+  font-size: 14px;
+}
+
+
+/* ============================================================
+   7.  CODEX — IMAGES
+   Optional image blocks to place inside .codex-content.
+   No need to add #workskin .img-float-clear again if already
+   included via another component's image css.
+
+   Example:
+   <div class="codex-content">
+     <p class="codex-img-left">
+       <img width="40%" src="img-url-here">
+     </p>
+     <p class="initial">First paragraph here.</p>
+     <div class="img-float-clear"></div>
+   </div>
+   ============================================================ */
+
+#workskin .codex-content > p:has(img) {
+  margin: 0;
+}
+
+#workskin .codex-content > p.codex-img-left img {
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .codex-content > p.codex-img-right img {
+  margin-left: 10px;
+  float: right;
+}
+
+#workskin .codex-content .img-float-clear + p,
+#workskin .codex-content .img-float-clear + p.codex-img-left + p,
+#workskin .codex-content .img-float-clear + p.codex-img-right + p {
+  margin-top: 0;
+}
+
+#workskin .img-float-clear {
+  clear: both;
+}
+
+
+/* ============================================================
+   8.  BOOK — BACK COVER
    A dark, ornate book cover with a decorative border.
    Use .book-title for the title line inside the book.
    Use .book-edition for a smaller line at the bottom (e.g. edition, year).
@@ -183,7 +549,7 @@
 
 
 /* ============================================================
-   BOOK — INNER PAGE
+   9.  BOOK — INNER PAGE
    Nest .parchment inside for inner pages with a lighter texture.
    
    Example:
@@ -216,7 +582,7 @@
 
 
 /* ============================================================
-   BOOK — IMAGES
+   10. BOOK — IMAGES
    Optional decorative image blocks to place inside .book.
    No need to add #workskin .img-float-clear again if already included via newspaper image css.
    
@@ -262,7 +628,7 @@
 
 
 /* ============================================================
-   NEWSPAPER
+   11. NEWSPAPER — CLIPPING
    A sepia-toned newspaper/gazette layout.
    
    Components:
@@ -375,7 +741,7 @@
 
 
 /* ============================================================
-   NEWSPAPER — IMAGES
+   12. NEWSPAPER — IMAGES
    Optional decorative sepia image blocks to place inside .newspaper-content.
    No need to add #workskin .img-float-clear again if already included via book image css.
 
@@ -420,6 +786,289 @@
 #workskin .newspaper-content .img-float-clear + p,
 #workskin .newspaper-content .img-float-clear + p.newspaper-img-left + p,
 #workskin .newspaper-content .img-float-clear + p.newspaper-img-right + p {
+  margin-top: 0;
+}
+
+#workskin .img-float-clear {
+  clear: both;
+}
+
+
+/* ============================================================
+   13. DIARY — SINGLE ENTRY
+   A handwritten diary page on white paper with ruled blue lines
+   and a red margin line. The lined background is on an inner
+   wrapper (.diary-inner) to avoid scroll lag on mobile.
+   Use .diary-date for the date, .diary-signature for a closing
+   line. Use .accent for red highlighted text.
+
+   Example:
+   <div class="diary">
+     <p class="diary-date">October 31st, 1998</p>
+     <div class="diary-content">
+       <p>First paragraph here.</p>
+       <hr>
+       <p>Another paragraph here.</p>
+     </div>
+     <p class="diary-signature">Goodnight for now.</p>
+   </div>
+   ============================================================ */
+
+#workskin .diary {
+  max-width: 38em;
+  margin: auto;
+  padding: 13px 15px;
+  padding-left: 75px;
+  box-sizing: border-box;
+  position: relative;
+
+  color: #0f0f3e;
+  font-family: "Lucida Handwriting", "Comic Sans MS", cursive;
+
+  background-image: repeating-linear-gradient(to bottom, #ffffff 0px, #ffffff 23px, #00b0d7 23px, #00b0d7 24px);
+  box-shadow: 0 0 10px #bcbcbc;
+}
+
+#workskin .diary::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 60px;
+  height: 100%;
+  width: 1px;
+  background: #db4034;
+}
+
+#workskin .diary p {
+  margin: 0;
+}
+
+#workskin p.diary-date {
+  margin-top: 15px;
+  text-align: right;
+}
+
+#workskin .diary-content {
+  margin-top: 26px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+#workskin .diary-content p {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+#workskin .diary-content > p:first-of-type,
+#workskin .diary-content > p.diary-img-left:first-of-type + p,
+#workskin .diary-content > p.diary-img-right:first-of-type + p {
+  margin-top: 0;
+}
+
+#workskin .diary-content p:last-of-type {
+  margin-bottom: 0;
+}
+
+#workskin p.diary-signature {
+  margin-top: 24px;
+  text-align: right;
+  font-style: italic;
+}
+
+#workskin .diary .accent {
+  color: #bd0000;
+}
+
+#workskin .diary-content hr {
+  border: 0;
+  border-top: 2px solid #ff6ae0;
+  width: 100%;
+  margin-inline: auto;
+  margin-top: 18px;
+  margin-bottom: 4px;
+}
+
+
+/* ============================================================
+   14. DIARY — IMAGES
+   Optional image blocks to place inside .diary-inner.
+   No need to add #workskin .img-float-clear again if already
+   included via another component's image css.
+
+   Example:
+   <div class="diary">
+     <p class="diary-date">October 31st, 1998</p>
+       <div class="diary-content">
+         <p class="diary-img-left">
+           <img width="40%" src="img-url-here">
+         </p>
+         <p>First paragraph here.</p>
+         <div class="img-float-clear"></div>
+     </div>
+     <p class="diary-signature">Goodnight for now.</p>
+   </div>
+   ============================================================ */
+
+#workskin .diary-content > p:has(img) {
+  margin: 0;
+}
+
+#workskin .diary-content > p.diary-img-left img {
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .diary-content > p.diary-img-right img {
+  margin-left: 10px;
+  float: right;
+}
+
+#workskin .diary-content .img-float-clear + p,
+#workskin .diary-content .img-float-clear + p.diary-img-left + p,
+#workskin .diary-content .img-float-clear + p.diary-img-right + p {
+  margin-top: 0;
+}
+
+#workskin .img-float-clear {
+  clear: both;
+}
+
+
+/* ============================================================
+   15. FILE — SINGLE PAGE
+   A typewritten classified file on parchment-textured paper.
+   Use .file-title for the file heading, .file-stamp for a
+   rotated stamp label (e.g. "Classified") at the bottom.
+   Use .accent for red highlighted text.
+
+   Example:
+   <div class="file">
+     <p class="file-title">Case File #047</p>
+     <div class="file-content">
+       <p>First paragraph here.</p>
+       <hr>
+       <p>Another paragraph here.</p>
+     </div>
+     <p class="file-stamp">Classified</p>
+   </div>
+   ============================================================ */
+
+#workskin .file {
+  max-width: 38em;
+  margin: auto;
+  padding: 2em 2.5em;
+  box-sizing: border-box;
+  position: relative;
+
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
+  background-color: rgb(247 242 234);
+  box-shadow: 0 0 10px #bcbcbc;
+}
+
+#workskin .file p {
+  margin: 15px auto;
+}
+
+#workskin .file-title {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  font-size: 1.3em;
+  padding-block: 15px;
+  border-block: 2px dashed #4a3e3d;
+}
+
+#workskin .file-content {
+  padding: 5px;
+  max-height: 500px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+#workskin .file-content p {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+#workskin .file-content > p:first-of-type,
+#workskin .file-content > p.file-img-left:first-of-type + p,
+#workskin .file-content > p.file-img-right:first-of-type + p {
+  margin-top: 0;
+}
+
+#workskin .file-content p:last-of-type {
+  margin-bottom: 0;
+}
+
+#workskin .file-stamp {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 16px;
+  border: 3px solid #bd0000;
+  border-radius: 4px;
+
+  color: #bd0000;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transform: rotate(-6deg);
+  opacity: 0.85;
+}
+
+#workskin .file .accent {
+  color: #bd0000;
+}
+
+#workskin .file-content hr {
+  border: 0;
+  border-top: 2px dashed #4a3e3d;
+  width: 90%;
+  margin: 30px auto;
+  position: relative;
+  overflow: visible;
+}
+
+
+/* ============================================================
+   16. FILE — IMAGES
+   Optional grayscale image blocks to place inside .file-content.
+   No need to add #workskin .img-float-clear again if already
+   included via another component's image css.
+
+   Example:
+   <div class="file-content">
+     <p class="file-img-left">
+       <img width="40%" src="img-url-here">
+     </p>
+     <p>First paragraph here.</p>
+     <div class="img-float-clear"></div>
+   </div>
+   ============================================================ */
+
+#workskin .file-content > p:has(img) {
+  filter: grayscale(0.8);
+}
+
+#workskin .file-content > p.file-img-left img {
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .file-content > p.file-img-right img {
+  margin-left: 10px;
+  float: right;
+}
+
+#workskin .file-content .img-float-clear + p,
+#workskin .file-content .img-float-clear + p.file-img-left + p,
+#workskin .file-content .img-float-clear + p.file-img-right + p {
   margin-top: 0;
 }
 

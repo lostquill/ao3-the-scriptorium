@@ -22,7 +22,7 @@ Usage and HTML examples available on [AO3](https://archiveofourown.org/works/847
 
 ## Assets
 The `assets/` folder contains the textures used by the workskin. All are free to use.
-- `newspaper-image.jpg`: photo by [Jupilu](https://pixabay.com/users/jupilu/) from [Pixabay](https://pixabay.com/)
+- `newspaper-image.jpg`: photo 'Wedding & Couple Photographer in Vietnam' by [Jupilu](https://pixabay.com/users/jupilu/) from [Pixabay](https://pixabay.com/)
 - `parchment-scroll.png`: designed by [Magnific](https://www.magnific.com)
 - `old-parchment-texture.jpg`: by [Biella Biella](https://pixabay.com/users/silviagaudenzi-3932581/) from [Pixabay](https://pixabay.com/)
 - `confidential.png`: by [Uclean India](https://www.kindpng.com/userpngs/16619/) from [kindpng](https://www.kindpng.com/)

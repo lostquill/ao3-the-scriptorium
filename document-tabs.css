@@ -1,8 +1,5 @@
 /* ============================================================
-   DOCUMENT TABS — STANDALONE VERSION (ISOLATED & CUSTOMIZABLE)
-   
-   Each variant is fully self-contained with its own specific rules.
-   Best for extracting a single component variant with no external dependencies.
+   DOCUMENT TABS
 
    Six visual variants: .doc-codex, .doc-folders, .doc-folio,
                         .doc-newspaper, .doc-diary, .doc-book;
@@ -59,6 +56,23 @@
 
      </div>
    </div>
+ 
+   Credits:
+   - Old parchment texture (parchment variant) by Silvia Gaudenzi
+     (Biella Biella) via Pixabay
+     https://pixabay.com/users/silviagaudenzi-3932581/
+   - "Confidential" logo by Uclean India via kindpng
+     https://www.kindpng.com/userpngs/16619/
+   - Article photo "Wedding & Couple Photographer in Vietnam"
+     by Jupilu via Pixabay
+     https://pixabay.com/fr/users/jupilu/
+   - Newspaper cover by richard.stephenson via wallpapers.com
+   - Diary cover inspired by berely's "Cahier journal intime
+     collage photo rétro rose et beige" via Canva
+     https://www.canva.com/p/berely/
+   - Other elements generated with Gemini. If you prefer not to
+     use AI-generated assets, you can swap them out: the CSS
+     will work with any image with minor adjustments.
    ============================================================ */
 
 
@@ -66,17 +80,534 @@
 	TABLE OF CONTENTS
 	↳ Use 'CTRL + F' to find a specific section
 
-	1.  CODEX
-	2.  FOLDERS
-	3.  FOLIO
+	1.  FOLIO
+	2.  CODEX
+	3.  BOOK
 	4.  NEWSPAPER
 	5.  DIARY
-	6.  BOOK
+	6.  FOLDERS
 	............................................................................ */
 
 
 /* ============================================================
-   1.  CODEX
+   1.  FOLIO
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   SCROLLBAR
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio * {
+  scrollbar-color: #4b3a2e transparent;
+}
+
+
+/* ------------------------------------------------------------
+   CONTAINER
+   Outer wrapper, cover and panels dimensions.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio {
+  width: 565px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#workskin .doc-folio .doc-cover,
+#workskin .doc-folio .tab-panel {
+  width: 375px;
+}
+
+#workskin .doc-folio,
+#workskin .doc-folio .doc-cover,
+#workskin .doc-folio .tab-panel {
+  height: 444px;
+  background-color: rgb(195 179 153);
+  box-sizing: border-box;
+}
+
+/* Padding & transparent border */
+
+#workskin .doc-folio .doc-cover {
+  padding-inline: 19px;
+}
+
+#workskin .doc-folio .tab-panel {
+  border-inline: 19px solid transparent;
+}
+
+
+/* ------------------------------------------------------------
+   COVER
+   Decorative left panel with background image.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .doc-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.9;
+  z-index: 1;
+
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folio.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+/* ------------------------------------------------------------
+   COVER — DECORATIVE IMAGE
+   Icon or illustration displayed on the cover panel.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .doc-img {
+  width: 170px;
+  height: 95px;
+  margin-block: 14%;
+	
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 1)) brightness(1.3) contrast(0.9);
+}
+
+
+/* ------------------------------------------------------------
+   COVER — HEADLINE
+   Title and subtitle block displayed on the cover image.
+   ------------------------------------------------------------ */
+
+/* Headline */
+
+#workskin .doc-folio .doc-headline {
+  padding-inline: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#workskin .doc-folio .doc-headline p {
+  margin: 0;
+  font-family: "Monotype Corsiva", "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  font-style: italic;
+  color: black;
+  text-align: center;
+}
+
+/* Title */
+
+#workskin .doc-folio .doc-headline p.doc-title {
+  padding-bottom: 15px;
+  padding-inline: 10px;
+  font-size: 27px;
+  line-height: 1;
+}
+
+/* Subtitle */
+
+#workskin .doc-folio .doc-headline p.doc-subtitle {
+  padding-top: 15px;
+  padding-inline: 15px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+
+/* ------------------------------------------------------------
+   SIDEBAR
+   Right column holding all tab buttons.
+   Acts as positioning context for all panels.
+   overflow: hidden clips panels at rest;
+   :has(.tab:hover) reveals them on hover.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .sidebar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 190px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  z-index: 10;
+  overflow: hidden;
+}
+
+#workskin .doc-folio .sidebar:has(.tab:hover) {
+  overflow: visible;
+}
+
+
+/* ------------------------------------------------------------
+   TAB
+   Individual tab item.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .tab {
+  flex: 1;
+  overflow: hidden;
+  z-index: 10;
+}
+
+#workskin .doc-folio .tab:hover {
+  overflow: visible;
+  z-index: 20;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — BUTTON
+   Visible area. Reveals the panel on hover.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .tab-btn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: ridge rgba(220, 210, 190, 0.8);
+  background-position: center center;
+  cursor: pointer;
+  transition: filter 300ms ease-in-out, opacity 300ms ease-in-out;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 5;
+  
+  opacity: 0.7;
+  filter: saturate(80%) sepia(10%);
+}
+
+#workskin .doc-folio .tab:hover .tab-btn {
+  opacity: 0.85;
+  filter: saturate(40%) sepia(0%);
+}
+
+
+/* ------------------------------------------------------------
+   TAB BUTTON IMAGES
+   Default image shared by all tabs. Override per tab using
+   :nth-child(N) to assign a different image to each category.
+
+   Example:
+   #workskin .doc-folio .tab:nth-child(1) .tab-btn {
+     background-image: url("img-url-here");
+     background-position: center center;
+     background-size: cover;
+   }
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .tab-btn {
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg");
+  background-position: right bottom;
+  background-size: 200%;
+}
+
+/* Per-tab overrides (uncomment and fill in URLs):
+
+#workskin .doc-folio .tab:nth-child(1) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
+  background-size: cover;
+}
+
+#workskin .doc-folio .tab:nth-child(2) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
+  background-size: cover;
+}
+
+#workskin .doc-folio .tab:nth-child(3) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
+  background-size: cover;
+}
+
+#workskin .doc-folio .tab:nth-child(4) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
+  background-size: cover;
+}
+
+#workskin .doc-folio .tab:nth-child(5) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
+  background-size: cover;
+} */
+
+
+/* ------------------------------------------------------------
+   TAB — LABEL
+   Text overlay at the bottom of each tab button.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .tab-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 6;
+  box-sizing: border-box;
+  
+  background-color: rgba(247, 242, 234, 0.88);
+  border-top: 1px solid rgba(170, 150, 120, 0.35);
+  box-shadow: 0 0 10px #141414;
+  border-radius: 25%;
+}
+
+/* Label text */
+
+#workskin .doc-folio .tab-label p {
+  margin-block: 7px;
+  font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
+  font-size: 12px;
+  font-style: italic;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+#workskin .doc-folio .tab-label .red {
+  color: #b30000;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — PANEL
+   Scrollable content panel revealed on tab hover.
+   Positioned against .sidebar (its stacking context).
+   top: 0 keeps it flush with the container top regardless
+   of which tab is hovered. Hidden by sidebar overflow at rest.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .tab-panel {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  z-index: 19;
+  
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: content-box;
+  
+  overflow: auto;
+  display: none;
+}
+
+#workskin .doc-folio .tab:hover .tab-panel {
+  display: block;
+}
+
+
+/* ------------------------------------------------------------
+   TAB — PANEL CONTENT
+   Inner content area.
+   ------------------------------------------------------------ */
+
+#workskin .doc-folio .tab-content {
+  width: 100%;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  position: relative;
+	
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-size: 105%;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+
+#workskin .doc-folio .tab-content p {
+  font-family: "Monotype Corsiva", "Apple Chancery", "Palatino Linotype", "Georgia", cursive;
+  color: black;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+#workskin .doc-folio .tab-content p.tab-title {
+  text-align: center;
+  font-size: 22px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #4a3e3d;
+}
+
+#workskin .doc-folio .tab-content p.tab-section {
+  font-size: 20px;
+}
+
+/* Images */
+
+#workskin .doc-folio .tab-content > p.img-left img {
+  margin-right: 10px;
+  float: left;
+}
+
+#workskin .doc-folio .tab-content > p.img-right img {
+  margin-left: 10px;
+  float: right;
+}
+
+#workskin .doc-folio .tab-content .img-float-clear + p,
+#workskin .doc-folio .tab-content .img-float-clear + p.img-left + p,
+#workskin .doc-folio .tab-content .img-float-clear + p.img-right + p {
+  margin-top: 0;
+}
+
+#workskin .doc-folio .tab-content .img-float-clear {
+  clear: both;
+}
+
+/* Accent colors */
+
+#workskin .doc-folio .accent {
+  color: #760000; /* red */
+}
+
+/* <hr> separator */
+
+#workskin .doc-folio .doc-headline .doc-title-separator,
+#workskin .doc-folio .tab-content hr {
+  border: 0;
+  height: 1px;
+  background: #2e2416;
+  width: 45%;
+  position: relative;
+  overflow: visible;
+  opacity: 0.85;
+}
+
+#workskin .doc-folio .doc-headline .doc-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .doc-folio .tab-content hr {
+  margin: 40px auto;
+}
+
+#workskin .doc-folio .doc-headline .doc-title-separator::after,
+#workskin .doc-folio .doc-headline .doc-title-separator::before,
+#workskin .doc-folio .tab-content hr::after,
+#workskin .doc-folio .tab-content hr::before {
+  display: inline-block;
+  position: absolute;
+  top: -13px;
+  color: #2e2416;
+  font-family: "Georgia", serif;
+  font-size: 18px;
+}
+
+#workskin .doc-folio .doc-headline .doc-title-separator::after,
+#workskin .doc-folio .tab-content hr::after {
+  content: "❧";
+  left: -10px;
+}
+
+#workskin .doc-folio .doc-headline .doc-title-separator::before,
+#workskin .doc-folio .tab-content hr::before {
+  content: "❧";
+  transform: scaleX(-1);
+  right: -10px; 
+}
+
+
+/* ------------------------------------------------------------
+   BIGGER MODIFIER
+   Add .bigger to switch to larger dimensions.
+   All overrides for .bigger are grouped here.
+
+   Example: <div class="doc-folio bigger">
+   ------------------------------------------------------------ */
+
+/* Container — Outer wrapper, cover and panels dimensions. */
+
+#workskin .bigger.doc-folio {
+  width: 765px;
+}
+
+#workskin .bigger.doc-folio,
+#workskin .bigger.doc-folio .doc-cover,
+#workskin .bigger.doc-folio .tab-panel {
+  height: 682px;
+}
+
+#workskin .bigger.doc-folio .doc-cover,
+#workskin .bigger.doc-folio .tab-panel {
+  width: 575px;
+}
+
+#workskin .bigger.doc-folio .doc-cover {
+  padding-inline: 29px;
+}
+
+#workskin .bigger.doc-folio .tab-panel {
+  border-inline: 29px solid transparent;
+}
+
+/* Cover image and margin */
+
+#workskin .bigger.doc-folio .doc-img {
+  width: 200px;
+  height: 125px;
+  margin-block: 16%;
+}
+
+/* Title */
+
+#workskin .bigger.doc-folio .doc-headline p.doc-title {
+  font-size: 35px;
+}
+
+/* Subtitle */
+
+#workskin .bigger.doc-folio .doc-headline p.doc-subtitle {
+  font-size: 24px;
+}
+
+/* Tab labels */
+
+#workskin .bigger.doc-folio .tab-label p {
+  font-size: 13px;
+}
+
+
+/* Tab button images — add per-tab overrides here, one entry per tab:
+   .tab:nth-child(1) for the first button, .tab:nth-child(2) for the second button, and so on.
+
+   Example:
+   #workskin .bigger.doc-folio .tab:nth-child(1) .tab-btn {
+     background-image: url("img-url-here");
+     background-position: center center;
+     background-size: cover;
+   } */
+
+/* Tab content — Font size */
+
+#workskin .bigger.doc-folio .tab-content p {
+  font-size: 19px;
+  line-height: 25px;
+}
+
+#workskin .bigger.doc-folio .tab-content p.tab-title {
+  font-size: 26px;
+}
+
+#workskin .bigger.doc-folio .tab-content p.tab-section {
+  font-size: 21px;
+}
+
+
+/* ============================================================
+   2.  CODEX
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -108,8 +639,21 @@
 #workskin .doc-codex,
 #workskin .doc-codex .doc-cover,
 #workskin .doc-codex .tab-panel {
-  height: 460px;
+  height: 458px;
+  background-color: rgb(247 242 234);
   box-sizing: border-box;
+}
+
+/* Padding & transparent border */
+
+#workskin .doc-codex .doc-cover {
+  padding: 58px 56px;
+}
+
+#workskin .doc-codex .tab-panel {
+  border-style: solid;
+  border-color: transparent;
+  border-width: 58px 56px;
 }
 
 
@@ -132,11 +676,6 @@
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-codex.jpg");
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-#workskin .doc-codex .doc-cover,
-#workskin .doc-codex .tab-panel {
-  padding: 58px 55px;
 }
 
 
@@ -217,7 +756,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
   z-index: 10;
   overflow: hidden;
 }
@@ -277,40 +816,45 @@
 
    Example:
    #workskin .doc-codex .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    }
    ------------------------------------------------------------ */
 
 #workskin .doc-codex .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/codex.jpg") 16% 15%;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/codex.jpg");
+  background-position: 16% 15%;
   background-size: 200%;
 }
 
 /* Per-tab overrides (uncomment and fill in URLs):
 
 #workskin .doc-codex .tab:nth-child(1) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-codex .tab:nth-child(2) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
   background-size: cover;
 }
 
 #workskin .doc-codex .tab:nth-child(3) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
   background-size: cover;
 }
 
 #workskin .doc-codex .tab:nth-child(4) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-codex .tab:nth-child(5) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 } */
 
@@ -355,7 +899,7 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL
-   Content panel revealed on tab hover.
+   Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
    of which tab is hovered. Hidden by sidebar overflow at rest.
@@ -367,13 +911,12 @@
   right: 100%;
   z-index: 19;
   
-  background-color: rgb(247 242 234);
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
   background-size: 100%;
   background-repeat: repeat;
   background-clip: content-box;
   
-  overflow: hidden;
+  overflow: auto;
   display: none;
 }
 
@@ -384,15 +927,14 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL CONTENT
-   Scrollable inner content area.
+   Inner content area.
    ------------------------------------------------------------ */
 
 #workskin .doc-codex .tab-content {
   width: 100%;
-  height: 100%;
   padding: 12px 14px;
-  overflow: auto;
   box-sizing: border-box;
+  position: relative;
 }
 
 /* Drop cap — applied automatically to the first paragraph in .doc-codex .tab-content
@@ -519,7 +1061,16 @@
 #workskin .bigger.doc-codex .doc-cover,
 #workskin .bigger.doc-codex .tab-panel {
   width: 575px;
-  padding: 88px 85px;
+}
+
+#workskin .bigger.doc-codex .doc-cover {
+  padding: 88px 86px;
+}
+
+#workskin .bigger.doc-codex .tab-panel {
+  border-style: solid;
+  border-color: transparent;
+  border-width: 88px 86px;
 }
 
 /* Cover image and margin */
@@ -551,7 +1102,8 @@
 
    Example:
    #workskin .bigger.doc-codex .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    } */
 
@@ -577,15 +1129,15 @@
 
 
 /* ============================================================
-   2.  FOLDERS
+   3.  BOOK
    ============================================================ */
 
 /* ------------------------------------------------------------
    SCROLLBAR
    ------------------------------------------------------------ */
 
-#workskin .doc-folders * {
-  scrollbar-color: #776d64 transparent;
+#workskin .doc-book * {
+  scrollbar-color: #76675b transparent;
 }
 
 
@@ -594,23 +1146,36 @@
    Outer wrapper, cover and panels dimensions.
    ------------------------------------------------------------ */
 
-#workskin .doc-folders {
+#workskin .doc-book {
   width: 565px;
   margin: auto;
   position: relative;
   overflow: hidden;
 }
 
-#workskin .doc-folders .doc-cover,
-#workskin .doc-folders .tab-panel {
+#workskin .doc-book .doc-cover,
+#workskin .doc-book .tab-panel {
   width: 375px;
 }
 
-#workskin .doc-folders,
-#workskin .doc-folders .doc-cover,
-#workskin .doc-folders .tab-panel {
+#workskin .doc-book,
+#workskin .doc-book .doc-cover,
+#workskin .doc-book .tab-panel {
   height: 445px;
+  background-color: #180905;
   box-sizing: border-box;
+}
+
+/* Padding & transparent border */
+
+#workskin .doc-book .doc-cover {
+  padding: 50px 43px;
+}
+
+#workskin .doc-book .tab-panel {
+  border-style: solid;
+  border-color: transparent;
+  border-width: 50px 43px;
 }
 
 
@@ -619,7 +1184,7 @@
    Decorative left panel with background image.
    ------------------------------------------------------------ */
 
-#workskin .doc-folders .doc-cover {
+#workskin .doc-book .doc-cover {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -630,16 +1195,12 @@
   opacity: 0.9;
   z-index: 1;
 
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folders.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-/* Padding */
-
-#workskin .doc-folders .doc-cover,
-#workskin .doc-folders .tab-panel {
-  padding-inline: 19px;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png");
+  background-repeat: repeat;
+  
+  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-border.png") 45% round;
+  border-image-outset: 7px;
+  border-image-width: 100px;
 }
 
 
@@ -648,18 +1209,20 @@
    Icon or illustration displayed on the cover panel.
    ------------------------------------------------------------ */
 
-#workskin .doc-folders .doc-img {
-  width: 170px;
-  height: 95px;
-  margin-block: 14%;
+#workskin .doc-book .doc-img {
+  width: 110px;
+  height: 80px;
+  margin-block: 12%;
 	
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/confidential.png");
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif");
+  background-size: cover;
   background-position: center;
   
-  transform: rotate(10deg);
-  filter: saturate(0.7);
+  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/frame.png") 30% round;
+  border-image-outset: 15px;
+  border-image-width: 36px;
+  
+  filter: contrast(1.1);
 }
 
 
@@ -670,7 +1233,7 @@
 
 /* Headline */
 
-#workskin .doc-folders .doc-headline {
+#workskin .doc-book .doc-headline {
   padding-inline: 15px;
   display: flex;
   flex-direction: column;
@@ -678,27 +1241,26 @@
   justify-content: center;
 }
 
-#workskin .doc-folders .doc-headline p {
+#workskin .doc-book .doc-headline p {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
+  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
   text-align: center;
-  color: black;
+  color: #d8c8af;
 }
 
 /* Title */
 
-#workskin .doc-folders .doc-headline p.doc-title {
+#workskin .doc-book .doc-headline p.doc-title {
   padding-bottom: 15px;
   padding-inline: 10px;
   font-size: 23px;
-  font-variant: small-caps;
   line-height: 1;
+  font-variant: small-caps;
 }
 
 /* Subtitle */
 
-#workskin .doc-folders .doc-headline p.doc-subtitle {
+#workskin .doc-book .doc-headline p.doc-subtitle {
   padding-top: 15px;
   padding-inline: 15px;
   font-size: 15px;
@@ -714,7 +1276,7 @@
    :has(.tab:hover) reveals them on hover.
    ------------------------------------------------------------ */
 
-#workskin .doc-folders .sidebar {
+#workskin .doc-book .sidebar {
   position: absolute;
   right: 0;
   top: 0;
@@ -722,12 +1284,12 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-color: #634037;
   z-index: 10;
   overflow: hidden;
 }
 
-#workskin .doc-folders .sidebar:has(.tab:hover) {
+#workskin .doc-book .sidebar:has(.tab:hover) {
   overflow: visible;
 }
 
@@ -737,13 +1299,13 @@
    Individual tab item.
    ------------------------------------------------------------ */
 
-#workskin .doc-folders .tab {
+#workskin .doc-book .tab {
   flex: 1;
   overflow: hidden;
   z-index: 10;
 }
 
-#workskin .doc-folders .tab:hover {
+#workskin .doc-book .tab:hover {
   overflow: visible;
   z-index: 20;
 }
@@ -754,11 +1316,11 @@
    Visible area. Reveals the panel on hover.
    ------------------------------------------------------------ */
 
-#workskin .doc-folders .tab-btn {
+#workskin .doc-book .tab-btn {
   display: block;
   width: 100%;
   height: 100%;
-  border: ridge rgba(220, 210, 190, 0.8);
+  border: ridge #37231e;
   background-position: center center;
   cursor: pointer;
   transition: filter 300ms ease-in-out, opacity 300ms ease-in-out;
@@ -767,12 +1329,12 @@
   z-index: 5;
   
   opacity: 0.7;
-  filter: brightness(1.3) saturate(50%);
+  filter: contrast(1.2) saturate(50%);
 }
 
-#workskin .doc-folders .tab:hover .tab-btn {
+#workskin .doc-book .tab:hover .tab-btn {
   opacity: 0.85;
-  filter: brightness(1) saturate(40%);
+  filter: contrast(1.2) saturate(40%);
 }
 
 
@@ -782,41 +1344,48 @@
    :nth-child(N) to assign a different image to each category.
 
    Example:
-   #workskin .doc-folders .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+   #workskin .doc-book .tab:nth-child(1) .tab-btn {
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    }
    ------------------------------------------------------------ */
 
-#workskin .doc-folders .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg") 75% center;
+#workskin .doc-book .tab-btn {
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/bookshelf.jpg");
+  background-position: right bottom;
   background-size: 200%;
 }
 
 /* Per-tab overrides (uncomment and fill in URLs):
 
-#workskin .doc-folders .tab:nth-child(1) .tab-btn {
-  background: url("img-url-here") center center;
+#workskin .doc-book .tab:nth-child(1) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
-#workskin .doc-folders .tab:nth-child(2) .tab-btn {
-  background: url("img-url-here") center center;
+#workskin .doc-book .tab:nth-child(2) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
-#workskin .doc-folders .tab:nth-child(3) .tab-btn {
-  background: url("img-url-here") center center;
+#workskin .doc-book .tab:nth-child(3) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
-#workskin .doc-folders .tab:nth-child(4) .tab-btn {
-  background: url("img-url-here") center center;
+#workskin .doc-book .tab:nth-child(4) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
-#workskin .doc-folders .tab:nth-child(5) .tab-btn {
-  background: url("img-url-here") center center;
+#workskin .doc-book .tab:nth-child(5) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 } */
 
@@ -826,7 +1395,7 @@
    Text overlay at the bottom of each tab button.
    ------------------------------------------------------------ */
 
-#workskin .doc-folders .tab-label {
+#workskin .doc-book .tab-label {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -834,40 +1403,42 @@
   z-index: 6;
   box-sizing: border-box;
   
-  background-color: rgba(247, 242, 234, 0.88);
+  background-color: #180905;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png");
+  background-size: 100%;
+  background-repeat: repeat;
   border-top: 1px solid rgba(170, 150, 120, 0.35);
-  box-shadow: 0 -1px 5px #373737;
-  border-radius: 30px 30px 0 0;
+  box-shadow: 0 0 10px #141414;
 }
 
 /* Label text */
 
-#workskin .doc-folders .tab-label p {
+#workskin .doc-book .tab-label p {
   margin-block: 7px;
-  font-family: monospace, "Courier New", Courier;
+  font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
   font-size: 12px;
-  line-height: 1.3;
+  font-style: italic;
   font-weight: bold;
   text-align: center;
+  line-height: 1.3;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: black;
+  color: rgba(247, 242, 234, 0.88);
 }
 
-#workskin .doc-folders .tab-label .red {
-  color: #ff0000;
+#workskin .doc-book .tab-label .red {
+  color: #b30000;
 }
 
 
 /* ------------------------------------------------------------
    TAB — PANEL
-   Content panel revealed on tab hover.
+   Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
    of which tab is hovered. Hidden by sidebar overflow at rest.
    ------------------------------------------------------------ */
 
-#workskin .doc-folders .tab-panel {
+#workskin .doc-book .tab-panel {
   position: absolute;
   top: 0;
   right: 100%;
@@ -879,594 +1450,132 @@
   background-repeat: repeat;
   background-clip: content-box;
   
-  overflow: hidden;
+  overflow: auto;
   display: none;
 }
 
-#workskin .doc-folders .tab:hover .tab-panel {
+#workskin .doc-book .tab:hover .tab-panel {
   display: block;
 }
 
 
 /* ------------------------------------------------------------
    TAB — PANEL CONTENT
-   Scrollable inner content area.
+   Inner content area.
    ------------------------------------------------------------ */
 
-#workskin .doc-folders .tab-content {
+#workskin .doc-book .tab-content {
   width: 100%;
-  height: 100%;
   padding: 12px 14px;
-  overflow: auto;
   box-sizing: border-box;
-}
-
-#workskin .doc-folders .tab-content p {
-  font-family: "Courier New", Courier, monospace;
-  color: black;
-  font-size: 13px;
-  line-height: 18px;
-}
-
-#workskin .doc-folders .tab-content p.tab-title {
-  text-align: center;
-  font-size: 17px;
-  padding-block: 20px;
-  border-block: 2px dashed #4a3e3d;
-}
-
-#workskin .doc-folders .tab-content p.tab-section {
-  font-size: 15px;
-  padding-bottom: 4px;
-  border-bottom: 1px dashed #868686;
-}
-
-/* Images */
-
-#workskin .doc-folders .tab-content > p:has(img) {
-  filter: grayscale(0.8);
-}
-
-#workskin .doc-folders .tab-content > p.img-left img {
-  margin-right: 10px;
-  float: left;
-}
-
-#workskin .doc-folders .tab-content > p.img-right img {
-  margin-left: 10px;
-  float: right;
-}
-
-#workskin .doc-folders .tab-content .img-float-clear + p,
-#workskin .doc-folders .tab-content .img-float-clear + p.img-left + p,
-#workskin .doc-folders .tab-content .img-float-clear + p.img-right + p {
-  margin-top: 0;
-}
-
-#workskin .doc-folders .tab-content .img-float-clear {
-  clear: both;
-}
-
-/* Accent colors */
-
-#workskin .doc-folders .accent {
-  color: #bd0000; /* red */
-}
-
-/* <hr> separator */
-
-#workskin .doc-folders .doc-headline .doc-title-separator,
-#workskin .doc-folders .tab-content hr {
-  border: 0;
-  border-top: 2px dashed #4a3e3d;
-  width: 90%;
   position: relative;
-  overflow: visible;
 }
 
-#workskin .doc-folders .doc-headline .doc-title-separator {
-  margin: 20px auto;
+/* Drop cap — applied automatically to the first paragraph in .doc-book .tab-content
+   that is not a title or section header, or manually via .initial on any paragraph. */
+#workskin .doc-book .initial::first-letter,
+#workskin .doc-book .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 3.5rem;
+  float: left;
+  line-height: 1;
+  margin-top: 2px;
+  margin-right: 8px;
+  color: #a96525;
 }
 
-#workskin .doc-folders .tab-content hr {
-  margin: 35px auto;
-}
-
-
-/* ------------------------------------------------------------
-   BIGGER MODIFIER
-   Add .bigger to switch to larger dimensions.
-   All overrides for .bigger are grouped here.
-
-   Example: <div class="doc-folders bigger">
-   ------------------------------------------------------------ */
-
-/* Container — Outer wrapper, cover and panels dimensions. */
-
-#workskin .bigger.doc-folders {
-  width: 765px;
-}
-
-#workskin .bigger.doc-folders,
-#workskin .bigger.doc-folders .doc-cover,
-#workskin .bigger.doc-folders .tab-panel {
-  height: 682px;
-}
-
-#workskin .bigger.doc-folders .doc-cover,
-#workskin .bigger.doc-folders .tab-panel {
-  width: 575px;
-  padding-inline: 28px;
-}
-
-/* Cover image and margin */
-
-#workskin .bigger.doc-folders .doc-img {
-  width: 200px;
-  height: 125px;
-  margin-block: 16%;
-}
-
-/* Headline */
-
-#workskin .bigger.doc-folders .doc-headline p.doc-title {
-  font-size: 30px;
-}
-
-#workskin .bigger.doc-folders .doc-headline p.doc-subtitle {
-  font-size: 17px;
-}
-
-/* Tab labels */
-
-#workskin .bigger.doc-folders .tab-label p {
-  font-size: 13px;
-}
-
-/* Tab button images — add per-tab overrides here, one entry per tab:
-   .tab:nth-child(1) for the first button, .tab:nth-child(2) for the second button, and so on.
-
-   Example:
-   #workskin .bigger.doc-folders .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
-     background-size: cover;
-   } */
-
-/* Tab content — Font size */
-
-#workskin .bigger.doc-folders .tab-content p {
+#workskin .doc-book .tab-content p {
+  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  color: #2e2416;
+  text-align: justify;
   font-size: 14px;
-  line-height: 22px;
+  line-height: 20px;
 }
 
-#workskin .bigger.doc-folders .tab-content p.tab-title {
+#workskin .doc-book .tab-content p.tab-title {
+  text-align: center;
   font-size: 18px;
+  padding-block: 15px;
+  border-block: 5px double #b2b2b2;
 }
 
-#workskin .bigger.doc-folders .tab-content p.tab-section {
+#workskin .doc-book .tab-content p.tab-section {
   font-size: 16px;
 }
 
-
-/* ============================================================
-   3.  FOLIO
-   ============================================================ */
-
-/* ------------------------------------------------------------
-   SCROLLBAR
-   ------------------------------------------------------------ */
-
-#workskin .doc-folio * {
-  scrollbar-color: #76675b transparent;
-}
-
-
-/* ------------------------------------------------------------
-   CONTAINER
-   Outer wrapper, cover and panels dimensions.
-   ------------------------------------------------------------ */
-
-#workskin .doc-folio {
-  width: 565px;
-  margin: auto;
-  position: relative;
-  overflow: hidden;
-}
-
-#workskin .doc-folio .doc-cover,
-#workskin .doc-folio .tab-panel {
-  width: 375px;
-}
-
-#workskin .doc-folio,
-#workskin .doc-folio .doc-cover,
-#workskin .doc-folio .tab-panel {
-  height: 445px;
-  box-sizing: border-box;
-}
-
-
-/* ------------------------------------------------------------
-   COVER
-   Decorative left panel with background image.
-   ------------------------------------------------------------ */
-
-#workskin .doc-folio .doc-cover {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0.9;
-  z-index: 1;
-
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folio.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-/* Padding */
-
-#workskin .doc-folio .doc-cover,
-#workskin .doc-folio .tab-panel {
-  padding-inline: 19px;
-}
-
-
-/* ------------------------------------------------------------
-   COVER — DECORATIVE IMAGE
-   Icon or illustration displayed on the cover panel.
-   ------------------------------------------------------------ */
-
-#workskin .doc-folio .doc-img {
-  width: 170px;
-  height: 95px;
-  margin-block: 14%;
-	
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-seal.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  
-  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 1)) brightness(1.3) contrast(0.9);
-}
-
-
-/* ------------------------------------------------------------
-   COVER — HEADLINE
-   Title and subtitle block displayed on the cover image.
-   ------------------------------------------------------------ */
-
-/* Headline */
-
-#workskin .doc-folio .doc-headline {
-  padding-inline: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#workskin .doc-folio .doc-headline p {
-  margin: 0;
-  font-family: "Monotype Corsiva", "Apple Chancery", "Palatino Linotype", "Georgia", serif;
-  font-style: italic;
-  color: black;
-  text-align: center;
-}
-
-/* Title */
-
-#workskin .doc-folio .doc-headline p.doc-title {
-  padding-bottom: 15px;
-  padding-inline: 10px;
-  font-size: 27px;
-  line-height: 1;
-}
-
-/* Subtitle */
-
-#workskin .doc-folio .doc-headline p.doc-subtitle {
-  padding-top: 15px;
-  padding-inline: 15px;
-  font-size: 20px;
-  line-height: 1;
-}
-
-
-/* ------------------------------------------------------------
-   SIDEBAR
-   Right column holding all tab buttons.
-   Acts as positioning context for all panels.
-   overflow: hidden clips panels at rest;
-   :has(.tab:hover) reveals them on hover.
-   ------------------------------------------------------------ */
-
-#workskin .doc-folio .sidebar {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 190px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
-  z-index: 10;
-  overflow: hidden;
-}
-
-#workskin .doc-folio .sidebar:has(.tab:hover) {
-  overflow: visible;
-}
-
-
-/* ------------------------------------------------------------
-   TAB
-   Individual tab item.
-   ------------------------------------------------------------ */
-
-#workskin .doc-folio .tab {
-  flex: 1;
-  overflow: hidden;
-  z-index: 10;
-}
-
-#workskin .doc-folio .tab:hover {
-  overflow: visible;
-  z-index: 20;
-}
-
-
-/* ------------------------------------------------------------
-   TAB — BUTTON
-   Visible area. Reveals the panel on hover.
-   ------------------------------------------------------------ */
-
-#workskin .doc-folio .tab-btn {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: ridge rgba(220, 210, 190, 0.8);
-  background-position: center center;
-  cursor: pointer;
-  transition: filter 300ms ease-in-out, opacity 300ms ease-in-out;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 5;
-  
-  opacity: 0.7;
-  filter: saturate(80%) sepia(10%);
-}
-
-#workskin .doc-folio .tab:hover .tab-btn {
-  opacity: 0.85;
-  filter: saturate(40%) sepia(0%);
-}
-
-
-/* ------------------------------------------------------------
-   TAB BUTTON IMAGES
-   Default image shared by all tabs. Override per tab using
-   :nth-child(N) to assign a different image to each category.
-
-   Example:
-   #workskin .doc-folio .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
-     background-size: cover;
-   }
-   ------------------------------------------------------------ */
-
-#workskin .doc-folio .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/scrolls.jpg") right bottom;
-  background-size: 200%;
-}
-
-/* Per-tab overrides (uncomment and fill in URLs):
-
-#workskin .doc-folio .tab:nth-child(1) .tab-btn {
-  background: url("img-url-here") center center;
-  background-size: cover;
-}
-
-#workskin .doc-folio .tab:nth-child(2) .tab-btn {
-  background: url("img-url-here") center center;
-  background-size: cover;
-}
-
-#workskin .doc-folio .tab:nth-child(3) .tab-btn {
-  background: url("img-url-here") center center;
-  background-size: cover;
-}
-
-#workskin .doc-folio .tab:nth-child(4) .tab-btn {
-  background: url("img-url-here") center center;
-  background-size: cover;
-}
-
-#workskin .doc-folio .tab:nth-child(5) .tab-btn {
-  background: url("img-url-here") center center;
-  background-size: cover;
-} */
-
-
-/* ------------------------------------------------------------
-   TAB — LABEL
-   Text overlay at the bottom of each tab button.
-   ------------------------------------------------------------ */
-
-#workskin .doc-folio .tab-label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 6;
-  box-sizing: border-box;
-  
-  background-color: rgba(247, 242, 234, 0.88);
-  border-top: 1px solid rgba(170, 150, 120, 0.35);
-  box-shadow: 0 0 10px #141414;
-  border-radius: 25%;
-}
-
-/* Label text */
-
-#workskin .doc-folio .tab-label p {
-  margin-block: 7px;
-  font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
-  font-size: 12px;
-  font-style: italic;
-  color: black;
-  font-weight: bold;
-  text-align: center;
-  line-height: 1.3;
-  letter-spacing: 0.02em;
-}
-
-#workskin .doc-folio .tab-label .red {
-  color: #b30000;
-}
-
-
-/* ------------------------------------------------------------
-   TAB — PANEL
-   Content panel revealed on tab hover.
-   Positioned against .sidebar (its stacking context).
-   top: 0 keeps it flush with the container top regardless
-   of which tab is hovered. Hidden by sidebar overflow at rest.
-   ------------------------------------------------------------ */
-
-#workskin .doc-folio .tab-panel {
-  position: absolute;
-  top: 0;
-  right: 100%;
-  z-index: 19;
-  
-  background-color: rgb(195 179 153);
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
-  background-size: 100%;
-  background-repeat: repeat;
-  background-clip: content-box;
-  
-  overflow: hidden;
-  display: none;
-}
-
-#workskin .doc-folio .tab:hover .tab-panel {
-  display: block;
-}
-
-
-/* ------------------------------------------------------------
-   TAB — PANEL CONTENT
-   Scrollable inner content area.
-   ------------------------------------------------------------ */
-
-#workskin .doc-folio .tab-content {
-  width: 100%;
-  height: 100%;
-  padding: 12px 14px;
-  overflow: auto;
-  box-sizing: border-box;
-	
-  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
-  background-size: 100%;
-  background-repeat: repeat;
-  background-attachment: local;
-}
-
-#workskin .doc-folio .tab-content p {
-  font-family: "Monotype Corsiva", "Apple Chancery", "Palatino Linotype", "Georgia", cursive;
-  color: black;
-  font-style: italic;
-  font-size: 18px;
-  line-height: 22px;
-}
-
-#workskin .doc-folio .tab-content p.tab-title {
-  text-align: center;
-  font-size: 22px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #4a3e3d;
-}
-
-#workskin .doc-folio .tab-content p.tab-section {
-  font-size: 20px;
-}
-
 /* Images */
 
-#workskin .doc-folio .tab-content > p.img-left img {
+#workskin .doc-book .tab-content > p.img-left img {
   margin-right: 10px;
   float: left;
 }
 
-#workskin .doc-folio .tab-content > p.img-right img {
+#workskin .doc-book .tab-content > p.img-right img {
   margin-left: 10px;
   float: right;
 }
 
-#workskin .doc-folio .tab-content .img-float-clear + p,
-#workskin .doc-folio .tab-content .img-float-clear + p.img-left + p,
-#workskin .doc-folio .tab-content .img-float-clear + p.img-right + p {
+#workskin .doc-book .tab-content .img-float-clear + p,
+#workskin .doc-book .tab-content .img-float-clear + p.img-left + p,
+#workskin .doc-book .tab-content .img-float-clear + p.img-right + p {
   margin-top: 0;
 }
 
-#workskin .doc-folio .tab-content .img-float-clear {
+#workskin .doc-book .tab-content .img-float-clear {
   clear: both;
 }
 
 /* Accent colors */
 
-#workskin .doc-folio .accent {
-  color: #760000; /* red */
+#workskin .doc-book .accent {
+  color: #cfbc64; /* yellow on cover */
+}
+
+#workskin .doc-book .tab-content .accent {
+  color: #a96525; /* darker on pages */
 }
 
 /* <hr> separator */
 
-#workskin .doc-folio .doc-headline .doc-title-separator,
-#workskin .doc-folio .tab-content hr {
+#workskin .doc-book .doc-headline .doc-title-separator,
+#workskin .doc-book .tab-content hr {
   border: 0;
   height: 1px;
-  background: #2e2416;
-  width: 45%;
+  background: #808080;
+  width: 70%;
   position: relative;
   overflow: visible;
-  opacity: 0.85;
 }
 
-#workskin .doc-folio .doc-headline .doc-title-separator {
+#workskin .doc-book .doc-headline .doc-title-separator {
   margin: 20px auto;
 }
 
-#workskin .doc-folio .tab-content hr {
-  margin: 40px auto;
+#workskin .doc-book .tab-content hr {
+  margin: 30px auto;
 }
 
-#workskin .doc-folio .doc-headline .doc-title-separator::after,
-#workskin .doc-folio .doc-headline .doc-title-separator::before,
-#workskin .doc-folio .tab-content hr::after,
-#workskin .doc-folio .tab-content hr::before {
+#workskin .doc-book .doc-headline .doc-title-separator::after,
+#workskin .doc-book .tab-content hr::after {
+  content: "♦\FE0E";
   display: inline-block;
   position: absolute;
-  top: -13px;
-  color: #2e2416;
-  font-family: "Georgia", serif;
-  font-size: 18px;
+  height: 0;
+  line-height: 0;
+  margin-top: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: transparent;
+  padding: 0 10px;
+  color: #cfbc64;
+  font-size: 14px;
 }
 
-#workskin .doc-folio .doc-headline .doc-title-separator::after,
-#workskin .doc-folio .tab-content hr::after {
-  content: "❧";
-  left: -10px;
-}
-
-#workskin .doc-folio .doc-headline .doc-title-separator::before,
-#workskin .doc-folio .tab-content hr::before {
-  content: "❧";
-  transform: scaleX(-1);
-  right: -10px; 
+#workskin .doc-book .tab-content hr::after {
+  color: #a96525;
 }
 
 
@@ -1475,80 +1584,98 @@
    Add .bigger to switch to larger dimensions.
    All overrides for .bigger are grouped here.
 
-   Example: <div class="doc-folio bigger">
+   Example: <div class="doc-book bigger">
    ------------------------------------------------------------ */
 
 /* Container — Outer wrapper, cover and panels dimensions. */
 
-#workskin .bigger.doc-folio {
+#workskin .bigger.doc-book {
   width: 765px;
 }
 
-#workskin .bigger.doc-folio,
-#workskin .bigger.doc-folio .doc-cover,
-#workskin .bigger.doc-folio .tab-panel {
+#workskin .bigger.doc-book,
+#workskin .bigger.doc-book .doc-cover,
+#workskin .bigger.doc-book .tab-panel {
   height: 682px;
 }
 
-#workskin .bigger.doc-folio .doc-cover,
-#workskin .bigger.doc-folio .tab-panel {
+#workskin .bigger.doc-book .doc-cover,
+#workskin .bigger.doc-book .tab-panel {
   width: 575px;
-  padding-inline: 29px;
+}
+
+#workskin .bigger.doc-book .doc-cover {
+  padding: 70px 50px;
+  border-image-outset: 8px;
+  border-image-width: 130px;
+}
+
+#workskin .bigger.doc-book .tab-panel {
+  border-style: solid;
+  border-color: transparent;
+  border-width: 70px 50px;
 }
 
 /* Cover image and margin */
 
-#workskin .bigger.doc-folio .doc-img {
-  width: 200px;
-  height: 125px;
-  margin-block: 16%;
+#workskin .bigger.doc-book .doc-img {
+  width: 160px;
+  height: 110px;
+  margin-block: 12%;
+  
+  border-image-outset: 25px;
+  border-image-width: 51px;
 }
 
-/* Title */
+/* Headline */
 
-#workskin .bigger.doc-folio .doc-headline p.doc-title {
-  font-size: 35px;
+#workskin .bigger.doc-book .doc-headline p.doc-title {
+  font-size: 30px;
 }
 
-/* Subtitle */
-
-#workskin .bigger.doc-folio .doc-headline p.doc-subtitle {
-  font-size: 24px;
+#workskin .bigger.doc-book .doc-headline p.doc-subtitle {
+  font-size: 17px;
 }
 
-/* Tab labels */
+/* Tab buttons / labels */
 
-#workskin .bigger.doc-folio .tab-label p {
+#workskin .bigger.doc-book .tab-btn {
+  background-size: unset;
+}
+
+#workskin .bigger.doc-book .tab-label p {
   font-size: 13px;
 }
-
 
 /* Tab button images — add per-tab overrides here, one entry per tab:
    .tab:nth-child(1) for the first button, .tab:nth-child(2) for the second button, and so on.
 
    Example:
-   #workskin .bigger.doc-folio .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+   #workskin .bigger.doc-book .tab:nth-child(1) .tab-btn {
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    } */
 
 /* Tab content — Font size */
 
-#workskin .bigger.doc-folio .tab-content p {
-  font-size: 19px;
-  line-height: 25px;
+#workskin .bigger.doc-book .initial::first-letter,
+#workskin .bigger.doc-book .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
+  font-size: 4rem;
 }
 
-#workskin .bigger.doc-folio .tab-content p.tab-title {
-  font-size: 26px;
+#workskin .bigger.doc-book .tab-content p {
+  font-size: 15px;
+  line-height: 22px;
 }
 
-#workskin .bigger.doc-folio .tab-content p.tab-section {
-  font-size: 21px;
+#workskin .bigger.doc-book .tab-content p.tab-title {
+  font-size: 20px;
 }
 
-
-/* ============================================================
+#workskin .bigger.doc-book .tab-content p.tab-section {
+  font-size: 18px;
+}/* ============================================================
    4.  NEWSPAPER
    ============================================================ */
 
@@ -1581,8 +1708,15 @@
 #workskin .doc-newspaper,
 #workskin .doc-newspaper .doc-cover,
 #workskin .doc-newspaper .tab-panel {
-  height: 445px;
+  height: 444px;
+  background-color: rgb(247 242 234);
   box-sizing: border-box;
+}
+
+/* Padding & transparent border */
+
+#workskin .doc-newspaper .tab-panel {
+  border: 5px solid transparent;
 }
 
 
@@ -1693,7 +1827,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
   z-index: 10;
   overflow: hidden;
 }
@@ -1754,40 +1888,47 @@
 
    Example:
    #workskin .doc-newspaper .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    }
    ------------------------------------------------------------ */
 
 #workskin .doc-newspaper .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-background.jpg") center bottom;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-background.jpg");
+  background-position: center bottom;
   background-size: 200%;
 }
 
 /* Per-tab overrides (uncomment and fill in URLs):
 
 #workskin .doc-newspaper .tab:nth-child(1) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-newspaper .tab:nth-child(2) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-newspaper .tab:nth-child(3) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-newspaper .tab:nth-child(4) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-newspaper .tab:nth-child(5) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 } */
 
@@ -1831,7 +1972,7 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL
-   Content panel revealed on tab hover.
+   Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
    of which tab is hovered. Hidden by sidebar overflow at rest.
@@ -1841,16 +1982,14 @@
   position: absolute;
   top: 0;
   right: 100%;
-  padding: 5px;
   z-index: 19;
   
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/newspaper-texture.jpg");
-  background-color: rgb(247 242 234);
   background-size: 100%;
   background-repeat: repeat;
   background-clip: content-box;
   
-  overflow: hidden;
+  overflow: auto;
   display: none;
 }
 
@@ -1861,15 +2000,14 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL CONTENT
-   Scrollable inner content area.
+   Inner content area.
    ------------------------------------------------------------ */
 
 #workskin .doc-newspaper .tab-content {
   width: 100%;
-  height: 100%;
   padding: 12px 14px;
-  overflow: auto;
   box-sizing: border-box;
+  position: relative;
 }
 
 #workskin .doc-newspaper .tab-content p {
@@ -2008,7 +2146,8 @@
 
    Example:
    #workskin .bigger.doc-newspaper .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    } */
 
@@ -2061,8 +2200,16 @@
 #workskin .doc-diary,
 #workskin .doc-diary .doc-cover,
 #workskin .doc-diary .tab-panel {
-  height: 445px;
+  height: 444px;
+  background-color: white;
   box-sizing: border-box;
+}
+
+/* Padding */
+
+#workskin .doc-diary .doc-cover,
+#workskin .doc-diary .tab-panel {
+  padding-inline: 19px 0;
 }
 
 
@@ -2087,13 +2234,6 @@
   background-repeat: no-repeat;
   
   filter: saturate(0.8) sepia(0.1);
-}
-
-/* Padding */
-
-#workskin .doc-diary .doc-cover,
-#workskin .doc-diary .tab-panel {
-  padding-inline: 19px 0;
 }
 
 
@@ -2185,7 +2325,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
   z-index: 10;
   overflow: hidden;
 }
@@ -2245,40 +2385,47 @@
 
    Example:
    #workskin .doc-diary .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    }
    ------------------------------------------------------------ */
 
 #workskin .doc-diary .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/collage.jpg") 55% 60%;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/collage.jpg");
+  background-position: 55% 60%;
   background-size: 200%;
 }
 
 /* Per-tab overrides (uncomment and fill in URLs):
 
 #workskin .doc-diary .tab:nth-child(1) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-diary .tab:nth-child(2) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-diary .tab:nth-child(3) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-diary .tab:nth-child(4) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
 #workskin .doc-diary .tab:nth-child(5) .tab-btn {
-  background: url("img-url-here") center center;
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 } */
 
@@ -2322,7 +2469,7 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL
-   Content panel revealed on tab hover.
+   Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
    of which tab is hovered. Hidden by sidebar overflow at rest.
@@ -2333,11 +2480,10 @@
   top: 0;
   right: 100%;
   z-index: 19;
-  overflow: hidden;
-  display: none;
   
-  background: white;
   background-clip: content-box;
+  overflow: auto;
+  display: none;
 }
 
 #workskin .doc-diary .tab:hover .tab-panel {
@@ -2347,21 +2493,18 @@
 
 /* ------------------------------------------------------------
    TAB — PANEL CONTENT
-   Scrollable inner content area.
+   Inner content area.
    ------------------------------------------------------------ */
 
 #workskin .doc-diary .tab-content {
   width: 100%;
-  height: 100%;
   padding: 25px 14px;
   padding-left: 40px;
-  overflow: auto;
   box-sizing: border-box;
+  position: relative;
 	
   background-image: repeating-linear-gradient(to bottom, #ffffff 0px, #ffffff 21px, #00b0d7 21px, #00b0d7 22px);
-  background-size: 100%;
-  background-repeat: repeat;
-  background-attachment: local;
+  background-attachment: scroll;
 }
 
 #workskin .doc-diary .tab-content::before {
@@ -2370,7 +2513,7 @@
   position: absolute;
   z-index: 1;
   top: 0;
-  left: 50px;
+  left: 30px;
   height: 100%;
   width: 1px;
   background: #db4034;
@@ -2516,7 +2659,8 @@
 
    Example:
    #workskin .bigger.doc-diary .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    } */
 
@@ -2529,7 +2673,7 @@
 }
 
 #workskin .bigger.doc-diary .tab-content::before {
-  left: 75px;
+  left: 50px;
 }
 
 /* Tab content — Font size */
@@ -2558,15 +2702,15 @@
 
 
 /* ============================================================
-   6.  BOOK
+   6.  FOLDERS
    ============================================================ */
 
 /* ------------------------------------------------------------
    SCROLLBAR
    ------------------------------------------------------------ */
 
-#workskin .doc-book * {
-  scrollbar-color: #76675b transparent;
+#workskin .doc-folders * {
+  scrollbar-color: #776d64 transparent;
 }
 
 
@@ -2575,23 +2719,34 @@
    Outer wrapper, cover and panels dimensions.
    ------------------------------------------------------------ */
 
-#workskin .doc-book {
+#workskin .doc-folders {
   width: 565px;
   margin: auto;
   position: relative;
   overflow: hidden;
 }
 
-#workskin .doc-book .doc-cover,
-#workskin .doc-book .tab-panel {
+#workskin .doc-folders .doc-cover,
+#workskin .doc-folders .tab-panel {
   width: 375px;
 }
 
-#workskin .doc-book,
-#workskin .doc-book .doc-cover,
-#workskin .doc-book .tab-panel {
+#workskin .doc-folders,
+#workskin .doc-folders .doc-cover,
+#workskin .doc-folders .tab-panel {
   height: 445px;
+  background-color: rgb(247 242 234);
   box-sizing: border-box;
+}
+
+/* Padding & transparent border */
+
+#workskin .doc-folders .doc-cover {
+  padding-inline: 19px;
+}
+
+#workskin .doc-folders .tab-panel {
+  border-inline: 19px solid transparent;
 }
 
 
@@ -2600,7 +2755,7 @@
    Decorative left panel with background image.
    ------------------------------------------------------------ */
 
-#workskin .doc-book .doc-cover {
+#workskin .doc-folders .doc-cover {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2611,20 +2766,10 @@
   opacity: 0.9;
   z-index: 1;
 
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png") top left;
-  background-color: #180905;
-  background-repeat: repeat;
-  
-  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-border.png") 45% round;
-  border-image-outset: 7px;
-  border-image-width: 100px;
-}
-
-/* Padding */
-
-#workskin .doc-book .doc-cover,
-#workskin .doc-book .tab-panel {
-  padding: 50px 43px;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-folders.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 
@@ -2633,19 +2778,18 @@
    Icon or illustration displayed on the cover panel.
    ------------------------------------------------------------ */
 
-#workskin .doc-book .doc-img {
-  width: 110px;
-  height: 80px;
-  margin-block: 12%;
+#workskin .doc-folders .doc-img {
+  width: 170px;
+  height: 95px;
+  margin-block: 14%;
 	
-  background: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif) center center;
-  background-size: cover;
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/confidential.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   
-  border-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/frame.png) 30% round;
-  border-image-outset: 15px;
-  border-image-width: 36px;
-  
-  filter: contrast(1.1);
+  transform: rotate(10deg);
+  filter: saturate(0.7);
 }
 
 
@@ -2656,7 +2800,7 @@
 
 /* Headline */
 
-#workskin .doc-book .doc-headline {
+#workskin .doc-folders .doc-headline {
   padding-inline: 15px;
   display: flex;
   flex-direction: column;
@@ -2664,26 +2808,27 @@
   justify-content: center;
 }
 
-#workskin .doc-book .doc-headline p {
+#workskin .doc-folders .doc-headline p {
   margin: 0;
-  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
   text-align: center;
-  color: #d8c8af;
+  color: black;
 }
 
 /* Title */
 
-#workskin .doc-book .doc-headline p.doc-title {
+#workskin .doc-folders .doc-headline p.doc-title {
   padding-bottom: 15px;
   padding-inline: 10px;
   font-size: 23px;
-  line-height: 1;
   font-variant: small-caps;
+  line-height: 1;
 }
 
 /* Subtitle */
 
-#workskin .doc-book .doc-headline p.doc-subtitle {
+#workskin .doc-folders .doc-headline p.doc-subtitle {
   padding-top: 15px;
   padding-inline: 15px;
   font-size: 15px;
@@ -2699,7 +2844,7 @@
    :has(.tab:hover) reveals them on hover.
    ------------------------------------------------------------ */
 
-#workskin .doc-book .sidebar {
+#workskin .doc-folders .sidebar {
   position: absolute;
   right: 0;
   top: 0;
@@ -2707,12 +2852,12 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/old-parchment-texture.jpg");
   z-index: 10;
   overflow: hidden;
 }
 
-#workskin .doc-book .sidebar:has(.tab:hover) {
+#workskin .doc-folders .sidebar:has(.tab:hover) {
   overflow: visible;
 }
 
@@ -2722,13 +2867,13 @@
    Individual tab item.
    ------------------------------------------------------------ */
 
-#workskin .doc-book .tab {
+#workskin .doc-folders .tab {
   flex: 1;
   overflow: hidden;
   z-index: 10;
 }
 
-#workskin .doc-book .tab:hover {
+#workskin .doc-folders .tab:hover {
   overflow: visible;
   z-index: 20;
 }
@@ -2739,7 +2884,7 @@
    Visible area. Reveals the panel on hover.
    ------------------------------------------------------------ */
 
-#workskin .doc-book .tab-btn {
+#workskin .doc-folders .tab-btn {
   display: block;
   width: 100%;
   height: 100%;
@@ -2752,12 +2897,12 @@
   z-index: 5;
   
   opacity: 0.7;
-  filter: contrast(1.2) saturate(50%);
+  filter: brightness(1.3) saturate(50%);
 }
 
-#workskin .doc-book .tab:hover .tab-btn {
+#workskin .doc-folders .tab:hover .tab-btn {
   opacity: 0.85;
-  filter: contrast(1.2) saturate(40%);
+  filter: brightness(1) saturate(40%);
 }
 
 
@@ -2767,41 +2912,48 @@
    :nth-child(N) to assign a different image to each category.
 
    Example:
-   #workskin .doc-book .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+   #workskin .doc-folders .tab:nth-child(1) .tab-btn {
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    }
    ------------------------------------------------------------ */
 
-#workskin .doc-book .tab-btn {
-  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/bookshelf.jpg") right bottom;
+#workskin .doc-folders .tab-btn {
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/files.jpg");
+  background-position: 75% center;
   background-size: 200%;
 }
 
 /* Per-tab overrides (uncomment and fill in URLs):
 
-#workskin .doc-book .tab:nth-child(1) .tab-btn {
-  background: url("img-url-here") center center;
+#workskin .doc-folders .tab:nth-child(1) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
-#workskin .doc-book .tab:nth-child(2) .tab-btn {
-  background: url("img-url-here") center center;
+#workskin .doc-folders .tab:nth-child(2) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
-#workskin .doc-book .tab:nth-child(3) .tab-btn {
-  background: url("img-url-here") center center;
+#workskin .doc-folders .tab:nth-child(3) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
-#workskin .doc-book .tab:nth-child(4) .tab-btn {
-  background: url("img-url-here") center center;
+#workskin .doc-folders .tab:nth-child(4) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 }
 
-#workskin .doc-book .tab:nth-child(5) .tab-btn {
-  background: url("img-url-here") center center;
+#workskin .doc-folders .tab:nth-child(5) .tab-btn {
+  background-image: url("img-url-here");
+  background-position: center center;
   background-size: cover;
 } */
 
@@ -2811,7 +2963,7 @@
    Text overlay at the bottom of each tab button.
    ------------------------------------------------------------ */
 
-#workskin .doc-book .tab-label {
+#workskin .doc-folders .tab-label {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -2819,177 +2971,140 @@
   z-index: 6;
   box-sizing: border-box;
   
-  background-color: rgba(0, 0, 0, 0.88);
+  background-color: rgba(247, 242, 234, 0.88);
   border-top: 1px solid rgba(170, 150, 120, 0.35);
-  box-shadow: 0 0 10px #141414;
+  box-shadow: 0 -1px 5px #373737;
+  border-radius: 30px 30px 0 0;
 }
 
 /* Label text */
 
-#workskin .doc-book .tab-label p {
+#workskin .doc-folders .tab-label p {
   margin-block: 7px;
-  font-family: "Georgia", "Apple Chancery", "Palatino Linotype", serif;
+  font-family: monospace, "Courier New", Courier;
   font-size: 12px;
-  font-style: italic;
+  line-height: 1.3;
   font-weight: bold;
   text-align: center;
-  line-height: 1.3;
   letter-spacing: 0.02em;
-  color: rgba(247, 242, 234, 0.88);
+  text-transform: uppercase;
+  color: black;
 }
 
-#workskin .doc-book .tab-label .red {
-  color: #b30000;
+#workskin .doc-folders .tab-label .red {
+  color: #ff0000;
 }
 
 
 /* ------------------------------------------------------------
    TAB — PANEL
-   Content panel revealed on tab hover.
+   Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
    of which tab is hovered. Hidden by sidebar overflow at rest.
    ------------------------------------------------------------ */
 
-#workskin .doc-book .tab-panel {
+#workskin .doc-folders .tab-panel {
   position: absolute;
   top: 0;
   right: 100%;
   z-index: 19;
   
-  background-color: rgb(247 242 234);
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
   background-size: 100%;
   background-repeat: repeat;
   background-clip: content-box;
   
-  overflow: hidden;
+  overflow: auto;
   display: none;
 }
 
-#workskin .doc-book .tab:hover .tab-panel {
+#workskin .doc-folders .tab:hover .tab-panel {
   display: block;
 }
 
 
 /* ------------------------------------------------------------
    TAB — PANEL CONTENT
-   Scrollable inner content area.
+   Inner content area.
    ------------------------------------------------------------ */
 
-#workskin .doc-book .tab-content {
+#workskin .doc-folders .tab-content {
   width: 100%;
-  height: 100%;
   padding: 12px 14px;
-  overflow: auto;
   box-sizing: border-box;
+  position: relative;
 }
 
-/* Drop cap — applied automatically to the first paragraph in .doc-book .tab-content
-   that is not a title or section header, or manually via .initial on any paragraph. */
-#workskin .doc-book .initial::first-letter,
-#workskin .doc-book .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
-  font-family: 'Georgia', serif;
-  font-weight: bold;
-  font-style: italic;
-  font-size: 3.5rem;
-  float: left;
-  line-height: 1;
-  margin-top: 2px;
-  margin-right: 8px;
-  color: #a96525;
+#workskin .doc-folders .tab-content p {
+  font-family: "Courier New", Courier, monospace;
+  color: black;
+  font-size: 13px;
+  line-height: 18px;
 }
 
-#workskin .doc-book .tab-content p {
-  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
-  color: #2e2416;
-  text-align: justify;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-#workskin .doc-book .tab-content p.tab-title {
+#workskin .doc-folders .tab-content p.tab-title {
   text-align: center;
-  font-size: 18px;
-  padding-block: 15px;
-  border-block: 5px double #b2b2b2;
+  font-size: 17px;
+  padding-block: 20px;
+  border-block: 2px dashed #4a3e3d;
 }
 
-#workskin .doc-book .tab-content p.tab-section {
-  font-size: 16px;
+#workskin .doc-folders .tab-content p.tab-section {
+  font-size: 15px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed #868686;
 }
 
 /* Images */
 
-#workskin .doc-book .tab-content > p.img-left img {
+#workskin .doc-folders .tab-content > p:has(img) {
+  filter: grayscale(0.8);
+}
+
+#workskin .doc-folders .tab-content > p.img-left img {
   margin-right: 10px;
   float: left;
 }
 
-#workskin .doc-book .tab-content > p.img-right img {
+#workskin .doc-folders .tab-content > p.img-right img {
   margin-left: 10px;
   float: right;
 }
 
-#workskin .doc-book .tab-content .img-float-clear + p,
-#workskin .doc-book .tab-content .img-float-clear + p.img-left + p,
-#workskin .doc-book .tab-content .img-float-clear + p.img-right + p {
+#workskin .doc-folders .tab-content .img-float-clear + p,
+#workskin .doc-folders .tab-content .img-float-clear + p.img-left + p,
+#workskin .doc-folders .tab-content .img-float-clear + p.img-right + p {
   margin-top: 0;
 }
 
-#workskin .doc-book .tab-content .img-float-clear {
+#workskin .doc-folders .tab-content .img-float-clear {
   clear: both;
 }
 
 /* Accent colors */
 
-#workskin .doc-book .accent {
-  color: #cfbc64; /* yellow on cover */
-}
-
-#workskin .doc-book .tab-content .accent {
-  color: #a96525; /* darker on pages */
+#workskin .doc-folders .accent {
+  color: #bd0000; /* red */
 }
 
 /* <hr> separator */
 
-#workskin .doc-book .doc-headline .doc-title-separator,
-#workskin .doc-book .tab-content hr {
+#workskin .doc-folders .doc-headline .doc-title-separator,
+#workskin .doc-folders .tab-content hr {
   border: 0;
-  height: 1px;
-  background: #808080;
-  width: 70%;
+  border-top: 2px dashed #4a3e3d;
+  width: 90%;
   position: relative;
   overflow: visible;
 }
 
-#workskin .doc-book .doc-headline .doc-title-separator {
+#workskin .doc-folders .doc-headline .doc-title-separator {
   margin: 20px auto;
 }
 
-#workskin .doc-book .tab-content hr {
-  margin: 30px auto;
-}
-
-#workskin .doc-book .doc-headline .doc-title-separator::after,
-#workskin .doc-book .tab-content hr::after {
-  content: "♦\FE0E";
-  display: inline-block;
-  position: absolute;
-  height: 0;
-  line-height: 0;
-  margin-top: 1px;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  background: transparent;
-  padding: 0 10px;
-  color: #cfbc64;
-  font-size: 14px;
-}
-
-#workskin .doc-book .tab-content hr::after {
-  color: #a96525;
+#workskin .doc-folders .tab-content hr {
+  margin: 35px auto;
 }
 
 
@@ -2998,60 +3113,55 @@
    Add .bigger to switch to larger dimensions.
    All overrides for .bigger are grouped here.
 
-   Example: <div class="doc-book bigger">
+   Example: <div class="doc-folders bigger">
    ------------------------------------------------------------ */
 
 /* Container — Outer wrapper, cover and panels dimensions. */
 
-#workskin .bigger.doc-book {
+#workskin .bigger.doc-folders {
   width: 765px;
 }
 
-#workskin .bigger.doc-book,
-#workskin .bigger.doc-book .doc-cover,
-#workskin .bigger.doc-book .tab-panel {
+#workskin .bigger.doc-folders,
+#workskin .bigger.doc-folders .doc-cover,
+#workskin .bigger.doc-folders .tab-panel {
   height: 682px;
 }
 
-#workskin .bigger.doc-book .doc-cover,
-#workskin .bigger.doc-book .tab-panel {
+#workskin .bigger.doc-folders .doc-cover,
+#workskin .bigger.doc-folders .tab-panel {
   width: 575px;
-  padding: 70px 50px;
 }
 
-#workskin .bigger.doc-book .doc-cover {
-  border-image-outset: 8px;
-  border-image-width: 130px;
+#workskin .bigger.doc-folders .doc-cover {
+  padding-inline: 28px;
+}
+
+#workskin .bigger.doc-folders .tab-panel {
+  border-inline: 28px solid transparent;
 }
 
 /* Cover image and margin */
 
-#workskin .bigger.doc-book .doc-img {
-  width: 160px;
-  height: 110px;
-  margin-block: 12%;
-  
-  border-image-outset: 25px;
-  border-image-width: 51px;
+#workskin .bigger.doc-folders .doc-img {
+  width: 200px;
+  height: 125px;
+  margin-block: 16%;
 }
 
 /* Headline */
 
-#workskin .bigger.doc-book .doc-headline p.doc-title {
+#workskin .bigger.doc-folders .doc-headline p.doc-title {
   font-size: 30px;
 }
 
-#workskin .bigger.doc-book .doc-headline p.doc-subtitle {
+#workskin .bigger.doc-folders .doc-headline p.doc-subtitle {
   font-size: 17px;
 }
 
-/* Tab buttons / labels */
+/* Tab labels */
 
-#workskin .bigger.doc-book .tab-btn {
-  background-size: unset;
-}
-
-#workskin .bigger.doc-book .tab-label p {
+#workskin .bigger.doc-folders .tab-label p {
   font-size: 13px;
 }
 
@@ -3059,27 +3169,23 @@
    .tab:nth-child(1) for the first button, .tab:nth-child(2) for the second button, and so on.
 
    Example:
-   #workskin .bigger.doc-book .tab:nth-child(1) .tab-btn {
-     background: url("img-url-here") center center;
+   #workskin .bigger.doc-folders .tab:nth-child(1) .tab-btn {
+     background-image: url("img-url-here");
+     background-position: center center;
      background-size: cover;
    } */
 
 /* Tab content — Font size */
 
-#workskin .bigger.doc-book .initial::first-letter,
-#workskin .bigger.doc-book .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
-  font-size: 4rem;
-}
-
-#workskin .bigger.doc-book .tab-content p {
-  font-size: 15px;
+#workskin .bigger.doc-folders .tab-content p {
+  font-size: 14px;
   line-height: 22px;
 }
 
-#workskin .bigger.doc-book .tab-content p.tab-title {
-  font-size: 20px;
+#workskin .bigger.doc-folders .tab-content p.tab-title {
+  font-size: 18px;
 }
 
-#workskin .bigger.doc-book .tab-content p.tab-section {
-  font-size: 18px;
+#workskin .bigger.doc-folders .tab-content p.tab-section {
+  font-size: 16px;
 }
