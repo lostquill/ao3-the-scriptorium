@@ -337,7 +337,7 @@
 
   background-color: rgb(247 242 234);
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
-  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-codex.jpg") 20% fill round;
+  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/codex-border.png") 20% round;
   border-image-outset: 10px;
   border-image-width: 85px;
   filter: drop-shadow(2px 4px 6px #464646);
