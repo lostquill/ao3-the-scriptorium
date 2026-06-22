@@ -983,22 +983,9 @@
   border-block: 2px dashed #4a3e3d;
 }
 
-#workskin .file-content {
-  padding: 5px;
-  max-height: 500px;
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-
 #workskin .file-content p {
   font-size: 14px;
   line-height: 18px;
-}
-
-#workskin .file-content > p:first-of-type,
-#workskin .file-content > p.file-img-left:first-of-type + p,
-#workskin .file-content > p.file-img-right:first-of-type + p {
-  margin-top: 0;
 }
 
 #workskin .file-content p:last-of-type {
