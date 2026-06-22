@@ -2539,6 +2539,11 @@
 
 /* Images */
 
+#workskin .doc-diary .tab-content > p[align="center"] img {
+  width: auto;
+  height: 136px;
+}
+
 #workskin .doc-diary .tab-content > p.img-left img {
   margin-right: 10px;
   float: left;
