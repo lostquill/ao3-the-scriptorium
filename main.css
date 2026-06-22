@@ -809,11 +809,9 @@
    <div class="diary">
      <p class="diary-date">October 31st, 1998</p>
      <div class="diary-content">
-       <div class="diary-inner">
-         <p>First paragraph here.</p>
-         <hr>
-         <p>Another paragraph here.</p>
-       </div>
+       <p>First paragraph here.</p>
+       <hr>
+       <p>Another paragraph here.</p>
      </div>
      <p class="diary-signature">Goodnight for now.</p>
    </div>
@@ -822,86 +820,77 @@
 #workskin .diary {
   max-width: 38em;
   margin: auto;
-  padding: 2em 2.5em;
+  padding: 13px 15px;
+  padding-left: 75px;
   box-sizing: border-box;
   position: relative;
 
   color: #0f0f3e;
   font-family: "Lucida Handwriting", "Comic Sans MS", cursive;
 
-  background-color: #ffffff;
+  background-image: repeating-linear-gradient(to bottom, #ffffff 0px, #ffffff 23px, #00b0d7 23px, #00b0d7 24px);
   box-shadow: 0 0 10px #bcbcbc;
 }
 
-#workskin .diary p {
-  margin: 15px auto;
-}
-
-#workskin .diary-date {
-  text-align: right;
-  font-style: italic;
-  margin-bottom: 1em;
-}
-
-#workskin .diary-content {
-  max-height: 460px;
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-
-#workskin .diary-inner {
-  position: relative;
-  padding: 20px 14px 20px 40px;
-
-  background-image: repeating-linear-gradient(to bottom, #ffffff 0px, #ffffff 23px, #00b0d7 23px, #00b0d7 24px);
-}
-
-#workskin .diary-inner::before {
+#workskin .diary::before {
   content: '';
   display: block;
   position: absolute;
   z-index: 1;
   top: 0;
-  left: 30px;
+  left: 60px;
   height: 100%;
   width: 1px;
   background: #db4034;
 }
 
-#workskin .diary-inner p {
-  position: relative;
-  z-index: 2;
-  line-height: 24px;
-  margin: 0 0 24px;
+#workskin .diary p {
+  margin: 0;
 }
 
-#workskin .diary-inner > p:first-of-type,
-#workskin .diary-inner > p.diary-img-left:first-of-type + p,
-#workskin .diary-inner > p.diary-img-right:first-of-type + p {
+#workskin p.diary-date {
+  margin-top: 15px;
+  text-align: right;
+}
+
+#workskin .diary-content {
+  margin-top: 26px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+#workskin .diary-content p {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+#workskin .diary-content > p:first-of-type,
+#workskin .diary-content > p.diary-img-left:first-of-type + p,
+#workskin .diary-content > p.diary-img-right:first-of-type + p {
   margin-top: 0;
 }
 
-#workskin .diary-inner p:last-of-type {
+#workskin .diary-content p:last-of-type {
   margin-bottom: 0;
 }
 
-#workskin .diary-signature {
+#workskin p.diary-signature {
+  margin-top: 24px;
   text-align: right;
   font-style: italic;
-  margin-top: 1em;
 }
 
 #workskin .diary .accent {
   color: #bd0000;
 }
 
-#workskin .diary-inner hr {
+#workskin .diary-content hr {
   border: 0;
   border-top: 2px solid #ff6ae0;
   width: 100%;
-  margin: 17px auto 3px;
-  position: relative;
-  z-index: 2;
+  margin-inline: auto;
+  margin-top: 18px;
+  margin-bottom: 4px;
 }
 
 
@@ -912,32 +901,36 @@
    included via another component's image css.
 
    Example:
-   <div class="diary-inner">
-     <p class="diary-img-left">
-       <img width="40%" src="img-url-here">
-     </p>
-     <p>First paragraph here.</p>
-     <div class="img-float-clear"></div>
+   <div class="diary">
+     <p class="diary-date">October 31st, 1998</p>
+       <div class="diary-content">
+         <p class="diary-img-left">
+           <img width="40%" src="img-url-here">
+         </p>
+         <p>First paragraph here.</p>
+         <div class="img-float-clear"></div>
+     </div>
+     <p class="diary-signature">Goodnight for now.</p>
    </div>
    ============================================================ */
 
-#workskin .diary-inner > p:has(img) {
+#workskin .diary-content > p:has(img) {
   margin: 0;
 }
 
-#workskin .diary-inner > p.diary-img-left img {
+#workskin .diary-content > p.diary-img-left img {
   margin-right: 10px;
   float: left;
 }
 
-#workskin .diary-inner > p.diary-img-right img {
+#workskin .diary-content > p.diary-img-right img {
   margin-left: 10px;
   float: right;
 }
 
-#workskin .diary-inner .img-float-clear + p,
-#workskin .diary-inner .img-float-clear + p.diary-img-left + p,
-#workskin .diary-inner .img-float-clear + p.diary-img-right + p {
+#workskin .diary-content .img-float-clear + p,
+#workskin .diary-content .img-float-clear + p.diary-img-left + p,
+#workskin .diary-content .img-float-clear + p.diary-img-right + p {
   margin-top: 0;
 }
 
