@@ -913,6 +913,11 @@
   margin: 0;
 }
 
+#workskin .diary-content > p[align="center"] img {
+  width: auto;
+  height: 136px;
+}
+
 #workskin .diary-content > p.diary-img-left img {
   margin-right: 10px;
   float: left;
