@@ -940,7 +940,7 @@
 /* Drop cap — applied automatically to the first paragraph in .doc-codex .tab-content
    that is not a title or section header, or manually via .initial on any paragraph. */
 #workskin .doc-codex .initial::first-letter,
-#workskin .doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
+#workskin .doc-codex .tab-content > p:not(#workskin .tab-title, #workskin .tab-section):first-of-type::first-letter {
   font-family: 'Georgia', serif;
   font-weight: bold;
   font-style: italic;
@@ -1110,7 +1110,7 @@
 /* Tab content — Font size */
 
 #workskin .bigger.doc-codex .initial::first-letter,
-#workskin .bigger.doc-codex .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
+#workskin .bigger.doc-codex .tab-content > p:not(#workskin .tab-title, #workskin .tab-section):first-of-type::first-letter {
   font-size: 4rem;
 }
 
@@ -1474,7 +1474,7 @@
 /* Drop cap — applied automatically to the first paragraph in .doc-book .tab-content
    that is not a title or section header, or manually via .initial on any paragraph. */
 #workskin .doc-book .initial::first-letter,
-#workskin .doc-book .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
+#workskin .doc-book .tab-content > p:not(#workskin .tab-title, #workskin .tab-section):first-of-type::first-letter {
   font-family: 'Georgia', serif;
   font-weight: bold;
   font-style: italic;
@@ -1660,7 +1660,7 @@
 /* Tab content — Font size */
 
 #workskin .bigger.doc-book .initial::first-letter,
-#workskin .bigger.doc-book .tab-content > p:not(.tab-title, .tab-section):first-of-type::first-letter {
+#workskin .bigger.doc-book .tab-content > p:not(#workskin .tab-title, #workskin .tab-section):first-of-type::first-letter {
   font-size: 4rem;
 }
 
