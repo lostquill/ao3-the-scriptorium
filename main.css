@@ -31,8 +31,8 @@
 	1.  FRAME
 	2.  PARCHMENT BACKGROUND
 	3.  PARCHMENT SCROLL
-	4.  PARCHMENT — SINGLE DOCUMENT
-	5.  PARCHMENT — IMAGES
+	4.  FOLIO — SINGLE DOCUMENT
+	5.  FOLIO — IMAGES
 	6.  CODEX — SINGLE PAGE
 	7.  CODEX — IMAGES
 	8.  BOOK — BACK COVER
@@ -137,7 +137,7 @@
 
 
 /* ============================================================
-   4.  PARCHMENT — SINGLE DOCUMENT
+   4.  FOLIO — SINGLE DOCUMENT
    A single parchment document on aged old-parchment texture,
    with the iconic wax seal centred at the top.
    Matches the aesthetic of the Stack (tab view) component.
@@ -267,7 +267,7 @@
 
 
 /* ============================================================
-   5.  PARCHMENT — IMAGES
+   5.  FOLIO — IMAGES
    Optional image blocks to place inside .folio-content.
    No need to add #workskin .img-float-clear again if already
    included via another component's image css.
