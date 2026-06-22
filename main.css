@@ -24,8 +24,30 @@
    ============================================================ */
 
 
+/* .............................................................................
+	TABLE OF CONTENTS
+	↳ Use 'CTRL + F' to find a specific section
+
+	1.  FRAME
+	2.  PARCHMENT BACKGROUND
+	3.  PARCHMENT SCROLL
+	4.  FOLIO — SINGLE DOCUMENT
+	5.  FOLIO — IMAGES
+	6.  CODEX — SINGLE PAGE
+	7.  CODEX — IMAGES
+	8.  BOOK — BACK COVER
+	9.  BOOK — INNER PAGE
+	10. BOOK — IMAGES
+	11. NEWSPAPER — CLIPPING
+	12. NEWSPAPER — IMAGES
+	13. DIARY — SINGLE ENTRY
+	14. DIARY — IMAGES
+	15. FILE — SINGLE PAGE
+	16. FILE — IMAGES
+	........................................................................... */
+
 /* ============================================================
-   FRAME
+   1.  FRAME
    A simple centered container with a light border.
    
    Example: <div class="frame"><p>Your text here.</p></div>
@@ -42,7 +64,7 @@
 
 
 /* ============================================================
-   PARCHMENT BACKGROUND
+   2.  PARCHMENT BACKGROUND
    A simple, textured parchment background.
    
    Example (standalone):
@@ -70,7 +92,7 @@
 }
 
 /* ============================================================
-   PARCHMENT SCROLL
+   3.  PARCHMENT SCROLL
    A decorative parchment scroll with a fixed size and scrollable content area.
    
    Example :
@@ -115,7 +137,7 @@
 
 
 /* ============================================================
-   FOLIO — SINGLE DOCUMENT
+   4.  FOLIO — SINGLE DOCUMENT
    A single parchment document on aged old-parchment texture,
    with the iconic wax seal centred at the top.
    Matches the aesthetic of the Stack (tab view) component.
@@ -245,7 +267,7 @@
 
 
 /* ============================================================
-   FOLIO — IMAGES
+   5.  FOLIO — IMAGES
    Optional image blocks to place inside .folio-content.
    No need to add #workskin .img-float-clear again if already
    included via another component's image css.
@@ -286,7 +308,7 @@
 
 
 /* ============================================================
-   CODEX — SINGLE PAGE
+   6.  CODEX — SINGLE PAGE
    An illuminated manuscript page framed by the codex cover
    image used as a decorative border (border-image with fill).
    Use .codex-title for the page heading, .codex-folio for an
@@ -411,7 +433,7 @@
 
 
 /* ============================================================
-   CODEX — IMAGES
+   7.  CODEX — IMAGES
    Optional image blocks to place inside .codex-content.
    No need to add #workskin .img-float-clear again if already
    included via another component's image css.
@@ -452,7 +474,7 @@
 
 
 /* ============================================================
-   BOOK — BACK COVER
+   8.  BOOK — BACK COVER
    A dark, ornate book cover with a decorative border.
    Use .book-title for the title line inside the book.
    Use .book-edition for a smaller line at the bottom (e.g. edition, year).
@@ -530,7 +552,7 @@
 
 
 /* ============================================================
-   BOOK — INNER PAGE
+   9.  BOOK — INNER PAGE
    Nest .parchment inside for inner pages with a lighter texture.
    
    Example:
@@ -563,7 +585,7 @@
 
 
 /* ============================================================
-   BOOK — IMAGES
+   10. BOOK — IMAGES
    Optional decorative image blocks to place inside .book.
    No need to add #workskin .img-float-clear again if already included via newspaper image css.
    
@@ -609,7 +631,7 @@
 
 
 /* ============================================================
-   NEWSPAPER
+   11. NEWSPAPER — CLIPPING
    A sepia-toned newspaper/gazette layout.
    
    Components:
@@ -722,7 +744,7 @@
 
 
 /* ============================================================
-   NEWSPAPER — IMAGES
+   12. NEWSPAPER — IMAGES
    Optional decorative sepia image blocks to place inside .newspaper-content.
    No need to add #workskin .img-float-clear again if already included via book image css.
 
@@ -776,7 +798,7 @@
 
 
 /* ============================================================
-   DIARY — SINGLE ENTRY
+   13. DIARY — SINGLE ENTRY
    A handwritten diary page on white paper with ruled blue lines
    and a red margin line. The lined background is on an inner
    wrapper (.diary-inner) to avoid scroll lag on mobile.
@@ -884,7 +906,7 @@
 
 
 /* ============================================================
-   DIARY — IMAGES
+   14. DIARY — IMAGES
    Optional image blocks to place inside .diary-inner.
    No need to add #workskin .img-float-clear again if already
    included via another component's image css.
@@ -925,7 +947,7 @@
 
 
 /* ============================================================
-   FILE — SINGLE PAGE
+   15. FILE — SINGLE PAGE
    A typewritten classified file on parchment-textured paper.
    Use .file-title for the file heading, .file-stamp for a
    rotated stamp label (e.g. "Classified") at the bottom.
@@ -1025,7 +1047,7 @@
 
 
 /* ============================================================
-   FILE — IMAGES
+   16. FILE — IMAGES
    Optional grayscale image blocks to place inside .file-content.
    No need to add #workskin .img-float-clear again if already
    included via another component's image css.
