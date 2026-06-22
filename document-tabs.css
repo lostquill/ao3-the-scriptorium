@@ -2524,12 +2524,11 @@
   color: #0f0f3e;
   font-size: 13px;
   line-height: 22px;
-  margin: 0;
+  margin-block: 22px;
 }
 
 #workskin .doc-diary .tab-content p.tab-title {
   font-size: 17px;
-  padding-bottom: 22px;
 }
 
 #workskin .doc-diary .tab-content p.tab-section {
@@ -2538,6 +2537,11 @@
 }
 
 /* Images */
+
+#workskin .doc-diary .tab-content > p[align="center"] img {
+  width: auto;
+  height: 136px;
+}
 
 #workskin .doc-diary .tab-content > p.img-left img {
   margin-right: 10px;
@@ -2582,8 +2586,8 @@
 
 #workskin .doc-diary .tab-content hr {
   margin-inline: auto;
-  margin-top: 17px;
-  margin-bottom: 3px;
+  margin-top: -5px;
+  margin-bottom: 25px;
 }
 
 
@@ -2681,11 +2685,11 @@
 #workskin .bigger.doc-diary .tab-content p {
   font-size: 14px;
   line-height: 30px;
+  margin-block: 30px;
 }
 
 #workskin .bigger.doc-diary .tab-content p.tab-title {
   font-size: 18px;
-  padding-bottom: 30px;
 }
 
 #workskin .bigger.doc-diary .tab-content p.tab-section {
@@ -2696,8 +2700,8 @@
 
 #workskin .bigger.doc-diary .tab-content hr {
   margin-inline: auto;
-  margin-top: 21px;
-  margin-bottom: 7px;
+  margin-top: -9px;
+  margin-bottom: 37px;
 }
 
 

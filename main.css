@@ -13,8 +13,6 @@
    - Old parchment texture by Silvia Gaudenzi
      (Biella Biella) via Pixabay
      https://pixabay.com/users/silviagaudenzi-3932581/
-   - "Confidential" logo by Uclean India via kindpng
-     https://www.kindpng.com/userpngs/16619/
    - Article photo "Wedding & Couple Photographer in Vietnam"
      by Jupilu via Pixabay
      https://pixabay.com/fr/users/jupilu/
@@ -418,7 +416,6 @@
   position: absolute;
   height: 0;
   line-height: 0;
-  margin-top: 1px;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
@@ -859,6 +856,7 @@
 #workskin .diary-content p {
   font-size: 14px;
   line-height: 24px;
+  margin-block: 24px;
 }
 
 #workskin .diary-content > p:first-of-type,
@@ -886,8 +884,8 @@
   border-top: 2px solid #ff6ae0;
   width: 100%;
   margin-inline: auto;
-  margin-top: 18px;
-  margin-bottom: 4px;
+  margin-top: -6px;
+  margin-bottom: 28px;
 }
 
 
@@ -913,6 +911,11 @@
 
 #workskin .diary-content > p:has(img) {
   margin: 0;
+}
+
+#workskin .diary-content > p[align="center"] img {
+  width: auto;
+  height: 136px;
 }
 
 #workskin .diary-content > p.diary-img-left img {
@@ -985,22 +988,9 @@
   border-block: 2px dashed #4a3e3d;
 }
 
-#workskin .file-content {
-  padding: 5px;
-  max-height: 500px;
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-
 #workskin .file-content p {
   font-size: 14px;
   line-height: 18px;
-}
-
-#workskin .file-content > p:first-of-type,
-#workskin .file-content > p.file-img-left:first-of-type + p,
-#workskin .file-content > p.file-img-right:first-of-type + p {
-  margin-top: 0;
 }
 
 #workskin .file-content p:last-of-type {
