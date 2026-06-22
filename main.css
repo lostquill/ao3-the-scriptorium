@@ -116,7 +116,7 @@
   padding: 7em 5.3em;
 	
   background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-scroll.png");
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 
