@@ -1,8 +1,5 @@
 /* ============================================================
-   DOCUMENT TABS — STANDALONE VERSION (ISOLATED & CUSTOMIZABLE)
-   
-   Each variant is fully self-contained with its own specific rules.
-   Best for extracting a single component variant with no external dependencies.
+   DOCUMENT TABS
 
    Six visual variants: .doc-codex, .doc-folders, .doc-folio,
                         .doc-newspaper, .doc-diary, .doc-book;
@@ -59,6 +56,23 @@
 
      </div>
    </div>
+ 
+   Credits:
+   - Old parchment texture (parchment variant) by Silvia Gaudenzi
+     (Biella Biella) via Pixabay
+     https://pixabay.com/users/silviagaudenzi-3932581/
+   - "Confidential" logo by Uclean India via kindpng
+     https://www.kindpng.com/userpngs/16619/
+   - Article photo "Wedding & Couple Photographer in Vietnam"
+     by Jupilu via Pixabay
+     https://pixabay.com/fr/users/jupilu/
+   - Newspaper cover by richard.stephenson via wallpapers.com
+   - Diary cover inspired by berely's "Cahier journal intime
+     collage photo rétro rose et beige" via Canva
+     https://www.canva.com/p/berely/
+   - Other elements generated with Gemini. If you prefer not to
+     use AI-generated assets, you can swap them out: the CSS
+     will work with any image with minor adjustments.
    ============================================================ */
 
 
