@@ -857,6 +857,7 @@
 #workskin .diary-content p {
   font-size: 14px;
   line-height: 24px;
+  margin-block: 24px;
 }
 
 #workskin .diary-content > p:first-of-type,
@@ -884,8 +885,8 @@
   border-top: 2px solid #ff6ae0;
   width: 100%;
   margin-inline: auto;
-  margin-top: 18px;
-  margin-bottom: 4px;
+  margin-top: -6px;
+  margin-bottom: 28px;
 }
 
 
