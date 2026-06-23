@@ -1741,7 +1741,7 @@
   z-index: 1;
 
   background-color: white;
-  background-image: url(https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-newspaper.jpg);
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/doc-cover-newspaper.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   
