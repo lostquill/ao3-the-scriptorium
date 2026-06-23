@@ -18,7 +18,7 @@ A collection of CSS components for AO3 workskins: simple document-style formatti
 
 Usage and HTML examples available on [AO3](https://archiveofourown.org/works/84721106).
 
-## Assets
+## Credits & assets
 The `assets/` folder contains the textures used by the workskin. All are free to use.
 - `newspaper-image.jpg`: photo 'Wedding & Couple Photographer in Vietnam' by [Jupilu](https://pixabay.com/users/jupilu/) from [Pixabay](https://pixabay.com/)
 - `parchment-scroll.png`: designed by [Magnific](https://www.magnific.com)
