@@ -2532,6 +2532,7 @@
 }
 
 #workskin .doc-diary .tab-content p.tab-title {
+  margin-top: 0;
   font-size: 17px;
 }
 
@@ -2693,6 +2694,7 @@
 }
 
 #workskin .bigger.doc-diary .tab-content p.tab-title {
+  margin-top: 0;
   font-size: 18px;
 }
 
