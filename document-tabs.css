@@ -592,6 +592,10 @@
 
 /* Tab content — Font size */
 
+#workskin .bigger.doc-folio .tab-content {
+  background-size: 103.5%;
+}
+
 #workskin .bigger.doc-folio .tab-content p {
   font-size: 19px;
   line-height: 25px;
