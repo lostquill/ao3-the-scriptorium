@@ -146,8 +146,8 @@
    Example:
    <div class="folio">
      <div class="folio-seal"></div>
-     <p class="folio-title">Title of the Document</p>
      <div class="folio-content">
+     <p class="folio-title">Title of the Document</p>
        <p>First paragraph here.</p>
        <hr>
        <p>Another paragraph here.</p>
@@ -177,7 +177,7 @@
 }
 
 #workskin .folio-seal {
-  width: 150px;
+  width: 130px;
   height: 87px;
 	
   position: absolute;
@@ -190,6 +190,11 @@
   background-position: center;
 
   filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 1)) brightness(1.3) contrast(0.9);
+}
+
+#workskin .folio > p.folio-title:first-of-type,
+#workskin .folio .folio-content {
+  margin-top: 30px;
 }
 
 #workskin .folio-title {
@@ -335,9 +340,9 @@
 
   background-color: rgb(247 242 234);
   background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/parchment-texture.jpg");
-  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/codex-border.png") 35% round;
+  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/codex-border.png") 27% round;
   border-image-outset: 10px;
-  border-image-width: 130px;
+  border-image-width: 80px;
   filter: drop-shadow(2px 4px 6px #464646);
 }
 
