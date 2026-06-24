@@ -1208,6 +1208,7 @@
   border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-border.png") 45% round;
   border-image-outset: 7px;
   border-image-width: 100px;
+  filter: contrast(0.9);
 }
 
 
