@@ -586,6 +586,12 @@
   text-shadow: none;
 }
 
+/* Accent color */
+
+#workskin .book .parchment .accent {
+  color: #a96525;
+}
+
 
 /* ============================================================
    10. BOOK — COVER ANIMATION
@@ -714,7 +720,7 @@
 /* <hr> separator */
 
 #workskin .cover-animation .book-cover .book-headline .book-title-separator,
-#workskin .cover-animation .parchment hr {
+#workskin .book .parchmentt hr {
   border: 0;
   height: 1px;
   background: #808080;
@@ -727,12 +733,12 @@
   margin: 20px auto;
 }
 
-#workskin .cover-animation .parchment hr {
+#workskin .book .parchmentt hr {
   margin: 30px auto;
 }
 
 #workskin .cover-animation .book-cover .book-headline .book-title-separator::after,
-#workskin .cover-animation .parchment hr::after {
+#workskin .book .parchmentt hr::after {
   content: "♦\FE0E";
   display: inline-block;
   position: absolute;
@@ -748,7 +754,7 @@
   font-size: 14px;
 }
 
-#workskin .cover-animation .parchment hr::after {
+#workskin .book .parchmentt hr::after {
   color: #a96525;
 }
 
@@ -757,14 +763,10 @@
     height: 420px;
 }
 
-/* Accent colors */
+/* Accent color */
 
 #workskin .cover-animation .book-cover .accent {
   color: #cfbc64; /* yellow on cover */
-}
-
-#workskin .cover-animation .parchment .accent {
-  color: #a96525; /* darker on pages */
 }
 
 
