@@ -38,13 +38,14 @@
 	7.  CODEX — IMAGES
 	8.  BOOK — BACK COVER
 	9.  BOOK — INNER PAGE
-	10. BOOK — IMAGES
-	11. NEWSPAPER — CLIPPING
-	12. NEWSPAPER — IMAGES
-	13. DIARY — SINGLE ENTRY
-	14. DIARY — IMAGES
-	15. FILE — SINGLE PAGE
-	16. FILE — IMAGES
+	10. BOOK — COVER ANIMATION
+	11. BOOK — IMAGES
+	12. NEWSPAPER — CLIPPING
+	13. NEWSPAPER — IMAGES
+	14. DIARY — SINGLE ENTRY
+	15. DIARY — IMAGES
+	16. FILE — SINGLE PAGE
+	17. FILE — IMAGES
 	........................................................................... */
 
 /* ============================================================
@@ -585,9 +586,192 @@
   text-shadow: none;
 }
 
+/* Accent color */
+
+#workskin .book .parchment .accent {
+  color: #a96525;
+}
+
 
 /* ============================================================
-   10. BOOK — IMAGES
+   10. BOOK — COVER ANIMATION
+   A book spread with a cover that slides open on hover to reveal inner pages.
+   
+   Example:
+   <div class="cover-animation">
+     <div class="book-cover">
+       <div class="book-img"></div>
+       <div class="book-headline">
+         <p class="book-title">Title</p>
+         <div class="book-title-separator"></div>
+         <p class="book-subtitle">Subtitle</p>
+       </div>
+     </div>
+     <div class="book">
+       <div class="parchment">
+         <p class="book-title">Chapter One</p>
+         <div class="book-content">
+           <p>First paragraph here.</p>
+           <p>Another paragraph here.</p>
+         </div>
+         <p class="book-edition">First Edition — 1998</p>
+       </div>
+     </div>
+   </div>
+   ============================================================ */
+
+#workskin .cover-animation {
+  width: 40em;
+  margin: 20px auto;
+  overflow: hidden;
+  position: relative;
+}
+
+#workskin .cover-animation .book-cover,
+#workskin .cover-animation .book {
+  width: 38em;
+  margin: 20px auto;
+  padding: 5em 2em;
+  box-sizing: border-box;
+  position: relative;
+	
+  color: #d8c8af;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+	
+  background: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-texture.png") top left;
+  background-color: #180905;
+  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-border.png") 45% round;
+  border-image-outset: 20px;
+  border-image-width: 130px;
+  filter: contrast(0.9);
+}
+
+#workskin .cover-animation .book-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  margin: 20px 0;
+  z-index: 1;
+  transition: 500ms ease-in-out;
+}
+
+#workskin .cover-animation:hover .book-cover {
+  left: -100%;
+}
+
+#workskin .cover-animation .book-cover .book-img {
+  width: 160px;
+  height: 110px;
+  margin-inline: auto;
+  margin-block: 12%;
+	
+  background-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/book-cover-image.gif");
+  background-size: cover;
+  background-position: center;
+  
+  border-image: url("https://raw.githubusercontent.com/lostquill/ao3-the-scriptorium/main/assets/frame.png") 30% round;
+  border-image-outset: 25px;
+  border-image-width: 51px;
+  
+  filter: contrast(1.1);
+}
+
+#workskin .cover-animation .book-cover .book-headline {
+  padding-inline: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#workskin .cover-animation .book-cover .book-headline p {
+  margin: 0;
+  font-family: "Apple Chancery", "Palatino Linotype", "Georgia", serif;
+  text-align: center;
+  color: #d8c8af;
+}
+
+/* Title */
+
+#workskin .cover-animation .book-cover .book-headline p.book-title {
+  padding-bottom: 15px;
+  padding-inline: 10px;
+  font-size: 30px;
+  line-height: 1;
+  font-variant: small-caps;
+	
+  border: none;
+  text-transform: none;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+/* Subtitle */
+
+#workskin .cover-animation .book-cover .book-headline p.book-subtitle {
+  padding-top: 15px;
+  padding-inline: 15px;
+  font-size: 17px;
+  line-height: 1;
+}
+
+/* <hr> separator */
+
+#workskin .cover-animation .book-cover .book-headline .book-title-separator,
+#workskin .book .parchment hr {
+  border: 0;
+  height: 1px;
+  background: #808080;
+  width: 70%;
+  position: relative;
+  overflow: visible;
+}
+
+#workskin .cover-animation .book-cover .book-headline .book-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .book .parchment hr {
+  margin: 30px auto;
+}
+
+#workskin .cover-animation .book-cover .book-headline .book-title-separator::after,
+#workskin .book .parchment hr::after {
+  content: "♦\FE0E";
+  display: inline-block;
+  position: absolute;
+  height: 0;
+  line-height: 0;
+  margin-top: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: transparent;
+  padding: 0 10px;
+  color: #cfbc64;
+  font-size: 14px;
+}
+
+#workskin .book .parchment hr::after {
+  color: #a96525;
+}
+
+/* Fixed parchment height */
+#workskin .cover-animation .book-content {
+    height: 420px;
+}
+
+/* Accent color */
+
+#workskin .cover-animation .book-cover .accent {
+  color: #cfbc64; /* yellow on cover */
+}
+
+
+/* ============================================================
+   11. BOOK — IMAGES
    Optional decorative image blocks to place inside .book.
    No need to add #workskin .img-float-clear again if already included via newspaper image css.
    
@@ -633,7 +817,7 @@
 
 
 /* ============================================================
-   11. NEWSPAPER — CLIPPING
+   12. NEWSPAPER — CLIPPING
    A sepia-toned newspaper/gazette layout.
    
    Components:
@@ -746,7 +930,7 @@
 
 
 /* ============================================================
-   12. NEWSPAPER — IMAGES
+   13. NEWSPAPER — IMAGES
    Optional decorative sepia image blocks to place inside .newspaper-content.
    No need to add #workskin .img-float-clear again if already included via book image css.
 
@@ -800,7 +984,7 @@
 
 
 /* ============================================================
-   13. DIARY — SINGLE ENTRY
+   14. DIARY — SINGLE ENTRY
    A handwritten diary page on white paper with ruled blue lines
    and a red margin line. The lined background is on an inner
    wrapper (.diary-inner) to avoid scroll lag on mobile.
@@ -898,7 +1082,7 @@
 
 
 /* ============================================================
-   14. DIARY — IMAGES
+   15. DIARY — IMAGES
    Optional image blocks to place inside .diary-inner.
    No need to add #workskin .img-float-clear again if already
    included via another component's image css.
@@ -948,7 +1132,7 @@
 
 
 /* ============================================================
-   15. FILE — SINGLE PAGE
+   16. FILE — SINGLE PAGE
    A typewritten classified file on parchment-textured paper.
    Use .file-title for the file heading, .file-stamp for a
    rotated stamp label (e.g. "Classified") at the bottom.
@@ -1035,7 +1219,7 @@
 
 
 /* ============================================================
-   16. FILE — IMAGES
+   17. FILE — IMAGES
    Optional grayscale image blocks to place inside .file-content.
    No need to add #workskin .img-float-clear again if already
    included via another component's image css.
