@@ -720,7 +720,7 @@
 /* <hr> separator */
 
 #workskin .cover-animation .book-cover .book-headline .book-title-separator,
-#workskin .book .parchmentt hr {
+#workskin .book .parchment hr {
   border: 0;
   height: 1px;
   background: #808080;
@@ -733,12 +733,12 @@
   margin: 20px auto;
 }
 
-#workskin .book .parchmentt hr {
+#workskin .book .parchment hr {
   margin: 30px auto;
 }
 
 #workskin .cover-animation .book-cover .book-headline .book-title-separator::after,
-#workskin .book .parchmentt hr::after {
+#workskin .book .parchment hr::after {
   content: "♦\FE0E";
   display: inline-block;
   position: absolute;
@@ -754,7 +754,7 @@
   font-size: 14px;
 }
 
-#workskin .book .parchmentt hr::after {
+#workskin .book .parchment hr::after {
   color: #a96525;
 }
 
