@@ -389,7 +389,7 @@
    Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
-   of which tab is hovered. Hidden by sidebar overflow at rest.
+   of which tab is hovered. 
    ------------------------------------------------------------ */
 
 #workskin .doc-folio .tab-panel {
@@ -909,7 +909,7 @@
    Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
-   of which tab is hovered. Hidden by sidebar overflow at rest.
+   of which tab is hovered. 
    ------------------------------------------------------------ */
 
 #workskin .doc-codex .tab-panel {
@@ -1443,7 +1443,7 @@
    Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
-   of which tab is hovered. Hidden by sidebar overflow at rest.
+   of which tab is hovered. 
    ------------------------------------------------------------ */
 
 #workskin .doc-book .tab-panel {
@@ -1984,7 +1984,7 @@
    Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
-   of which tab is hovered. Hidden by sidebar overflow at rest.
+   of which tab is hovered. 
    ------------------------------------------------------------ */
 
 #workskin .doc-newspaper .tab-panel {
@@ -2481,7 +2481,7 @@
    Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
-   of which tab is hovered. Hidden by sidebar overflow at rest.
+   of which tab is hovered. 
    ------------------------------------------------------------ */
 
 #workskin .doc-diary .tab-panel {
@@ -3016,7 +3016,7 @@
    Scrollable content panel revealed on tab hover.
    Positioned against .sidebar (its stacking context).
    top: 0 keeps it flush with the container top regardless
-   of which tab is hovered. Hidden by sidebar overflow at rest.
+   of which tab is hovered. 
    ------------------------------------------------------------ */
 
 #workskin .doc-folders .tab-panel {
