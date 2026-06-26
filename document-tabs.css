@@ -1449,7 +1449,7 @@
 #workskin .doc-book .tab-panel {
   position: absolute;
   top: 0;
-  right: 100%;
+  right: 380%;
   z-index: 19;
   
   background-color: rgb(247 242 234);
@@ -1459,11 +1459,11 @@
   background-clip: content-box;
   
   overflow: auto;
-  display: none;
+  transition: 300ms ease-in-out;
 }
 
 #workskin .doc-book .tab:hover .tab-panel {
-  display: block;
+  right: 100%;
 }
 
 
