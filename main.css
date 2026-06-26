@@ -233,9 +233,13 @@
   margin-top: 1em;
 }
 
+/* Accent color */
+
 #workskin .folio .accent {
   color: #760000;
 }
+
+/* <hr> separator */
 
 #workskin .folio-content hr {
   border: 0;
@@ -407,9 +411,13 @@
   color: #616acc;
 }
 
+/* Accent color */
+
 #workskin .codex .accent {
   color: #616acc;
 }
+
+/* <hr> separator */
 
 #workskin .codex-content hr {
   border: 0;
@@ -517,7 +525,7 @@
   margin: 15px auto;
 }
 
-#workskin p.book-title {
+#workskin .book p.book-title {
   font-size: 1.1em;
   letter-spacing: 0.1em;
   font-weight: bold;
@@ -556,6 +564,50 @@
   text-align: right;
 }
 
+/* Accent color on cover + back cover */
+
+#workskin .book .accent,
+#workskin .book-cover .accent {
+  color: #cfbc64; /* yellow */
+}
+
+/* <hr> separator */
+
+#workskin .book hr,
+#workskin .book-headline .book-title-separator {
+  border: 0;
+  height: 1px;
+  background: #808080;
+  width: 70%;
+  position: relative;
+  overflow: visible;
+}
+
+#workskin .book hr {
+  margin: 30px auto;
+}
+
+#workskin .book-headline .book-title-separator {
+  margin: 20px auto;
+}
+
+#workskin .book hr::after,
+#workskin .book-headline .book-title-separator::after {
+  content: "♦\FE0E";
+  display: inline-block;
+  position: absolute;
+  height: 0;
+  line-height: 0;
+  margin-top: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: transparent;
+  padding: 0 10px;
+  color: #cfbc64;
+  font-size: 14px;
+}
+
 
 /* ============================================================
    9.  BOOK — INNER PAGE
@@ -589,9 +641,16 @@
   text-shadow: none;
 }
 
-/* Accent color */
+/* Accent color on parchment page */
 
-#workskin .book .parchment .accent {
+#workskin .book .parchment .accent,
+#workskin .book-cover .parchment .accent {
+  color: #a96525;
+}
+
+/* <hr> separator */
+
+#workskin .book .parchment hr::after {
   color: #a96525;
 }
 
@@ -704,11 +763,6 @@
   font-size: 30px;
   line-height: 1;
   font-variant: small-caps;
-	
-  border: none;
-  text-transform: none;
-  font-weight: normal;
-  letter-spacing: 0;
 }
 
 /* Subtitle */
@@ -720,56 +774,10 @@
   line-height: 1;
 }
 
-/* <hr> separator */
-
-#workskin .cover-animation .book-cover .book-headline .book-title-separator,
-#workskin .book .parchment hr {
-  border: 0;
-  height: 1px;
-  background: #808080;
-  width: 70%;
-  position: relative;
-  overflow: visible;
-}
-
-#workskin .cover-animation .book-cover .book-headline .book-title-separator {
-  margin: 20px auto;
-}
-
-#workskin .book .parchment hr {
-  margin: 30px auto;
-}
-
-#workskin .cover-animation .book-cover .book-headline .book-title-separator::after,
-#workskin .book .parchment hr::after {
-  content: "♦\FE0E";
-  display: inline-block;
-  position: absolute;
-  height: 0;
-  line-height: 0;
-  margin-top: 1px;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  background: transparent;
-  padding: 0 10px;
-  color: #cfbc64;
-  font-size: 14px;
-}
-
-#workskin .book .parchment hr::after {
-  color: #a96525;
-}
-
 /* Fixed book content height */
+
 #workskin .cover-animation .book-content {
     height: 420px;
-}
-
-/* Accent color */
-
-#workskin .cover-animation .book-cover .accent {
-  color: #cfbc64; /* yellow on cover */
 }
 
 
@@ -1071,9 +1079,13 @@
   font-style: italic;
 }
 
+/* Accent color */
+
 #workskin .diary .accent {
   color: #bd0000;
 }
+
+/* <hr> separator */
 
 #workskin .diary-content hr {
   border: 0;
@@ -1208,9 +1220,13 @@
   opacity: 0.85;
 }
 
+/* Accent color */
+
 #workskin .file .accent {
   color: #bd0000;
 }
+
+/* <hr> separator */
 
 #workskin .file-content hr {
   border: 0;
