@@ -26,8 +26,8 @@ All are free to use; some require attribution if reused elsewhere (see the note 
 - `parchment-scroll.png`: designed by [Magnific](https://www.magnific.com)
 - `old-parchment-texture.jpg`: by [Biella Biella](https://pixabay.com/users/silviagaudenzi-3932581/) from [Pixabay](https://pixabay.com/)
 - `book-cover-texture.png`: 'Green Dust and Scratches' by Atle Mo from [transparenttextures.com](https://www.transparenttextures.com/)
-- `confidential.png`: by [Uclean India](https://www.kindpng.com/userpngs/16619/) from [kindpng](https://www.kindpng.com/)
-- `doc-cover-newspaper.jpg`: by richard.stephenson from [Wallpapers.com](https://www.wallpapers.com/)
+- `confidential.png`: [logo](https://www.kindpng.com/imgv/hhmRwJo_evidence-stamp-png-confidential-png-transparent-png/) by [Uclean India](https://www.kindpng.com/userpngs/16619/) from [kindpng](https://www.kindpng.com/)
+- `doc-cover-newspaper.jpg`: ['Vintage Newspaper And Cutouts'](https://wallpapers.com/wallpapers/vintage-newspaper-6phubhtbb2kgpaut.html) by richard.stephenson from [Wallpapers.com](https://www.wallpapers.com/)
 - `doc-cover-diary.jpg`: inspired by [berely](https://www.canva.com/p/berely/)'s 'Cahier journal intime collage photo rétro rose et beige' from [Canva](https://www.canva.com/)
 - Diary/Notebook ruled lines and margin design inspired by [CSS Notebook Paper](https://codepen.io/designcouch/pen/bGvzKE) by [Jesse Couch](https://codepen.io/designcouch) on CodePen.
 - `book-border.png`, `frame.png`, `doc-cover-codex.jpg`, `codex-border.png`, `codex-icon.png`, `doc-seal.png`, `diary-lock.png`, `scrolls.jpg`, `files.jpg`, `bookshelf.jpg` and `codex.jpg` generated with Gemini (Nano Banana). If you prefer not to use AI-generated assets, you can swap them out: the CSS will work with any image with minor adjustments.
