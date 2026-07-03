@@ -23,6 +23,7 @@ The `assets/` folder contains the textures used by the workskin. All are free to
 - `newspaper-image.jpg`: photo 'Wedding & Couple Photographer in Vietnam' by [Jupilu](https://pixabay.com/users/jupilu/) from [Pixabay](https://pixabay.com/)
 - `parchment-scroll.png`: designed by [Magnific](https://www.magnific.com)
 - `old-parchment-texture.jpg`: by [Biella Biella](https://pixabay.com/users/silviagaudenzi-3932581/) from [Pixabay](https://pixabay.com/)
+- `book-cover-texture.png`: 'Green Dust and Scratches' by Atle Mo from [transparenttextures.com](https://www.transparenttextures.com/)
 - `confidential.png`: by [Uclean India](https://www.kindpng.com/userpngs/16619/) from [kindpng](https://www.kindpng.com/)
 - `doc-cover-newspaper.jpg`: by richard.stephenson from [Wallpapers.com](https://www.wallpapers.com/)
 - `doc-cover-diary.jpg`: inspired by [berely](https://www.canva.com/p/berely/)'s 'Cahier journal intime collage photo rétro rose et beige' from [Canva](https://www.canva.com/)
