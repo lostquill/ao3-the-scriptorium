@@ -24,7 +24,7 @@ All are free to use; some require attribution if reused elsewhere (see the note 
 - `newspaper-image.jpg`: photo 'Wedding & Couple Photographer in Vietnam' by [Jupilu](https://pixabay.com/users/jupilu/) from [Pixabay](https://pixabay.com/)
 - `book-cover-image.gif`: supernova explosion animation by [Claudio Caridi](https://www.vecteezy.com/members/claudio-caridi415591) via [Vecteezy](https://www.vecteezy.com/free-videos/supernova)
 - `parchment-scroll.png`: designed by [Magnific](https://www.magnific.com)
-- `old-parchment-texture.jpg`: by [Biella Biella](https://pixabay.com/users/silviagaudenzi-3932581/) from [Pixabay](https://pixabay.com/)
+- `old-parchment-texture.jpg`: [parchment texture](https://pixabay.com/illustrations/paper-cardboard-parchment-8882753/) by [Biella Biella](https://pixabay.com/users/silviagaudenzi-3932581/) from [Pixabay](https://pixabay.com/)
 - `book-cover-texture.png`: 'Green Dust and Scratches' by Atle Mo from [transparenttextures.com](https://www.transparenttextures.com/)
 - `confidential.png`: [stamp](https://www.kindpng.com/imgv/hhmRwJo_evidence-stamp-png-confidential-png-transparent-png/) by [Uclean India](https://www.kindpng.com/userpngs/16619/) from [kindpng](https://www.kindpng.com/)
 - `doc-cover-newspaper.jpg`: ['Vintage Newspaper And Cutouts'](https://wallpapers.com/wallpapers/vintage-newspaper-6phubhtbb2kgpaut.html) by richard.stephenson from [Wallpapers.com](https://www.wallpapers.com/)
