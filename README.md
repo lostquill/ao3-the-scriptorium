@@ -21,6 +21,7 @@ Usage and HTML examples available on [AO3](https://archiveofourown.org/works/847
 ## Credits & assets
 The `assets/` folder contains the textures used by the workskin. All are free to use.
 - `newspaper-image.jpg`: photo 'Wedding & Couple Photographer in Vietnam' by [Jupilu](https://pixabay.com/users/jupilu/) from [Pixabay](https://pixabay.com/)
+- `book-cover-image.gif`: Big Bang concept image via [SciTechDaily](https://scitechdaily.com/new-details-revealed-of-what-happened-in-the-first-microsecond-of-the-big-bang/)
 - `parchment-scroll.png`: designed by [Magnific](https://www.magnific.com)
 - `old-parchment-texture.jpg`: by [Biella Biella](https://pixabay.com/users/silviagaudenzi-3932581/) from [Pixabay](https://pixabay.com/)
 - `book-cover-texture.png`: 'Green Dust and Scratches' by Atle Mo from [transparenttextures.com](https://www.transparenttextures.com/)
@@ -28,7 +29,8 @@ The `assets/` folder contains the textures used by the workskin. All are free to
 - `doc-cover-newspaper.jpg`: by richard.stephenson from [Wallpapers.com](https://www.wallpapers.com/)
 - `doc-cover-diary.jpg`: inspired by [berely](https://www.canva.com/p/berely/)'s 'Cahier journal intime collage photo rétro rose et beige' from [Canva](https://www.canva.com/)
 - Diary/Notebook ruled lines and margin design inspired by [CSS Notebook Paper](https://codepen.io/designcouch/pen/bGvzKE) by [Jesse Couch](https://codepen.io/designcouch) on CodePen.
-- other elements generated with Gemini. If you prefer not to use AI-generated assets, you can swap them out: the CSS will work with any image with minor adjustments.
+- `book-border.png`, `frame.png`, `doc-cover-codex.jpg`, `codex-border.png`, `codex-icon.png`, `doc-seal.png`, `diary-lock.png`, `scrolls.jpg`, `files.jpg`, `bookshelf.jpg` and `codex.jpg` generated with Gemini. If you prefer not to use AI-generated assets, you can swap them out: the CSS will work with any image with minor adjustments.
+- All other elements (`newspaper-texture.jpg`, `doc-cover-folio.jpg`, `doc-cover-diary.jpg`, `doc-cover-folders.jpg`, `doc-cover-newspaper.jpg`) cobbled together by myself with whatever tools I had on hand (mostly Photofiltre).
 
 ## License
 Free to use and adapt. Credit appreciated but not required.
