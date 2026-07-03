@@ -30,7 +30,7 @@ The `assets/` folder contains the textures used by the workskin. All are free to
 - `doc-cover-diary.jpg`: inspired by [berely](https://www.canva.com/p/berely/)'s 'Cahier journal intime collage photo rétro rose et beige' from [Canva](https://www.canva.com/)
 - Diary/Notebook ruled lines and margin design inspired by [CSS Notebook Paper](https://codepen.io/designcouch/pen/bGvzKE) by [Jesse Couch](https://codepen.io/designcouch) on CodePen.
 - `book-border.png`, `frame.png`, `doc-cover-codex.jpg`, `codex-border.png`, `codex-icon.png`, `doc-seal.png`, `diary-lock.png`, `scrolls.jpg`, `files.jpg`, `bookshelf.jpg` and `codex.jpg` generated with Gemini (Nano Banana). If you prefer not to use AI-generated assets, you can swap them out: the CSS will work with any image with minor adjustments.
-- All other elements (`newspaper-texture.jpg`, `doc-cover-folio.jpg`, `doc-cover-diary.jpg`, `doc-cover-folders.jpg`, `doc-cover-newspaper.jpg`) cobbled together by myself with whatever tools I had on hand (mostly Photofiltre).
+- All other elements (`newspaper-texture.jpg`, `doc-cover-folio.jpg`, `doc-cover-diary.jpg`, `doc-cover-folders.jpg`, `doc-cover-newspaper.jpg`) cobbled together by myself with whatever tools I had on hand (mostly Photofiltre and Canva).
 
 ## License
 Free to use and adapt. Credit appreciated but not required.
