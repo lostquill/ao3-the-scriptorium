@@ -21,7 +21,7 @@ Usage and HTML examples available on [AO3](https://archiveofourown.org/works/847
 ## Credits & assets
 The `assets/` folder contains the textures used by the workskin. All are free to use.
 - `newspaper-image.jpg`: photo 'Wedding & Couple Photographer in Vietnam' by [Jupilu](https://pixabay.com/users/jupilu/) from [Pixabay](https://pixabay.com/)
-- `book-cover-image.gif`: Big Bang concept image via [SciTechDaily](https://scitechdaily.com/new-details-revealed-of-what-happened-in-the-first-microsecond-of-the-big-bang/)
+- `book-cover-image.gif`: supernova explosion animation by [Claudio Caridi](https://www.vecteezy.com/members/claudio-caridi415591) via [Vecteezy](https://www.vecteezy.com/free-videos/supernova)
 - `parchment-scroll.png`: designed by [Magnific](https://www.magnific.com)
 - `old-parchment-texture.jpg`: by [Biella Biella](https://pixabay.com/users/silviagaudenzi-3932581/) from [Pixabay](https://pixabay.com/)
 - `book-cover-texture.png`: 'Green Dust and Scratches' by Atle Mo from [transparenttextures.com](https://www.transparenttextures.com/)
