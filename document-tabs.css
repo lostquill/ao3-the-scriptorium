@@ -196,11 +196,13 @@
 /* Headline */
 
 #workskin .doc-folio .doc-headline {
+  width: 100%;
   padding-inline: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 #workskin .doc-folio .doc-headline p {
@@ -719,11 +721,13 @@
 /* Headline */
 
 #workskin .doc-codex .doc-headline {
+  width: 100%;
   padding-inline: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 #workskin .doc-codex .doc-headline p {
@@ -1248,6 +1252,7 @@
 /* Headline */
 
 #workskin .doc-book .doc-headline {
+  width: 100%;
   padding-inline: 15px;
   display: flex;
   flex-direction: column;
@@ -1787,6 +1792,7 @@
 /* Headline */
 
 #workskin .doc-newspaper .doc-headline {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2822,11 +2828,13 @@
 /* Headline */
 
 #workskin .doc-folders .doc-headline {
+  width: 100%;
   padding-inline: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 #workskin .doc-folders .doc-headline p {
