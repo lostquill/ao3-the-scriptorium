@@ -1793,11 +1793,12 @@
 
 #workskin .doc-newspaper .doc-headline {
   width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+	
   background-color: rgba(255, 255, 255, 0.8);
   padding: 30px 15px;
   margin-inline: 15px;
@@ -1806,7 +1807,7 @@
 
 #workskin .doc-newspaper .doc-headline p {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: Garamond, "Apple Garamond", Baskerville, "Baskerville Old Face", "Hoefler Text", "Book Antiqua", "Times New Roman", Times, serif;
   text-align: center;
   font-weight: bold;
   color: black;
@@ -1976,7 +1977,7 @@
 
 #workskin .doc-newspaper .tab-label p {
   margin-block: 7px;
-  font-family: monospace, "Courier New", Courier;
+  font-family: Garamond, "Apple Garamond", Baskerville, "Baskerville Old Face", "Hoefler Text", "Book Antiqua", "Times New Roman", Times, serif;
   font-size: 12px;
   text-transform: uppercase;
   color: black;
@@ -2032,10 +2033,10 @@
 }
 
 #workskin .doc-newspaper .tab-content p {
-  font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, sans-serif;
+  font-family: Garamond, "Apple Garamond", Baskerville, "Baskerville Old Face", "Hoefler Text", "Book Antiqua", "Times New Roman", Times, serif;
   color: black;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 17px;
+  line-height: 19px;
   text-align: justify;
 }
 
@@ -2045,14 +2046,14 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   padding-block: 20px;
-  border-block: 2px dashed #4a3e3d;
+  border-block: 2px solid #ada09e;
 }
 
 #workskin .doc-newspaper .tab-content p.tab-section {
   font-size: 15px;
   text-transform: uppercase;
   padding-bottom: 4px;
-  border-bottom: 1px dashed #868686;
+  border-bottom: 1px solid #ada09e;
 }
 
 /* Images */
@@ -2092,7 +2093,7 @@
 #workskin .doc-newspaper .doc-headline .doc-title-separator,
 #workskin .doc-newspaper .tab-content hr {
   border: 0;
-  border-top: 2px dashed #4a3e3d;
+  border-top: 2px solid #ada09e;
   width: 90%;
   position: relative;
   overflow: visible;
@@ -2175,8 +2176,8 @@
 /* Tab content — Font size */
 
 #workskin .bigger.doc-newspaper .tab-content p {
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 18px;
+  line-height: 23px;
 }
 
 #workskin .bigger.doc-newspaper .tab-content p.tab-title {
